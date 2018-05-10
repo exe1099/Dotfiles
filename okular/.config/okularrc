@@ -18,8 +18,8 @@ File3[$e]=$HOME/pCloud/Informatik/neural_network/neuralnetworksanddeeplearning/m
 File4[$e]=$HOME/Downloads/FeynmanLectures/feynman_lectures_on_physics_volumen_1.pdf
 File5[$e]=$HOME/Downloads/FeynmanLectures/feynman_lectures_on_physics_volumen_2.pdf
 File6[$e]=$HOME/Downloads/FeynmanLectures/feynman_lectures_on_physics_volumen_3.pdf
-File7[$e]=$HOME/pCloud/AAAUni/countingstats.pdf
-File8[$e]=$HOME/pCloud/Documents/Physics/Statistics/ChiSquareStuff.pdf
+File7[$e]=$HOME/pCloud/Documents/test.md.pdf
+File8[$d]
 File9[$d]
 Name1[$e]=Extreme_im_Vulkanismus_Julia_Luhn.pdf
 Name10[$d]
@@ -28,6 +28,6 @@ Name3[$e]=michael_nielsen.pdf
 Name4[$e]=feynman_lectures_on_physics_volumen_1.pdf
 Name5[$e]=feynman_lectures_on_physics_volumen_2.pdf
 Name6[$e]=feynman_lectures_on_physics_volumen_3.pdf
-Name7[$e]=countingstats.pdf
-Name8[$e]=ChiSquareStuff.pdf
+Name7[$e]=test.md.pdf
+Name8[$d]
 Name9[$d]

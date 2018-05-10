@@ -82,7 +82,8 @@ exec --no-startup-id nm-applet
 # exec --no-startup-id wicd-curses
 
 # unclutter makes the mouse invisible after a brief period
-exec --no-startup-id unclutter
+# hide mouse pointer; makes problems with ideavim (I think)
+# exec --no-startup-id unclutter
  
 # compositor for transparency
 exec --no-startup-id compton -b

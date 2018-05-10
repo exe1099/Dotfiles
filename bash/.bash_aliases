@@ -1,14 +1,22 @@
-# my own aliases
+#  ______   __       __   ______   ______   ______   ______    
+# /\  __ \ /\ \     /\ \ /\  __ \ /\  ___\ /\  ___\ /\  ___\   
+# \ \  __ \\ \ \____\ \ \\ \  __ \\ \___  \\ \  __\ \ \___  \  
+#  \ \_\ \_\\ \_____\\ \_\\ \_\ \_\\/\_____\\ \_____\\/\_____\ 
+#   \/_/\/_/ \/_____/ \/_/ \/_/\/_/ \/_____/ \/_____/ \/_____/ 
+#                                                                         
 
-#alias jn='source activate main; screen -d -m jupyter notebook; exit'
-#alias openf='xdg-open '
-#alias pycharm='screen -d -m ./PyCharm/bin/pycharm.sh; exit'
-#alias uni='cd Dropbox/AAAUni'
-#alias check_reader='source activate main; cd PycharmProjects/Everything/reader/;
-#                    python reader_selenium.py; exit'
-#alias crypto='source activate main; cd PycharmProjects/Everything/crypto/;
-#                    python report.py 30; source deactivate; cd ~'
-#alias fm='ranger'
+
+# use exa instead of ls; exa is modern ls
+alias l='exa --group-directories-first'
+alias la='exa --group-directories-first -a'
+alias ll='exa --group-directories-first -l --git'
+alias lla='exa --group-directories-first -l -a --git'
+
+# use colors
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
 alias wlan='wicd-curses'
 alias ranger='python ~/Gits/ranger/ranger.py ~'
 alias r='python ~/Gits/ranger/ranger.py ~'
@@ -20,8 +28,6 @@ alias startP='pdfpc -g ~/pCloud/LatexDocs/BA_slides/BA_slides.pdf'
 alias list_devices='sudo fdisk -l | grep -A 2 Device'
 alias v='nvr ~/d'
 
-alias l='exa'
-alias la='exa -a'
-alias ll='exa -l --git'
-alias lla='exa -l -a --git'
+alias starwars='telnet towel.blinkenlights.nl' # watch Star Wars A New Hope in ASCII Art
 
+alias ccat='highlight --out-format=ansi' # color cat - print file with syntax highlighting

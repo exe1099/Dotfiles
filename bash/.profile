@@ -1,34 +1,20 @@
-# ~/.profile: executed by the command interpreter for login shells.
-# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
-# exists.
-# see /usr/share/doc/bash/examples/startup-files for examples.
-# the files are located in the bash-doc package.
+#  ____             __ _ _      
+# |  _ \ _ __ ___  / _(_) | ___ 
+# | |_) | '__/ _ \| |_| | |/ _ \
+# |  __/| | | (_) |  _| | |  __/
+# |_|   |_|  \___/|_| |_|_|\___|
+#                               
+# runs on login
 
-# the default umask is set in /etc/profile; for setting the umask
-# for ssh logins, install and configure the libpam-umask package.
-#umask 022
 
-# if running bash
-if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
-    fi
-fi
+# source .bashrc
+[ -f ~/.bashrc ] && source ~/.bashrc
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
+[ -d ~/bin ] && PATH="$PATH:$HOME/bin"
 
 # add texlive installation to PATH
 PATH="/usr/local/texlive/2018/bin/x86_64-linux:$PATH"
 
-# export QT_QPA_PLATFORMTHEME=gtk2
-
+# to tell app to use qt5ct variable
 [ "$XDG_CURRENT_DESKTOP" = "KDE" ] || [ "$XDG_CURRENT_DESKTOP" = "GNOME" ] || export QT_QPA_PLATFORMTHEME="qt5ct"
