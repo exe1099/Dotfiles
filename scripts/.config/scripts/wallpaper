@@ -1,0 +1,6 @@
+#!/bin/bash
+
+wp_path=/home/excalibur1099/pCloud/Pictures/wallpapers/Spacescapes
+image=$(ls $wp_path | grep -E '(jpg|png)$' | sort -R | tail -1)
+
+feh --bg-scale $wp_path/$image
