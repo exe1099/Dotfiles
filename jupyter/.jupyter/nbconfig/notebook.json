@@ -1,0 +1,53 @@
+{
+  "comment_uncomment_indent": true,
+  "load_extensions": {
+    "comment-uncomment/main": true,
+    "scratchpad/main": false,
+    "move_selected_cells/main": true,
+    "snippets/main": true,
+    "code_prettify/code_prettify": true,
+    "collapsible_headings/main": true,
+    "hide_header/main": true,
+    "hinterland/hinterland": true,
+    "code_font_size/code_font_size": true,
+    "notify/notify": true
+  },
+  "hinterland": {
+    "hint_delay": "200"
+  },
+  "code_prettify": {
+    "hotkeys": {
+      "process_selected": "ctrl-f"
+    }
+  },
+  "comment_uncomment_keybinding": "ctrl-b",
+  "Cell": {
+    "cm_config": {
+      "lineNumbers": false
+    }
+  },
+ "header_toggle": "h",
+  "keys": {
+    "command": {
+      "bind": {
+        "9,9": "jupyter-notebook:run-all-cells",
+        "8,8": "jupyter-notebook:run-all-cells-below",
+        "strg-v": "jupyter-notebook:paste-cell-above",
+        "alt-up": "jupyter-notebook:move-cell-up",
+        "alt-down": "jupyter-notebook:move-cell-down",
+        "m": "jupyter-notebook:merge-selected-cells",
+        "h": "jupyter-notebook:toggle-header",
+        "f2": "jupyter-notebook:rename-notebook",
+        "strg-m": "jupyter-notebook:change-cell-to-markdown"
+      },
+      "unbind": [
+        "shift-v",
+        "m",
+        "h"
+      ]
+    }
+  },
+  "Notebook": {
+    "Header": true
+  }
+}

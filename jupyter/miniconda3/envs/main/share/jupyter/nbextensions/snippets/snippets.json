@@ -1,0 +1,56 @@
+{
+    "snippets" : [
+        {
+            "name" : "all_the_good_stuff",
+            "code" : [
+                "import os",
+		        "import numpy as np",
+		        "np.set_printoptions(suppress=True)",
+		        "import matplotlib as mpl",
+                "import matplotlib.pyplot as plt",
+		        "%matplotlib inline",
+		        "import scipy.constants as c",
+		        "import uncertainties as u",
+		        "from uncertainties import unumpy as unp",
+		        "from uncertainties import ufloat",
+		        "from uncertainties import umath",
+		        "import sympy as sp",
+                "import scipy as sc",
+		        "sp.init_printing()",
+		        "import lmfit as fit",
+		        "import pandas as pd",
+		        "phc = c.physical_constants",
+		        "import sys",
+		        "sys.path.append('/home/excalibur1099/pCloud/Informatik/Python/')",
+		        "from self_written_functions import *",
+                "plt.style.use('~/pCloud/Informatik/Python/matplotlibrc/notebook')"
+    			]
+        },
+
+        {
+            "name" : "auto_reload",
+            "code" : [
+                "%load_ext autoreload",
+                "%autoreload 2",
+                "%aimport -os, -np, -plt, -mpl, -c, -u, -unp, -ufloat, -umath, -sp, -sc, -fit, -pd, -sys"
+                ]
+        },
+
+        {
+            "name" : "plot_style",
+            "code" : [
+                "plt.style.use('~/pCloud/Informatik/Python/matplotlibrc/notebook')"
+                ]
+        },
+        {
+            "name" : "plot_minor_ticks",
+            "code" : [
+                "bool_ = True",
+                "mpl.rcParams['xtick.minor.visible'] = bool_",
+                "mpl.rcParams['xtick.bottom'] = bool_",
+                "mpl.rcParams['ytick.left'] = bool_"
+                ]
+        }
+
+    ]
+}
