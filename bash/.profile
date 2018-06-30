@@ -28,3 +28,7 @@ fi
 
 # add texlive installation to PATH
 PATH="/usr/local/texlive/2018/bin/x86_64-linux:$PATH"
+
+# export QT_QPA_PLATFORMTHEME=gtk2
+
+[ "$XDG_CURRENT_DESKTOP" = "KDE" ] || [ "$XDG_CURRENT_DESKTOP" = "GNOME" ] || export QT_QPA_PLATFORMTHEME="qt5ct"

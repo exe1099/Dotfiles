@@ -370,9 +370,11 @@ let g:NERDTrimTrailingWhitespace = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Movement
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" jump 10 lines up or down
+" jump 10 lines up or down/characters left/right
 nmap <c-j> 10j
 nmap <c-k> 10k
+nmap <c-h> 10h
+nmap <c-l> 10l
 
 " insert empty line below/above and stay in normal mode
 nmap # o<esc>
