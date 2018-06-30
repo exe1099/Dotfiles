@@ -15,3 +15,7 @@ alias jn='conda activate main; screen -d -m jupyter notebook; exit'
 alias openf='xdg-open '
 alias pycharm='screen -d -m ./PyCharm/bin/pycharm.sh; exit'
 alias startP='pdfpc -g ~/pCloud/LatexDocs/BA_slides/BA_slides.pdf'
+
+alias la='exa -a'
+alias ll='exa -l --git'
+alias lla='exa -l -a --git'
