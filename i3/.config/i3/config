@@ -97,8 +97,8 @@ exec --no-startup-id ./.config/scripts/pcloud
 #################################################
 exec --no-startup-id i3-msg 'workspace $ws1; exec firefox'
 exec --no-startup-id i3-msg 'workspace $ws2; exec termite -e "ranger"'
-exec --no-startup-id i3-msg 'workspace $ws3; exec termite'
-exec --no-startup-id i3-msg 'workspace $ws4; exec gvim ~/d'
+# exec --no-startup-id i3-msg 'workspace $ws3; exec termite'
+# exec --no-startup-id i3-msg 'workspace $ws4; exec gvim ~/d'
 exec --no-startup-id i3-msg 'workspace $ws8; exec thunderbird'
 exec --no-startup-id termite --class="scratchpad" -e "python3"
 
@@ -108,7 +108,8 @@ exec --no-startup-id termite --class="scratchpad" -e "python3"
 #################################################
 assign [class="ranger_terminal"] → $ws3
 assign [class="Thunderbird"] → $ws8
-assign [class="libreoffice-startcenter|Soffice"] $ws7
+assign [class="libreoffice-startcenter|Soffice"] → $ws7
+assign [class="okular"] → $ws5
 for_window [class="Pdfpc" window_role="presentation"] move to output up
 for_window [class="Pdfpc" window_role="presenter"] move to output down
 
@@ -116,8 +117,10 @@ for_window [class="Pdfpc" window_role="presenter"] move to output down
 #################################################
 # => Multimedia and Function Keys
 #################################################
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -RTMIN+10 i3blocks 
+#&& notify-send -c volume -u low "50%"
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -RTMIN+10 i3blocks
+#&& notify-send -c volume -u low "40%"
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -RTMIN+10 i3blocks
 
 # display manager

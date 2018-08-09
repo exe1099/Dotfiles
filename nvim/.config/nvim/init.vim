@@ -221,8 +221,12 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 map 0 ^
 
 " Move a line of text using ALT+[jk]
-nnoremap <M-j> mz:m+<cr>`z
-nnoremap <M-k> mz:m-2<cr>`z
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 " different binding for terminal
 " if !has("gui_running")
    " nnoremap <Esc>j mz:m+<cr>`z
@@ -380,9 +384,6 @@ nmap <c-l> 10l
 nmap # o<esc>
 nmap ' O<esc>
 
-" leave insert mode and stay in position
-inoremap jk <esc>l
-
 " deactive arrow keys
 nnoremap <up> <nop>
 nnoremap <down> <nop>
@@ -410,7 +411,9 @@ map <c-t> :tabnew<cr>
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 " use system clipboard
-vnoremap <c-C> "+y
+" + clipboard
+" * primary selection ("mouse highlight")
+vnoremap <c-C> "*y :let @+=@*<CR>
 nnoremap <c-V> "+p
 
 

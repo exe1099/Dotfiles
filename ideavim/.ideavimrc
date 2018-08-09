@@ -1,0 +1,48 @@
+set so=8 " keep space between coursor and top/bottom
+set backspace=eol,start,indent
+
+" Highlight search results
+set hlsearch
+
+" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
+map <space> /
+map <c-space> ?
+
+" Disable highlight when <cr> is pressed
+nnoremap <CR> :nohlsearch<cr>
+
+" Remap VIM 0 to first non-blank character
+map 0 ^
+
+" Move a line of text using ALT+[jk]
+nnoremap <M-j> mz:m+<cr>`z
+nnoremap <M-k> mz:m-2<cr>`z
+
+" jump 10 lines up or down/characters left/right
+nmap <c-j> 5j
+nmap <c-k> 5k
+" nmap <c-h> h
+" nmap <c-l> 10l
+
+" insert empty line below/above and stay in normal mode
+nmap # o<esc>
+nmap ' O<esc>
+
+" leave insert mode and stay in position
+inoremap jk <esc>l
+
+" move along screen lines, not file lines
+nnoremap j gj
+nnoremap k gk
+
+" use system clipboard
+vnoremap <c-C> "+y
+nnoremap <c-V> "+p
+
+set incsearch                  " show search matches as you type
+
+" highlight line if in insert mode
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
+
+nnoremap ,r :action RenameElement<cr>

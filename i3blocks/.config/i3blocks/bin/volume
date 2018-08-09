@@ -68,3 +68,7 @@ case $BLOCK_BUTTON in
 esac
 
 volume | format
+# source /home/excalibur1099/Dotfiles/i3blocks/.config/i3blocks/bin/volume_bar
+text=$(volume | format)
+dunstify -a volume -t 2000 -r 2593 -u low "   $text   "
+

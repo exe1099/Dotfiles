@@ -38,7 +38,7 @@
         "m": "jupyter-notebook:merge-selected-cells",
         "h": "jupyter-notebook:toggle-header",
         "f2": "jupyter-notebook:rename-notebook",
-        "strg-m": "jupyter-notebook:change-cell-to-markdown"
+        "ctrl-m": "jupyter-notebook:change-cell-to-markdown"
       },
       "unbind": [
         "shift-v",

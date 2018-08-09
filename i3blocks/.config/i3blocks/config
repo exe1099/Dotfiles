@@ -35,7 +35,7 @@ markup=none
 # See the script for details.
 [volume]
 # label=VOL
-label=♪
+label=
 instance=Master
 #instance=PCM
 interval=once

@@ -4,7 +4,7 @@
 #alias openf='xdg-open '
 #alias pycharm='screen -d -m ./PyCharm/bin/pycharm.sh; exit'
 #alias uni='cd Dropbox/AAAUni'
-#alias check_reader='source activate main; cd PycharmProjects/Everything/reader/; 
+#alias check_reader='source activate main; cd PycharmProjects/Everything/reader/;
 #                    python reader_selenium.py; exit'
 #alias crypto='source activate main; cd PycharmProjects/Everything/crypto/;
 #                    python report.py 30; source deactivate; cd ~'
@@ -15,7 +15,10 @@ alias jn='conda activate main; screen -d -m jupyter notebook; exit'
 alias openf='xdg-open '
 alias pycharm='screen -d -m ./PyCharm/bin/pycharm.sh; exit'
 alias startP='pdfpc -g ~/pCloud/LatexDocs/BA_slides/BA_slides.pdf'
+alias list_devices='sudo fdisk -l | grep -A 2 Device'
 
+alias l='exa'
 alias la='exa -a'
 alias ll='exa -l --git'
 alias lla='exa -l -a --git'
+
