@@ -4,7 +4,7 @@ FullScreen=false
 [MainWindow]
 Height 1080=1025
 Height 768=704
-State=AAAA/wAAAAD9AAAAAAAABRMAAAKnAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAAAABVYAAALSAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
 Width 1366=1299
 Width 1920=933
@@ -12,7 +12,7 @@ Window-Maximized 768x1366=true
 
 [Recent Files]
 File1[$e]=$HOME/Documents/drucken/27_ExPhysik5b_180201.pdf
-File10[$e]=/run/user/1000/gvfs/mtp:host=%255Busb%253A002%252C007%255D/S3/DEVICON.FIL
+File10[$d]
 File2[$e]=$HOME/Documents/Grundprobleme der Wasserversorgung in Niederösterreich.pdf
 File3[$e]=$HOME/Downloads/Grundprobleme der Wasserversorgung in Niederösterreich.pdf
 File4[$e]=$HOME/pCloud/LatexDocs/BA_slides/BA_slides.pdf
@@ -22,7 +22,7 @@ File7[$e]=$HOME/Downloads/Extreme_im_Vulkanismus_Julia_Luhn.pdf
 File8[$e]=$HOME/Downloads/Extreme_im_Vulkanismus_Julia_Luhn2.pdf
 File9[$e]=$HOME/pCloud/Documents/FLIX-Booking-8075388582.pdf
 Name1[$e]=27_ExPhysik5b_180201.pdf
-Name10[$e]=DEVICON.FIL
+Name10[$d]
 Name2[$e]=Grundprobleme der Wasserversorgung in Niederösterreich.pdf
 Name3[$e]=Grundprobleme der Wasserversorgung in Niederösterreich.pdf
 Name4[$e]=BA_slides.pdf

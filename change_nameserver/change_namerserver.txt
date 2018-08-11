@@ -1,0 +1,6 @@
+* use Cloudflare 1.1.1.1
+* configure over NetworkManager (applet)
+* right click NetworkManager, Edit Connections...
+* select network, edit
+* IPv4 Settings, Automatic (DHCP) addresses only
+* DNS server: 1.0.0.1

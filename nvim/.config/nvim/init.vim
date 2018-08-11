@@ -415,7 +415,7 @@ vnoremap <leader>d "_d
 " * primary selection ("mouse highlight")
 vnoremap <c-C> "*y :let @+=@*<CR>
 nnoremap <c-V> "+p
-
+inoremap <c-V> <Esc>"+pa
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General Settings
