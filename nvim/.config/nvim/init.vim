@@ -35,11 +35,12 @@ set autoread
 let mapleader = ","
 
 " Fast saving
-nmap <leader>w :w!<cr>
+" nmap <leader>w :w!<cr>
 
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
-command W w !sudo tee % > /dev/null
+command W w suda://%
+" command W w !sudo tee % > /dev/null " this doesnt work in neovim
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -415,8 +416,37 @@ vnoremap <leader>d "_d
 vnoremap <c-C> "*y :let @+=@*<CR>
 nnoremap <c-V> "+p
 inoremap <c-V> <Esc>"+pa
-" save and run current file
-map <F9> <Esc>:w<CR>:!%:p<CR>
+
+" save and run current file, :! (execute) % (current filename) :p (use absolute path)
+" map <F9> <Esc>:w<CR>:!%:p<CR>
+
+" save and run current file and show output in vertical split
+function! Setup_ExecNDisplay()
+  " write file
+  execute "w"
+  " execute permission
+  execute "silent !chmod +x %:p"
+  " save filename in variable, not sure what :t is for
+  let n=expand('%:t')
+  " 2>&1 stderr to stdout (2>1 would be to file names 1)
+  " tee: write stdin to file
+  execute "silent !%:p 2>&1 | tee ~/.vim/tmp/out_".n
+  " create new vsplit
+  execute "vsplit ~/.vim/tmp/out_".n
+  execute "redraw!"
+  set autoread
+endfunction
+
+function! ExecNDisplay()
+  execute "w"
+  let n=expand('%:t')
+  execute "silent !%:p 2>&1 | tee ~/.vim/tmp/out_".n
+endfunction
+
+:nmap <F8> :call Setup_ExecNDisplay()<CR>
+:nmap <F9> :call ExecNDisplay()<CR>
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -428,6 +458,8 @@ set number                     " Show current line number
 set relativenumber             " Show relative line numbers
 set autoindent
 set laststatus=2
+set splitright
+set splitbelow
 map yx :wq<cr>
 map yy :w<cr>
 " map xx :q<cr>
@@ -444,7 +476,7 @@ autocmd InsertLeave * set nocul
 " => Status line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_powerline_fonts = 1 " needed for status line
-set noshowmode " hide -- INSERT --
+" set noshowmode " hide -- INSERT --
 let g:airline_theme='minimalist_2'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -507,6 +539,5 @@ nnoremap <PageDown> :bnext<CR>
 " CommandT: <c-v> - open in vertical split
     "           <c-s> - open in split
 " alt-j/k - move line up/down
-" ctrl-j/k/h/l - navigate split view
 " ctrl-t - new tab
 
