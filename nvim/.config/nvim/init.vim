@@ -344,11 +344,10 @@ Plug 'https://github.com/mbbill/undotree/'
 Plug 'sheerun/vim-polyglot'  " synatx highlighting for different languages
 Plug 'vim-airline/vim-airline'  " fancy status bar
 Plug 'vim-airline/vim-airline-themes'  " themes for fancy status bar
-Plug 'bluz71/vim-moonfly-colors'  " color-scheme
 Plug 'wincent/command-t'  " fuzzy-finder
 Plug 'scrooloose/nerdcommenter'  " comment/uncomment plugin
-Plug 'dikiaap/minimalist'  " color-scheme
 Plug 'exe1099/minimalist_2'  " color-scheme
+Plug 'https://github.com/lambdalisue/suda.vim' " write with sudo
 call plug#end()
 
 " Options for plugins
@@ -416,7 +415,8 @@ vnoremap <leader>d "_d
 vnoremap <c-C> "*y :let @+=@*<CR>
 nnoremap <c-V> "+p
 inoremap <c-V> <Esc>"+pa
-
+" save and run current file
+map <F9> <Esc>:w<CR>:!%:p<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -476,7 +476,6 @@ syntax on
 " set guicursor+=i:block-Cursor
 set termguicolors
 colorscheme minimalist_2
-" colorscheme moonfly
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -122,11 +122,6 @@ fi
 # minimalistic command prompt with color
 export PS1="\[\033[01;34m\]\w\[\033[00m\]\$ "
 
-# run seperate nvim session as permanent editor
-export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
-alias gvim='nvr --remote'
-export NVR_CMD=nvim-qt
-
 # added by Miniconda3 installer
 # export PATH="/home/excalibur1099/miniconda3/bin:$PATH"
 . /home/excalibur1099/miniconda3/etc/profile.d/conda.sh

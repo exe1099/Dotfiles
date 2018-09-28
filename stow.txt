@@ -1,0 +1,2 @@
+Stow file in root directory with:
+    sudo stow -t / <stow folder>

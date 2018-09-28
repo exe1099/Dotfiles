@@ -71,10 +71,10 @@ for_window [class="Yad"] floating enable
 #################################################
 # => Starting External Scripts
 #################################################
-# wallpaper
+# wallpaper script
 exec --no-startup-id /home/excalibur1099/.config/scripts/wallpaper
 
-# touchpad options
+# touchpad options (inverse scrolling, palm rejection etc.)
 exec --no-startup-id synclient VertScrollDelta=-112 VertEdgeScroll=0 HorizTwoFingerScroll=1 HorizScrollDelta=-112 PalmDetect=1
 
 # network manager
@@ -177,7 +177,9 @@ bindsym $mod+s              scratchpad show
 bindsym $mod+Shift+s        move scratchpad
 bindsym $mod+r              exec termite -e 'ranger' 
 bindsym $mod+p              exec termite -e 'python3'
-bindsym $mod+Shift+w        exec --no-startup-id /home/excalibur1099/.config/scripts/wallpaper
+bindsym $mod+Shift+w        exec --no-startup-id ~/.config/scripts/wallpaper
+bindsym $mod+m              exec --no-startup-id ~/.config/scripts/dmenumount
+bindsym $mod+Shift+m        exec --no-startup-id ~/.config/scripts/dmenuumount
 
 # resizing current window
 bindsym $mod+Shift+z        resize shrink width 10 px or 10 ppt
