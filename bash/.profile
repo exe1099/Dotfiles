@@ -13,6 +13,9 @@
 # set PATH so it includes user's private bin if it exists
 [ -d ~/bin ] && PATH="$PATH:$HOME/bin"
 
+# lots of bins get installed to this directory
+[ -d~/.local/bin ] && PATH="$PATH:$HOME/.local/bin"
+
 # add texlive installation to PATH
 PATH="/usr/local/texlive/2018/bin/x86_64-linux:$PATH"
 
