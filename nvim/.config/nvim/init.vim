@@ -123,6 +123,10 @@ function! MyFoldText() " {{{
 endfunction " }}}
 set foldtext=MyFoldText()
 
+" autosave folds
+" autocmd BufWinLeave *.* mkview
+" autocmd BufWinEnter *.* silent loadview
+
 " }}}
 " => Plugins --------------------------------------------------------{{{
 
@@ -138,10 +142,14 @@ Plug 'scrooloose/nerdcommenter'  " comment/uncomment plugin
 Plug 'exe1099/minimalist_2'  " color-scheme
 Plug 'https://github.com/lambdalisue/suda.vim' " write file with sudo
 Plug 'python-mode/python-mode', { 'branch': 'develop' } " Python Stuff for editor
+Plug 'vim-scripts/restore_view.vim' " remembers cursor position and view
 call plug#end()
 
 
 " Options for plugins
+
+set viewoptions=cursor,folds,slash,unix
+" let g:skipview_files = ['*\.vim']
 
 nnoremap <F5> :UndotreeToggle<cr>
 
@@ -185,13 +193,11 @@ let g:airline#extensions#tabline#show_tab_nr = 0
 " }}}
 " => Tabs, Windows, Buffers -----------------------------------------{{{
 
-" return to last edit position when opening files (You want this!)
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
 " a buffer becomes hidden when it is abandoned
 set hid
 
-
+" return to last edit position when opening files (You want this!){{{
+" au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif"}}}
 
 " }}}
 " => Movement with Tabs, Windows, Buffers----------------------------{{{
