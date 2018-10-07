@@ -6,6 +6,8 @@
 #
 
 
+# => General ---------------------------------------------------{{{
+
 shopt -s autocd # allows you to cd in directory without typing cd
 
 # don't put duplicate lines or lines starting with space in the history.
@@ -25,19 +27,19 @@ export PS1="\[\033[01;34m\]\w\[\033[00m\]\$ "
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# bash aliases
+# source bash aliases
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 
 # added by Miniconda3 installer
 # export PATH="/home/excalibur1099/miniconda3/bin:$PATH"
 . /home/excalibur1099/miniconda3/etc/profile.d/conda.sh
 
-
-#### Unused Stuff ####
+# }}}
+# => Unused Stuff ----------------------------------------------{{{
 
 # set variable identifying the chroot you work in (used in the prompt below)
 # if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    # debian_chroot=$(cat /etc/debian_chroot)
+# debian_chroot=$(cat /etc/debian_chroot)
 # fi
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -79,3 +81,7 @@ shopt -s checkwinsize
 #     . /etc/bash_completion
 #   fi
 # fi
+
+# }}}
+
+

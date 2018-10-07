@@ -17,6 +17,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+# my stuff
 alias wlan='wicd-curses'
 alias ranger='python ~/Gits/ranger/ranger.py ~'
 alias r='python ~/Gits/ranger/ranger.py ~'
@@ -27,7 +28,5 @@ alias pycharm='screen -d -m ./PyCharm/bin/pycharm.sh; exit'
 alias startP='pdfpc -g ~/pCloud/LatexDocs/BA_slides/BA_slides.pdf'
 alias list_devices='sudo fdisk -l | grep -A 2 Device'
 alias v='nvr ~/d'
-
 alias starwars='telnet towel.blinkenlights.nl' # watch Star Wars A New Hope in ASCII Art
-
 alias ccat='highlight --out-format=ansi' # color cat - print file with syntax highlighting
