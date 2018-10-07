@@ -1,210 +1,19 @@
-#################################################
-# => General Options
-#################################################
+#  _ _____                        __ _       
+# (_)___ /        ___ ___  _ __  / _(_) __ _ 
+# | | |_ \ _____ / __/ _ \| '_ \| |_| |/ _` |
+# | |___) |_____| (__ (_) | | | |  _| | (_| |
+# |_|____/       \___\___/|_| |_|_| |_|\__, |
+#                                      |___/ 
+
+# => General ----------------------------------------------{{{
+
 # use windows key
-set $mod Mod4 
-font pango:hack 9
+    set $mod Mod4 
+        font pango:hack 9
 
+# }}}
+# => Workspace Names and Bindings -------------------------{{{
 
-#################################################
-# => Window Managment
-#################################################
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
-# split in horizontal orientation
-# bindsym $mod+h split h
-
-# split in vertical orientation
-bindsym $mod+v split v
-
-
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
-
-
-#################################################
-# => i3 specific
-#################################################
-# reload the configuration file
-bindsym $mod+Shift+c reload
-
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
-# color of focused window
-# class                 border  backgr. text    indicator child_border
-# client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
-
-#################################################
-# => Status Bar
-#################################################
-bar {
-  i3bar_command i3bar
-  status_command /usr/bin/i3blocks -c ~/.config/i3blocks/config
-  position top
-  font pango:Hack, FontAwesome 9
-  strip_workspace_numbers no
-  # separator_symbol "-"
-  # workspace_buttons yes
-  bindsym button4 nop
-  bindsym button5 nop
-  tray_padding 0
-}
-
-# for calender in status bar??
-for_window [class="Yad"] floating enable  
-
-
-#################################################
-# => Starting External Scripts
-#################################################
-# wallpaper script
-exec --no-startup-id /home/excalibur1099/.config/scripts/wallpaper
-
-# touchpad options (inverse scrolling, palm rejection etc.)
-exec --no-startup-id synclient VertScrollDelta=-112 VertEdgeScroll=0 HorizTwoFingerScroll=1 HorizScrollDelta=-112 PalmDetect=1
-
-# network manager
-exec --no-startup-id nm-applet
-# exec --no-startup-id wicd-curses
-
-# unclutter makes the mouse invisible after a brief period
-# hide mouse pointer; makes problems with ideavim (I think)
-# exec --no-startup-id unclutter
- 
-# compositor for transparency
-exec --no-startup-id compton -b
-
-# cloud services
-exec --no-startup-id dropbox start
-exec --no-startup-id ./.config/scripts/pcloud
-
-
-#################################################
-# => Autostart Programs in Workspaces/Scratchpad
-#################################################
-exec --no-startup-id i3-msg 'workspace $ws1; exec firefox'
-exec --no-startup-id i3-msg 'workspace $ws2; exec termite -e "ranger"'
-# exec --no-startup-id i3-msg 'workspace $ws3; exec termite'
-exec --no-startup-id i3-msg 'workspace $ws4; exec termite -e "v"'
-exec --no-startup-id i3-msg 'workspace $ws8; exec thunderbird'
-exec --no-startup-id termite --class="scratchpad" -e "python3"
-
-
-#################################################
-# => Assign Workspaces to Programs
-#################################################
-assign [class="ranger_terminal"] → $ws3
-assign [class="Thunderbird"] → $ws8
-assign [class="libreoffice-startcenter|Soffice"] → $ws7
-assign [class="okular"] → $ws5
-for_window [class="Pdfpc" window_role="presentation"] move to output up
-for_window [class="Pdfpc" window_role="presenter"] move to output down
-
-
-#################################################
-# => Multimedia and Function Keys
-#################################################
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -RTMIN+10 i3blocks 
-#&& notify-send -c volume -u low "50%"
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -RTMIN+10 i3blocks
-#&& notify-send -c volume -u low "40%"
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -RTMIN+10 i3blocks
-
-# display manager
-bindsym XF86Display             exec arandr
-bindsym XF86ScreenSaver         exec --no-startup-id  ~/.config/scripts/toggle_touchpad
-
-
-#################################################
-# => i3-gaps
-#################################################
-# hide if only single window
-hide_edge_borders both
-
-smart_gaps on 
-for_window [class="^.*"] border pixel 8
-gaps inner 5 
-gaps outer 5
-
-
-#################################################
-# => Basic Defintions
-#################################################
-set $browser firefox
-
-
-#################################################
-# => Dropdown Window
-#################################################
-# for_window [instance="python_scratch"] floating enable
-# for_window [instance="python_scratch"] resize set 625 400
-# for_window [instance="python_scratch"] move position center
-for_window [class="scratchpad"] move scratchpad
-
-
-#################################################
-# => Basic Bindings
-#################################################
-bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Shift+Esc exec i3-msg exit
-
-# start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
-
-
-#################################################
-# => Letter Keys
-#################################################
-bindsym $mod+q              kill
-bindsym $mod+Shift+q        kill
-bindsym $mod+t              split toggle
-bindsym $mod+f              fullscreen toggle
-bindsym $mod+s              scratchpad show 
-bindsym $mod+Shift+s        move scratchpad
-bindsym $mod+r              exec termite -e 'ranger' 
-bindsym $mod+p              exec termite -e 'python3'
-bindsym $mod+Shift+w        exec --no-startup-id ~/.config/scripts/wallpaper
-bindsym $mod+m              exec --no-startup-id ~/.config/scripts/dmenumount
-bindsym $mod+Shift+m        exec --no-startup-id ~/.config/scripts/dmenuumount
-
-# resizing current window
-bindsym $mod+Shift+z        resize shrink width 10 px or 10 ppt
-bindsym $mod+Shift+u        resize grow height 10 px or 10 ppt
-bindsym $mod+Shift+i        resize shrink height 10 px or 10 ppt
-bindsym $mod+Shift+o        resize grow width 10 px or 10 ppt
-
-# change container layout (stacked, tabbed, toggle split)
-# bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
-bindsym $mod+x move workspace to output down
-
-
-#################################################
-# => Mouse Keys
-#################################################
-# middle mouse button
-# bindsym button 2 ??
-
-
-#################################################
-# => Workspace Names and Bindings
-#################################################
 # worspace variables
 set $ws1 "1:"
 set $ws2 "2:"
@@ -259,10 +68,194 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+F4 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
+# }}}
+# => Window Managment -------------------------------------{{{
 
-#################################################
-# => Window bindings
-#################################################
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# split in horizontal orientation
+# bindsym $mod+h split h
+
+# split in vertical orientation
+# bindsym $mod+v split v
+
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# }}}
+# => i3 specific ------------------------------------------{{{
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# color of focused window
+# class                 border  backgr. text    indicator child_border
+# client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+
+# }}}
+# => Status Bar -------------------------------------------{{{
+
+    bar {
+        i3bar_command i3bar
+            status_command /usr/bin/i3blocks -c ~/.config/i3blocks/config
+            position top
+            font pango:Hack, FontAwesome 9
+            strip_workspace_numbers no
+# separator_symbol "-"
+# workspace_buttons yes
+            bindsym button4 nop
+            bindsym button5 nop
+            tray_padding 0
+    }
+
+# for calender in status bar??
+    for_window [class="Yad"] floating enable  
+
+# }}}
+# => Starting External Scripts-----------------------------{{{
+
+# wallpaper script
+exec --no-startup-id /home/excalibur1099/.config/scripts/wallpaper
+
+# touchpad options (inverse scrolling, palm rejection etc.)
+exec --no-startup-id synclient VertScrollDelta=-112 VertEdgeScroll=0 HorizTwoFingerScroll=1 HorizScrollDelta=-112 PalmDetect=1
+
+# network manager
+exec --no-startup-id nm-applet
+# exec --no-startup-id wicd-curses
+
+# unclutter makes the mouse invisible after a brief period
+# hide mouse pointer; makes problems with ideavim (I think)
+# exec --no-startup-id unclutter
+ 
+# compositor for transparency
+exec --no-startup-id compton -b
+
+# cloud services
+exec --no-startup-id dropbox start
+exec --no-startup-id ./.config/scripts/pcloud
+
+# }}}
+# => Autostart Programs in Workspaces/Scratchpad ----------{{{
+
+exec --no-startup-id i3-msg 'workspace $ws1; exec firefox'
+exec --no-startup-id i3-msg 'workspace $ws2; exec termite -e "ranger"'
+# exec --no-startup-id i3-msg 'workspace $ws3; exec termite'
+exec --no-startup-id i3-msg 'workspace $ws4; exec termite -e "v"'
+exec --no-startup-id i3-msg 'workspace $ws8; exec thunderbird'
+exec --no-startup-id termite --class="scratchpad" -e "python3"
+
+# }}}
+# => Assign Workspaces to Programs-------------------------{{{
+
+assign [class="ranger_terminal"] → $ws3
+assign [class="Thunderbird"] → $ws8
+assign [class="libreoffice-startcenter|Soffice"] → $ws7
+assign [class="okular"] → $ws5
+for_window [class="Pdfpc" window_role="presentation"] move to output up
+for_window [class="Pdfpc" window_role="presenter"] move to output down
+
+# }}}
+# => Multimedia and Function Keys--------------------------{{{
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -RTMIN+10 i3blocks 
+#&& notify-send -c volume -u low "50%"
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -RTMIN+10 i3blocks
+#&& notify-send -c volume -u low "40%"
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -RTMIN+10 i3blocks
+
+# display manager
+bindsym XF86Display             exec arandr
+bindsym XF86ScreenSaver         exec --no-startup-id  ~/.config/scripts/toggle_touchpad
+
+# }}}
+# => i3-gaps-----------------------------------------------{{{
+
+# hide if only single window
+hide_edge_borders both
+
+smart_gaps on 
+for_window [class="^.*"] border pixel 8
+gaps inner 5 
+gaps outer 5
+
+# }}}
+# => Basic Defintions--------------------------------------{{{
+
+set $browser firefox
+
+# }}}
+# => Dropdown Window---------------------------------------{{{
+
+# for_window [instance="python_scratch"] floating enable
+# for_window [instance="python_scratch"] resize set 625 400
+# for_window [instance="python_scratch"] move position center
+for_window [class="scratchpad"] move scratchpad
+
+# }}}
+# => Basic Bindings----------------------------------------{{{
+
+bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Shift+Esc exec i3-msg exit
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec dmenu_run
+
+# }}}
+# => Letter Keys-------------------------------------------{{{
+
+bindsym $mod+q              kill
+bindsym $mod+Shift+q        kill
+bindsym $mod+t              split toggle
+bindsym $mod+f              fullscreen toggle
+bindsym $mod+s              scratchpad show 
+bindsym $mod+Shift+s        move scratchpad
+bindsym $mod+r              exec termite -e 'ranger' 
+bindsym $mod+p              exec termite -e 'python3'
+bindsym $mod+v              exec termite -e 'nvr /home/excalibur1099/d'
+bindsym $mod+Shift+w        exec --no-startup-id ~/.config/scripts/wallpaper
+bindsym $mod+m              exec --no-startup-id ~/.config/scripts/dmenumount
+bindsym $mod+Shift+m        exec --no-startup-id ~/.config/scripts/dmenuumount
+
+# resizing current window
+bindsym $mod+Shift+z        resize shrink width 10 px or 10 ppt
+bindsym $mod+Shift+u        resize grow height 10 px or 10 ppt
+bindsym $mod+Shift+i        resize shrink height 10 px or 10 ppt
+bindsym $mod+Shift+o        resize grow width 10 px or 10 ppt
+
+# change container layout (stacked, tabbed, toggle split)
+# bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+bindsym $mod+x move workspace to output down
+
+# }}}
+# => Mouse Keys -------------------------------------------{{{
+
+# middle mouse button
+# bindsym button 2 ??
+
+# }}}
+# => Window bindings---------------------------------------{{{
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -275,6 +268,4 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-
-
-
+# }}}
