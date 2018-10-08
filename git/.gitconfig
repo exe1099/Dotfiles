@@ -35,4 +35,4 @@
     tool = vimdiff
 [core]
 	editor = vim
-pager = less
+    pager = less
