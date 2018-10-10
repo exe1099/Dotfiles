@@ -8,9 +8,9 @@
 " => General --------------------------------------------------------{{{
 
 " turn backup off, since most stuff is in SVN, git et.c anyway...
-set nobackup
-set nowb
-set noswapfile
+" set nobackup
+" set nowb
+" set noswapfile
 
 set mouse=a                    " use mouse to switch between panels + scroll
 set incsearch                  " show search matches as you type
@@ -248,6 +248,8 @@ set hid
 
 " }}}
 " => Colors and Fonts------------------------------------------------{{{
+"
+colorscheme minimalist_2
 
 " enable syntax highlighting
 syntax enable
@@ -259,7 +261,6 @@ set encoding=utf8
 set ffs=unix,dos,mac
 
 set termguicolors
-colorscheme minimalist_2
 
 " }}}
 " => Text, Wrap, Indent ---------------------------------------------{{{
@@ -334,6 +335,13 @@ inoremap <c-V> <Esc>"+pa
 
 " }}}
 " => Working with Code ----------------------------------------------{{{
+
+" compile markdown file
+function! CompilteMarkdown()
+    execute "w"
+    execute "! pandoc -o %:p.pdf %:p"
+endfunction
+:nmap mc :call CompilteMarkdown()<CR><CR>
 
 " save and run current file and show output in vertical split
 function! Setup_ExecNDisplay()
