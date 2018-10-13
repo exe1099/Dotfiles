@@ -10,7 +10,7 @@
 " turn backup off, since most stuff is in SVN, git et.c anyway...
 " set nobackup
 " set nowb
-" set noswapfile
+set noswapfile
 
 set mouse=a                    " use mouse to switch between panels + scroll
 set incsearch                  " show search matches as you type
@@ -100,10 +100,10 @@ set tm=500
 set foldcolumn=1
 
 " toggle current fold
-nnoremap f za
+nnoremap <leader>f za
 
 " create fold
-vnoremap f zf
+vnoremap <leader> zf
 
 " custom fold text
 function! MyFoldText() " {{{
@@ -163,6 +163,11 @@ let g:pymode_doc_bind = 'K' " bind key to documentation
 let g:pymode_run = 1 " turn on run code
 let g:pymode_run_bind = '<leader>r' " bind key to run code
 " autocmd BufEnter __run__,__doc__ :wincmd L " open doc-, run-windows on right
+" let g:pymode_rope = 1
+" let g:pymode_rope_completion = 1
+" let g:pymode_rope_complete_on_dot = 1
+" let g:pymode_rope_completion_bind = '<C-Space>'
+
 
 " NERDComToggleComment
 nnoremap <c-b> :call NERDComment(0,"toggle")<CR>
@@ -294,8 +299,8 @@ set breakindentopt=shift:2"}}}
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
-map <space> /
-map <c-space> ?
+nnoremap <space> /
+nnoremap <c-space> ?
 
 " disable highlight when pressed
 nnoremap <CR> :nohlsearch<cr>
