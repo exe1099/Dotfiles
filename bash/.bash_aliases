@@ -17,6 +17,8 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+alias diff='icdiff'
+
 # my stuff
 alias wlan='wicd-curses'
 alias ranger='python ~/Gits/ranger/ranger.py ~'
