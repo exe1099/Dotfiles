@@ -100,10 +100,10 @@ set tm=500
 set foldcolumn=1
 
 " toggle current fold
-nnoremap <leader>f za
+nnoremap <C-f> za
 
 " create fold
-vnoremap <leader> zf
+vnoremap <C-f> zf
 
 " custom fold text
 function! MyFoldText() " {{{
