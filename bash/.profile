@@ -19,5 +19,5 @@
 # add texlive installation to PATH
 PATH="/usr/local/texlive/2018/bin/x86_64-linux:$PATH"
 
-# to tell app to use qt5ct variable
-[ "$XDG_CURRENT_DESKTOP" = "KDE" ] || [ "$XDG_CURRENT_DESKTOP" = "GNOME" ] || export QT_QPA_PLATFORMTHEME="qt5ct"
+# to tell app to use qt5ct theme
+export QT_QPA_PLATFORMTHEME="qt5ct"
