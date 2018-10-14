@@ -1,9 +1,8 @@
-# Installtion
+# Installation
 * download updater from website
 * mark executable and run
 
 # Customization
 * generate file on website by choosing options
-* copy file to /home/excalibur1099/.mozilla/firefox/<profile>.default/chrome/ShadowFox_customization
+* copy file to ~/.mozilla/firefox/<profile>.default/chrome/ShadowFox_customization
 * run updater again
-
