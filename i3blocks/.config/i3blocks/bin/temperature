@@ -1,4 +1,5 @@
 #!/bin/bash
+# dependecies: lm-sensors
 
 TEMP_DEVICE="${BLOCK_INSTANCE:-Core}"
 TEMP_OUTPUT=$(sensors | grep "${TEMP_DEVICE}")
