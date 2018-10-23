@@ -34,3 +34,4 @@ alias starwars='telnet towel.blinkenlights.nl' # watch Star Wars A New Hope in A
 alias ccat='highlight --out-format=ansi' # color cat - print file with syntax highlighting
 alias download='aria2c'
 alias main='conda activate main'
+alias gs='git st'
