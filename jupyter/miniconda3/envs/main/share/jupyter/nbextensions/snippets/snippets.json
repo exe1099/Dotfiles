@@ -21,9 +21,9 @@
 		        "import pandas as pd",
 		        "phc = c.physical_constants",
 		        "import sys",
-		        "sys.path.append('/home/excalibur1099/pCloud/Informatik/Python/')",
-		        "from self_written_functions import *",
-                "plt.style.use('~/pCloud/Informatik/Python/matplotlibrc/notebook')"
+		        "sys.path.append(os.path.join(os.path.expanduser('~'), 'Cloud/Informatik/Python/'))",
+		        "from my_functions import general",
+                "plt.style.use('~/Cloud/Informatik/Python/matplotlibrc/notebook')"
     			]
         },
 
@@ -39,7 +39,7 @@
         {
             "name" : "plot_style",
             "code" : [
-                "plt.style.use('~/pCloud/Informatik/Python/matplotlibrc/notebook')"
+                "plt.style.use('~/Cloud/Informatik/Python/matplotlibrc/notebook')"
                 ]
         },
         {
