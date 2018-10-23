@@ -130,7 +130,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id compton -b
 
 # cloud services
-# exec --no-startup-id dropbox start
+exec --no-startup-id dropbox start
 exec --no-startup-id ~/bin/pcloud
 
 # unclutter makes the mouse invisible after a brief period
@@ -240,7 +240,8 @@ bindsym $mod+s              scratchpad show
 bindsym $mod+Shift+s        move scratchpad
 bindsym $mod+r              exec termite -e 'ranger' 
 bindsym $mod+p              exec termite -e 'python3'
-bindsym $mod+v              exec termite -e 'nvr ~/d'
+# can't use ~/d here
+bindsym $mod+v              exec termite -e 'nvr /home/exe/d'
 bindsym $mod+Shift+w        exec --no-startup-id ~/.config/scripts/wallpaper
 bindsym $mod+m              exec --no-startup-id ~/.config/scripts/dmenumount
 bindsym $mod+Shift+m        exec --no-startup-id ~/.config/scripts/dmenuumount
