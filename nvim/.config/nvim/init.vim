@@ -153,7 +153,7 @@ set viewoptions=cursor,folds,slash,unix
 
 nnoremap <F5> :UndotreeToggle<cr>
 
-let g:pymode = 1 " turn on the whole plugin
+let g:pymode = 0 " turn on the whole plugin
 let g:pymode_python = 'python3' " Python3 syntax checking
 let g:pymode_trim_whitespaces = 1 " trim unused whitespaces on save
 let g:pymode_options = 1 " set default python option (line length, ...)
@@ -300,7 +300,7 @@ vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
 nnoremap <space> /
-nnoremap <c-space> ?
+nnoremap <c-space> :%s/
 
 " disable highlight when pressed
 nnoremap <CR> :nohlsearch<cr>
