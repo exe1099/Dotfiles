@@ -1,4 +1,5 @@
 #! /bin/sh
+# dependencies: yad
 
 width=200
 height=200

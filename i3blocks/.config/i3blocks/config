@@ -81,9 +81,9 @@ interval=5
 # interval=10
 # separator=false
 
-[wifi]
+# [wifi]
 # instance=wlp3s0
-interval=10
+# interval=10
 # separator=false
 
 # [bandwidth]

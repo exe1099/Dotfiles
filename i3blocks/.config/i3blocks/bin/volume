@@ -1,7 +1,7 @@
 #!/bin/bash
-# author: exe
-# volume notification script using dunstify for notifications and amixer to get volume
-
+# author: exe1099
+# volume notification script
+# dependencies: dunstify (for notifications), amixer (to get volume)
 # notification time
 time=2000
 

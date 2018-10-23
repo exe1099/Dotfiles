@@ -1,4 +1,5 @@
 #!/bin/bash
+# author: exe1099
 # dependecies: lm-sensors
 
 TEMP_DEVICE="${BLOCK_INSTANCE:-Core}"
