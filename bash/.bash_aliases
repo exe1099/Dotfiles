@@ -32,3 +32,5 @@ alias list_devices='sudo fdisk -l | grep -A 2 Device'
 alias v='nvr ~/d'
 alias starwars='telnet towel.blinkenlights.nl' # watch Star Wars A New Hope in ASCII Art
 alias ccat='highlight --out-format=ansi' # color cat - print file with syntax highlighting
+alias download='aria2c'
+alias main='conda activate main'
