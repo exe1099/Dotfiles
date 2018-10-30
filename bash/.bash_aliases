@@ -35,3 +35,6 @@ alias ccat='highlight --out-format=ansi' # color cat - print file with syntax hi
 alias download='aria2c'
 alias main='conda activate main'
 alias gs='git st'
+alias scrape_uni='conda activate main; cd ~/Cloud/Informatik/Python/UniScraper; python uni_scraper.py'
+alias mount_group_drive='sudo sshfs lbinn@linux.zdv.uni-mainz.de:/uni-mainz.de/groups/08/AGBoeser/IceCube/ /media/GroupDrive/'
+alias umount_group_drive='sudo fusermount -u /media/GroupDrive'
