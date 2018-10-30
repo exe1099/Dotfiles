@@ -1,6 +1,9 @@
 #!/bin/bash
+# author: exe1099
+# $1: dir in wallpapers directory to use
 
-wp_path=~/Cloud/Pictures/wallpapers/Space
+
+wp_path=~/Cloud/Pictures/Wallpapers/$1
 image=$(ls $wp_path | grep -E '(jpg|png)$' | sort -R | tail -1)
 
 feh --bg-scale $wp_path/$image

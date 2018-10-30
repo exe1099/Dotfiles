@@ -242,7 +242,7 @@ bindsym $mod+r              exec termite -e 'ranger'
 bindsym $mod+p              exec termite -e 'python3'
 # can't use ~/d here
 bindsym $mod+v              exec termite -e 'nvr /home/exe/d'
-bindsym $mod+Shift+w        exec --no-startup-id ~/.config/scripts/wallpaper
+bindsym $mod+Shift+w        exec --no-startup-id ~/.config/scripts/change_wallpaper Current
 bindsym $mod+m              exec --no-startup-id ~/.config/scripts/dmenumount
 bindsym $mod+Shift+m        exec --no-startup-id ~/.config/scripts/dmenuumount
 
