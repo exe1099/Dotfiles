@@ -100,7 +100,7 @@ set tm=500
 set foldcolumn=1
 
 " toggle current fold
-nnoremap <C-f> za
+nnoremap F za
 
 " create fold
 vnoremap <C-f> zf

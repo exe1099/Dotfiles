@@ -9,6 +9,7 @@
     ui = auto
 
 [alias]
+    a = add
 	st = status
     dc = diff --cached
     ds = diff --stat=160,120

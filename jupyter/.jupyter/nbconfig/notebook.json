@@ -45,7 +45,8 @@
         "y": "jupyter-notebook:copy-cell",
         "p": "jupyter-notebook:paste-cell-below",
         "ctrl-shift-c": "jupyter-notebook:change-cell-to-code",
-        "ctrl-r": "jupyter-notebook:change-cell-to-raw"
+        "ctrl-r": "jupyter-notebook:change-cell-to-raw",
+        "o": "jupyter-notebook:toggle-cell-output-collapsed"
       },
       "unbind": [
         "shift-v",
@@ -55,7 +56,8 @@
         "y",
         "c",
         "v",
-        "r"
+        "r",
+        "o"
       ]
     }
   },
