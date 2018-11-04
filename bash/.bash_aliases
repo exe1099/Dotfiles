@@ -19,22 +19,29 @@ alias egrep='egrep --color=auto'
 
 alias diff='icdiff'
 
-# my stuff
+# programming
+alias jn='conda activate main; screen -d -m jupyter notebook; exit'
+alias pycharm='screen -d -m ./PyCharm/bin/pycharm.sh; exit'
+alias scrape_uni='conda activate main; cd ~/Cloud/Informatik/Python/UniScraper; python uni_scraper.py'
+alias connect_four='conda activate connect_four && python /home/exe/Cloud/Informatik/Python/ConnectFour/connect_four.py'
+alias main='conda activate main'
+
+# utility
 alias wlan='wicd-curses'
 alias ranger='python ~/Gits/ranger/ranger.py ~'
 alias r='python ~/Gits/ranger/ranger.py ~'
 alias sr='sudo python ~/Gits/ranger/ranger.py ~'
-alias jn='conda activate main; screen -d -m jupyter notebook; exit'
 alias openf='xdg-open '
-alias pycharm='screen -d -m ./PyCharm/bin/pycharm.sh; exit'
-alias startP='pdfpc -g ~/pCloud/LatexDocs/BA_slides/BA_slides.pdf'
+alias download='aria2c'
 alias list_devices='sudo fdisk -l | grep -A 2 Device'
 alias v='nvr ~/d'
-alias starwars='telnet towel.blinkenlights.nl' # watch Star Wars A New Hope in ASCII Art
 alias ccat='highlight --out-format=ansi' # color cat - print file with syntax highlighting
-alias download='aria2c'
-alias main='conda activate main'
+
+# stuff
+alias startP='pdfpc -g ~/pCloud/LatexDocs/BA_slides/BA_slides.pdf'
+alias starwars='telnet towel.blinkenlights.nl' # watch Star Wars A New Hope in ASCII Art
 alias gs='git st'
-alias scrape_uni='conda activate main; cd ~/Cloud/Informatik/Python/UniScraper; python uni_scraper.py'
 alias mount_group_drive='sudo sshfs lbinn@linux.zdv.uni-mainz.de:/uni-mainz.de/groups/08/AGBoeser/IceCube/ /media/GroupDrive/'
 alias umount_group_drive='sudo fusermount -u /media/GroupDrive'
+alias screens_one='~/.screenlayout/screens_one.sh'
+alias screens_two='~/.screenlayout/screens_two.sh'

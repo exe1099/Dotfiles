@@ -1,2 +1,2 @@
 #!/bin/bash
-termite --class="ranger_terminal" -d $(pwd) &
+termite --class="ranger_terminal" -d "$(pwd)" &
