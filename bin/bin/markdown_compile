@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# $1: file to be converted
+
+
+if [ $# -ne 1 ]
+then 
+    echo "Too many parameters."
+    exit 1
+fi
+
+filename=$(echo $1 | cut -d "." -f1)
+
+filenamewithext=$filename.pdf
+pandoc -o $filenamewithext $1
