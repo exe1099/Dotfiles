@@ -7,6 +7,8 @@
 
 " => General --------------------------------------------------------{{{
 
+set timeoutlen=1000            " time to wait for next keypress in combos
+
 " turn backup off, since most stuff is in SVN, git et.c anyway...
 " set nobackup
 " set nowb
@@ -102,6 +104,10 @@ set foldcolumn=1
 " toggle current fold
 nnoremap F za
 
+" rewrite set foldmethod command
+nnoremap <leader>f :set foldmethod=
+
+
 " create fold
 vnoremap <C-f> zf
 
@@ -140,18 +146,29 @@ Plug 'vim-airline/vim-airline-themes'  " themes for fancy status bar
 " Plug 'wincent/command-t'  " fuzzy-finder
 Plug 'scrooloose/nerdcommenter'  " comment/uncomment plugin
 Plug 'exe1099/minimalist_2'  " color-scheme
-Plug 'https://github.com/lambdalisue/suda.vim' " write file with sudo
-Plug 'python-mode/python-mode', { 'branch': 'develop' } " Python Stuff for editor
-Plug 'vim-scripts/restore_view.vim' " remembers cursor position and view
+Plug 'https://github.com/lambdalisue/suda.vim'  " write file with sudo
+Plug 'python-mode/python-mode', { 'branch': 'develop' }  " Python Stuff for editor
+Plug 'vim-scripts/restore_view.vim'  " remembers cursor position and view (folds etc.)
+Plug 'stevearc/vim-arduino'
 call plug#end()
 
 
 " Options for plugins
 
+let g:arduino_cmd = '/home/exe/Source/arduino-1.8.7/arduino'
+let g:arduino_board = 'arduino:avr:uno'
+let g:arduino_serial_port = '/dev/ttyACM3'
+nnoremap <leader>av :w<cr>:ArduinoVerify<cr>
+nnoremap <leader>au :w<cr>:ArduinoUpload<cr>
+nnoremap <leader>as :ArduinoUploadAndSerial<cr>
+
+
 set viewoptions=cursor,folds,slash,unix
 " let g:skipview_files = ['*\.vim']
 
+
 nnoremap <F5> :UndotreeToggle<cr>
+
 
 let g:pymode = 0 " turn on the whole plugin
 let g:pymode_python = 'python3' " Python3 syntax checking
@@ -180,6 +197,7 @@ let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1
 " enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
+
 
 " airline
 let g:airline_powerline_fonts = 1 " needed for status line
