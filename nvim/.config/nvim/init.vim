@@ -313,12 +313,12 @@ set breakindent
 set breakindentopt=shift:2"}}}
 " => Searching ------------------------------------------------------{{{
 
-" pressing * or # searches for the current selection
-vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
-vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
-
 nnoremap <space> /
+" search for current selection
+" yank, control-r quotes to paste from register quotes, enter
+vnoremap <space> y/<C-R>"<CR>
 nnoremap <c-space> :%s/
+vnoremap <c-space> y:%s/<C-R>"/
 
 " disable highlight when pressed
 nnoremap <CR> :nohlsearch<cr>
