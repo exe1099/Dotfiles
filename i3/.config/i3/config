@@ -150,7 +150,7 @@ exec --no-startup-id termite --class="scratchpad" -e "python3"
 # => Assign Windows to Workspaces/Scratchpad---------------{{{
 
 assign [class="ranger_terminal"] → $ws3
-assign [class="okular"] → $ws5
+# assign [class="okular"] → $ws5
 assign [class="libreoffice-startcenter|Soffice"] → $ws7
 assign [class="Thunderbird"] → $ws8
 
