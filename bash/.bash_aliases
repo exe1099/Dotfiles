@@ -41,7 +41,7 @@ alias ccat='highlight --out-format=ansi' # color cat - print file with syntax hi
 alias startP='pdfpc -g ~/pCloud/LatexDocs/BA_slides/BA_slides.pdf'
 alias starwars='telnet towel.blinkenlights.nl' # watch Star Wars A New Hope in ASCII Art
 alias gs='git st'
-alias mount_group_drive='sudo sshfs lbinn@linux.zdv.uni-mainz.de:/uni-mainz.de/groups/08/AGBoeser/IceCube/ /media/GroupDrive/'
-alias umount_group_drive='sudo fusermount -u /media/GroupDrive'
+alias group_drive_mount='sudo sshfs lbinn@linux.zdv.uni-mainz.de:/uni-mainz.de/groups/08/AGBoeser/IceCube/ /media/GroupDrive/'
+alias group_drive_umount='sudo fusermount -u /media/GroupDrive'
 alias screens_one='~/.screenlayout/screens_one.sh'
 alias screens_two='~/.screenlayout/screens_two.sh'
