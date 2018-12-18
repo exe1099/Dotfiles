@@ -26,7 +26,7 @@
 # Each block command defaults to the script name to avoid boilerplate.
 command=~/.config/i3blocks/bin/$BLOCK_NAME
 separator_block_width=20
-markup=none
+markup=pango
 
 # Volume indicator
 #

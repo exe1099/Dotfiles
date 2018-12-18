@@ -1,18 +1,14 @@
-#  _ _____                        __ _       
-# (_)___ /        ___ ___  _ __  / _(_) __ _ 
+#  _ _____                        __ _
+# (_)___ /        ___ ___  _ __  / _(_) __ _
 # | | |_ \ _____ / __/ _ \| '_ \| |_| |/ _` |
 # | |___) |_____| (__ (_) | | | |  _| | (_| |
 # |_|____/       \___\___/|_| |_|_| |_|\__, |
-#                                      |___/ 
+#                                      |___/
 
 # => General ----------------------------------------------{{{
 
 # use windows key as main key
-set $mod Mod4 
-
-font pango:hack 9
-
-set $browser firefox
+set $mod Mod4
 
 # }}}
 # => i3 Specific ------------------------------------------{{{
@@ -35,9 +31,9 @@ bindsym $mod+Shift+Esc exec i3-msg exit
 smart_borders on
 
 smart_gaps on
-for_window [class="^.*"] border pixel 8
-gaps inner 5
-gaps outer 5
+for_window [class="^.*"] border pixel 5
+gaps inner 0
+gaps outer 0
 
 # }}}
 # => Status Bar -------------------------------------------{{{
@@ -46,7 +42,7 @@ bar {
     i3bar_command i3bar
     status_command /usr/bin/i3blocks -c ~/.config/i3blocks/config
     position top
-    font pango:Hack, FontAwesome 9
+    font pango:Hack Nerd Font 7
     strip_workspace_numbers no
     bindsym button4 nop
     bindsym button5 nop
@@ -56,7 +52,7 @@ bar {
     }
 
 # for calender in status bar??
-for_window [class="Yad"] floating enable  
+for_window [class="Yad"] floating enable
 
 # }}}
 # => Workspaces related -----------------------------------{{{
@@ -69,9 +65,12 @@ set $ws4 "4:"
 set $ws5 "5:^"
 set $ws6 "6:F1"
 set $ws7 "7:F2"
-set $ws8 "8:"
+set $ws8 "8:"
 set $ws9 "9"
 set $ws10 "10"
+
+# switch to urgent workspace
+bindsym $mod+y [urgent=latest] focus
 
 # previous/next workspace
 bindsym $mod+Prior		workspace prev
@@ -116,11 +115,26 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # }}}
 # => Autostart External Scripts----------------------------{{{
 
+# stuff from manjaro
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id nm-applet
+# exec --no-startup-id xfce4-power-manager
+# exec --no-startup-id pamac-tray
+exec --no-startup-id clipit
+# exec --no-startup-id blueman-applet
+# exec_always --no-startup-id sbxkb
+# exec --no-startup-id start_conky_maia
+# exec --no-startup-id start_conky_green
+# exec --no-startup-id xautolock -time 10 -locker blurlock
+# exec_always --no-startup-id ff-theme-util
+# exec_always --no-startup-id fix_xcursor
+
 # wallpaper script
-exec --no-startup-id ~/.config/scripts/wallpaper
+exec --no-startup-id ~/.config/scripts/wallpaper_change Current
 
 # touchpad options (inverse scrolling, palm rejection etc.)
-exec --no-startup-id synclient VertScrollDelta=-112 VertEdgeScroll=0 HorizTwoFingerScroll=1 HorizScrollDelta=-112 PalmDetect=1
+# exec --no-startup-id synclient VertScrollDelta=-112 VertEdgeScroll=0 HorizTwoFingerScroll=1 HorizScrollDelta=-112 PalmDetect=1
+exec --no-startup-id xinput set-prop 10 295 1
 
 # network manager
 exec --no-startup-id nm-applet
@@ -140,11 +154,11 @@ exec --no-startup-id ~/bin/pcloud
 # }}}
 # => Autostart Programs in Workspaces/Scratchpad ----------{{{
 
-exec --no-startup-id i3-msg 'workspace $ws1; exec firefox'
-exec --no-startup-id i3-msg 'workspace $ws2; exec termite -e "ranger"'
-exec --no-startup-id i3-msg 'workspace $ws4; exec termite -e "v"'
+exec --no-startup-id i3-msg 'workspace $ws1; exec firefox; workspace $ws2'
+# exec --no-startup-id i3-msg 'workspace $ws2; exec $TERMINAL ranger; workspace $ws4'
+exec --no-startup-id i3-msg 'workspace $ws4; exec $TERMINAL nvr ~/d; workspace $ws8'
 exec --no-startup-id i3-msg 'workspace $ws8; exec thunderbird'
-exec --no-startup-id termite --class="scratchpad" -e "python3"
+exec --no-startup-id $TERMINAL -c="scratchpad" python3
 
 # }}}
 # => Assign Windows to Workspaces/Scratchpad---------------{{{
@@ -214,20 +228,27 @@ bindsym $mod+Shift+l move right
 # => Multimedia and Function Keys--------------------------{{{
 
 # change volume; send signal 10 to i3blocks, which triggers volume block (executes volume script)
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -RTMIN+10 i3blocks 
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -RTMIN+10 i3blocks
+# exec --no-startup-id volumeicon
+bindsym $mod+Ctrl+m                 exec $TERMINAL alsamixer
+bindsym XF86AudioRaiseVolume        exec --no-startup-id amixer set Master 5%+ && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume        exec --no-startup-id amixer set Master 5%- && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute               exec --no-startup-id amixer set Master toggle && pkill -RTMIN+10 i3blocks
+# bindsym XF86WakeUp                exec --no-startup-id ~/.config/scripts/display_select
 
 # display manager
-bindsym XF86Display             exec arandr
+bindsym XF86Display                 exec --no-startup-id ~/.config/scripts/display_select
 
 # enable/disable touchpad
-bindsym XF86ScreenSaver         exec --no-startup-id  ~/.config/scripts/toggle_touchpad
+# bindsym XF86ScreenSaver           exec --no-startup-id  ~/.config/scripts/touchpad_toggle
+
+# brightness control
+bindsym XF86MonBrightnessUp         exec --no-startup-id ~/.config/scripts/brightness 1
+bindsym XF86MonBrightnessDown       exec --no-startup-id ~/.config/scripts/brightness -1
 
 # }}}
-# => More Bindings-------------------------------------------{{{
+# => More Bindings-----------------------------------------{{{
 
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec $TERMINAL
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
@@ -236,14 +257,45 @@ bindsym $mod+q              kill
 bindsym $mod+Shift+q        kill
 bindsym $mod+t              split toggle
 bindsym $mod+f              fullscreen toggle
-bindsym $mod+s              scratchpad show 
+bindsym $mod+s              scratchpad show
 bindsym $mod+Shift+s        move scratchpad
-bindsym $mod+r              exec termite -e 'ranger' 
-bindsym $mod+p              exec termite -e 'python3'
+bindsym $mod+r              exec $TERMINAL ranger
+bindsym $mod+p              exec $TERMINAL python3
 # can't use ~/d here
-bindsym $mod+v              exec termite -e 'nvr /home/exe/d'
-bindsym $mod+Shift+w        exec --no-startup-id ~/.config/scripts/change_wallpaper Current
-bindsym $mod+m              exec --no-startup-id ~/.config/scripts/dmenumount
-bindsym $mod+Shift+m        exec --no-startup-id ~/.config/scripts/dmenuumount
+bindsym $mod+v              exec $TERMINAL nvr ~/d
+bindsym $mod+Shift+w        exec --no-startup-id ~/.config/scripts/wallpaper_change Current
+bindsym $mod+m              exec --no-startup-id ~/.config/scripts/mount
+bindsym $mod+Shift+m        exec --no-startup-id ~/.config/scripts/umount
+
+
+# Open specific applications in floating mode
+for_window [title="alsamixer"] floating enable border pixel 1
+for_window [class="calamares"] floating enable border normal
+for_window [class="Clipgrab"] floating enable
+for_window [title="File Transfer*"] floating enable
+for_window [class="Galculator"] floating enable border pixel 1
+for_window [class="GParted"] floating enable border normal
+for_window [title="i3_help"] floating enable sticky enable border normal
+for_window [class="Lightdm-settings"] floating enable
+for_window [class="Lxappearance"] floating enable sticky enable border normal
+for_window [class="Manjaro-hello"] floating enable
+for_window [class="Manjaro Settings Manager"] floating enable border normal
+for_window [title="MuseScore: Play Panel"] floating enable
+for_window [class="Nitrogen"] floating enable sticky enable border normal
+for_window [class="Oblogout"] fullscreen enable
+for_window [class="octopi"] floating enable
+for_window [title="About Pale Moon"] floating enable
+for_window [class="Pamac-manager"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="qt5ct"] floating enable sticky enable border normal
+for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
+for_window [class="Simple-scan"] floating enable border normal
+for_window [class="(?i)System-config-printer.py"] floating enable border normal
+for_window [class="Skype"] floating enable border normal
+for_window [class="Timeset-gui"] floating enable border normal
+for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [class="Xfburn"] floating enable
 
 # }}}
+# vim:filetype=i3
+# vim: set foldmethod=marker

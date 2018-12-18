@@ -1,0 +1,17 @@
+{
+"name" : "frame" ,
+"tag" : [
+ "\begin{frame}{%<title%>}",
+ "%BEGIN_FOLD",
+ "%<content%>",
+ "\end{frame}",
+ "%END_FOLD"
+ ],
+"description" : [
+ ""
+ ],
+"abbrev" : "" ,
+"trigger" : "" ,
+"menu" : "" ,
+"shortcut" : ""
+}

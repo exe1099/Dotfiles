@@ -1,0 +1,13 @@
+#!/bin/sh
+
+chosen=$(printf "single-monitor\\ndual-monitor\\ndual-monitor-mirror\\nmanual" | dmenu -i -p "Select display arrangement:")
+echo $chosen
+
+case "$chosen" in
+    "dual-monitor") xrandr --output LVDS1 --auto --output VGA1 --above LVDS1 --auto;;
+    "single-monitor") xrandr --output LVDS1 --auto --scale-from 1366x768 --output VGA1 --off;;
+    "dual-monitor-mirror") xrandr --output LVDS1 --scale-from 1024x768 --output VGA1 --same-as LVDS1 --auto ;;
+    "manual") arandr
+esac
+
+~/.fehbg

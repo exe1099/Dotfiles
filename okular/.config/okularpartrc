@@ -1,11 +1,28 @@
 [Core General]
 ObeyDRM=false
 
+[Desktop Entry]
+FullScreen=false
+
 [Main View]
 ShowLeftPanel=false
+
+[MainWindow]
+Height 768=747
+State=AAAA/wAAAAD9AAAAAAAABVYAAAKdAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1366=1366
 
 [Nav Panel]
 SyncThumbnailsViewport=false
 
+[PageView]
+BackgroundColor=71,71,71
+UseCustomBackgroundColor=true
+
+[Recent Files]
+File1[$e]=$HOME/AAAUni/Astro/AAAP 16-10-18.pdf
+Name1[$e]=AAAP 16-10-18.pdf
+
 [Reviews]
-AnnotationTools=<tool id="1" type="highlight"><engine type="TextSelector" color="#ffff00"><annotation opacity="0.8" type="Highlight" color="#ffff00"/></engine><shortcut>1</shortcut></tool>,<tool id="2" type="highlight" name="Highlighter2"><engine type="TextSelector" color="#00ff00"><annotation opacity="0.5" type="Highlight" color="#00ff00"/></engine><shortcut>2</shortcut></tool>,<tool id="3" type="note-inline"><engine type="PickPoint" color="#ffff00" block="true" hoverIcon="tool-note-inline"><annotation font="Hack\\,7\\,-1\\,5\\,50\\,0\\,0\\,0\\,0\\,0\\,Regular" type="FreeText" color="#ffff00" width="0.4"/></engine><shortcut>3</shortcut></tool>,<tool id="4" type="straight-line"><engine type="PolyLine" color="#ffff00" points="2"><annotation type="Line" color="#ffff00" width="2"/></engine><shortcut>4</shortcut></tool>,<tool id="5" type="ellipse"><engine type="PickPoint" color="#00ff00" block="true"><annotation opacity="0.85" type="GeomCircle" color="#00ff00" width="1.7"/></engine><shortcut>5</shortcut></tool>,<tool id="6" type="ink"><engine type="SmoothLine" color="#00ff00"><annotation type="Ink" color="#00ff00" width="2"/></engine><shortcut>6</shortcut></tool>,<tool id="7" type="note-linked"><engine type="PickPoint" color="#ffff00" hoverIcon="tool-note"><annotation type="Text" color="#ffff00" icon="Note"/></engine><shortcut>7</shortcut></tool>,<tool id="8" type="polygon"><engine type="PolyLine" color="#007eee" points="-1"><annotation type="Line" color="#007eee" width="1"/></engine><shortcut>8</shortcut></tool>,<tool id="9" type="stamp"><engine type="PickPoint" block="true" size="64" hoverIcon="okular"><annotation type="Stamp" icon="okular"/></engine><shortcut>9</shortcut></tool>,<tool id="10" type="underline"><engine type="TextSelector" color="#000000"><annotation type="Underline" color="#000000"/></engine></tool>
+AnnotationTools=<tool id="1" type="highlight"><engine color="#ffff00" type="TextSelector"><annotation color="#ffff00" opacity="0.8" type="Highlight"/></engine><shortcut>1</shortcut></tool>,<tool id="2" name="Highlighter2" type="highlight"><engine color="#00ff00" type="TextSelector"><annotation color="#00ff00" opacity="0.5" type="Highlight"/></engine><shortcut>2</shortcut></tool>,<tool id="3" type="note-inline"><engine color="#ffff00" block="true" hoverIcon="tool-note-inline" type="PickPoint"><annotation color="#ffff00" font="Hack\\,7\\,-1\\,5\\,50\\,0\\,0\\,0\\,0\\,0\\,Regular" width="0.4" type="FreeText"/></engine><shortcut>3</shortcut></tool>,<tool id="4" type="straight-line"><engine color="#ffff00" points="2" type="PolyLine"><annotation color="#ffff00" width="2" type="Line"/></engine><shortcut>4</shortcut></tool>,<tool id="5" type="ellipse"><engine color="#00ff00" block="true" type="PickPoint"><annotation color="#00ff00" width="1.7" opacity="0.85" type="GeomCircle"/></engine><shortcut>5</shortcut></tool>,<tool id="6" type="ink"><engine color="#00ff00" type="SmoothLine"><annotation color="#00ff00" width="2" type="Ink"/></engine><shortcut>6</shortcut></tool>,<tool id="7" type="note-linked"><engine color="#ffff00" hoverIcon="tool-note" type="PickPoint"><annotation icon="Note" color="#ffff00" type="Text"/></engine><shortcut>7</shortcut></tool>,<tool id="8" type="polygon"><engine color="#007eee" points="-1" type="PolyLine"><annotation color="#007eee" width="1" type="Line"/></engine><shortcut>8</shortcut></tool>,<tool id="9" type="stamp"><engine block="true" size="64" hoverIcon="okular" type="PickPoint"><annotation icon="okular" type="Stamp"/></engine><shortcut>9</shortcut></tool>,<tool id="10" type="underline"><engine color="#000000" type="TextSelector"><annotation color="#000000" type="Underline"/></engine></tool>

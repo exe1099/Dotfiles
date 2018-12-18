@@ -1,9 +1,9 @@
-"__     _____ __  __ ____   ____ 
+"__     _____ __  __ ____   ____
 "\ \   / /_ _|  \/  |  _ \ / ___|
-" \ \ / / | || |\/| | |_) | |    
-"  \ V /  | || |  | |  _ <| |___ 
+" \ \ / / | || |\/| | |_) | |
+"  \ V /  | || |  | |  _ <| |___
 "   \_/  |___|_|  |_|_| \_\\____|
-"                                
+"
 
 " => General --------------------------------------------------------{{{
 
@@ -22,14 +22,13 @@ set number                     " Show current line number
 set relativenumber             " Show relative line numbers
 set autoindent
 set laststatus=2
+
 set splitright
 set splitbelow
+
 map yx :wq<cr>
 map yy :w<cr>
 " map xx :q<cr>
-
-" strip all trailing whitespaces in the current file
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 " highlight line if in insert mode
 autocmd InsertEnter * set cul
@@ -46,10 +45,6 @@ set autoread
 
 let mapleader = "," " map leader key
 
-" :W sudo saves the file
-" (useful for handling the permission-denied error)
-command W w suda://%
-
 " }}}
 " => VIM User Interface ---------------------------------------------{{{
 "
@@ -58,6 +53,9 @@ set so=8
 
 " turn on the wild menu
 set wildmenu
+
+" tab autocompletion
+set wildmode=longest,list,full
 
 " always show current position
 set ruler
@@ -107,7 +105,6 @@ nnoremap F za
 " rewrite set foldmethod command
 nnoremap <leader>f :set foldmethod=
 
-
 " create fold
 vnoremap <C-f> zf
 
@@ -136,54 +133,74 @@ set foldtext=MyFoldText()
 " }}}
 " => Plugins --------------------------------------------------------{{{
 
-" Plug 
+" autoinstall vim-plug if not installed already
+if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Plug
 call plug#begin('~/.vim/plugged')
 " Add plugins here
-Plug 'https://github.com/mbbill/undotree/'
 Plug 'sheerun/vim-polyglot'  " synatx highlighting for different languages
 Plug 'vim-airline/vim-airline'  " fancy status bar
 Plug 'vim-airline/vim-airline-themes'  " themes for fancy status bar
-" Plug 'wincent/command-t'  " fuzzy-finder
 Plug 'scrooloose/nerdcommenter'  " comment/uncomment plugin
 Plug 'exe1099/minimalist_2'  " color-scheme
 Plug 'https://github.com/lambdalisue/suda.vim'  " write file with sudo
-Plug 'python-mode/python-mode', { 'branch': 'develop' }  " Python Stuff for editor
 Plug 'vim-scripts/restore_view.vim'  " remembers cursor position and view (folds etc.)
-Plug 'stevearc/vim-arduino'
+Plug 'PotatoesMaster/i3-vim-syntax'  " syntax for i3 file
+Plug 'tpope/vim-surround'  " add surrounding motions
+" Plug 'junegunn/fzf'  " fuzzy finder
+Plug 'scrooloose/nerdtree'  " file explorer
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+" Plug 'https://github.com/mbbill/undotree/'
+" Plug 'python-mode/python-mode', { 'branch': 'develop' }  " Python Stuff for editor
+" Plug 'stevearc/vim-arduino'
+" Plug 'wincent/command-t'  " fuzzy-finder
 call plug#end()
 
 
 " Options for plugins
 
-let g:arduino_cmd = '/home/exe/Source/arduino-1.8.7/arduino'
-let g:arduino_board = 'arduino:avr:uno'
-let g:arduino_serial_port = '/dev/ttyACM3'
-nnoremap <leader>av :w<cr>:ArduinoVerify<cr>
-nnoremap <leader>au :w<cr>:ArduinoUpload<cr>
-nnoremap <leader>as :ArduinoUploadAndSerial<cr>
+" :W sudo saves the file
+" (useful for handling the permission-denied error)
+command! W w suda://%
 
-
+" NERDTree
 set viewoptions=cursor,folds,slash,unix
+nnoremap <C-O> :NERDTreeToggle<Cr>
+let NERDTreeQuitOnOpen = 1  " automatically close when opening a file
+let NERDTreeMinimalUI = 1  " astethics
+let NERDTreeDirArrows = 1  " astethics
 " let g:skipview_files = ['*\.vim']
 
+" let g:fzf_nvim_statusline = 0 " disable statusline overwriting
 
-nnoremap <F5> :UndotreeToggle<cr>
+" nnoremap <F5> :UndotreeToggle<cr>
 
 
-let g:pymode = 0 " turn on the whole plugin
-let g:pymode_python = 'python3' " Python3 syntax checking
-let g:pymode_trim_whitespaces = 1 " trim unused whitespaces on save
-let g:pymode_options = 1 " set default python option (line length, ...)
-let g:pymode_indent = 1 " pep8 compatible python ident
-let g:pymode_doc = 1 " turn on documentation
-let g:pymode_doc_bind = 'K' " bind key to documentation
-let g:pymode_run = 1 " turn on run code
-let g:pymode_run_bind = '<leader>r' " bind key to run code
+" let g:pymode = 0 " turn on the whole plugin
+" let g:pymode_python = 'python3' " Python3 syntax checking
+" let g:pymode_trim_whitespaces = 1 " trim unused whitespaces on save
+" let g:pymode_options = 1 " set default python option (line length, ...)
+" let g:pymode_indent = 1 " pep8 compatible python ident
+" let g:pymode_doc = 1 " turn on documentation
+" let g:pymode_doc_bind = 'K' " bind key to documentation
+" let g:pymode_run = 1 " turn on run code
+" let g:pymode_run_bind = '<leader>r' " bind key to run code
 " autocmd BufEnter __run__,__doc__ :wincmd L " open doc-, run-windows on right
 " let g:pymode_rope = 1
 " let g:pymode_rope_completion = 1
 " let g:pymode_rope_complete_on_dot = 1
 " let g:pymode_rope_completion_bind = '<C-Space>'
+" let g:arduino_cmd = '/home/exe/Source/arduino-1.8.7/arduino'
+" let g:arduino_board = 'arduino:avr:uno'
+" let g:arduino_serial_port = '/dev/ttyACM3'
+" nnoremap <leader>av :w<cr>:ArduinoVerify<cr>
+" nnoremap <leader>au :w<cr>:ArduinoUpload<cr>
+" nnoremap <leader>as :ArduinoUploadAndSerial<cr>
 
 
 " NERDComToggleComment
@@ -216,6 +233,8 @@ let g:airline#extensions#tabline#show_tab_nr = 0
 " }}}
 " => Tabs, Windows, Buffers -----------------------------------------{{{
 
+map <C-h> <C-w>h
+map <C-l> <C-w>l
 " a buffer becomes hidden when it is abandoned
 set hid
 
@@ -283,6 +302,7 @@ set encoding=utf8
 " use Unix as the standard file type
 set ffs=unix,dos,mac
 
+" use truecolor (rgb) in terminal
 set termguicolors
 
 " }}}
@@ -314,9 +334,11 @@ set breakindentopt=shift:2"}}}
 " => Searching ------------------------------------------------------{{{
 
 nnoremap <space> /
+
 " search for current selection
-" yank, control-r quotes to paste from register quotes, enter
 vnoremap <space> y/<C-R>"<CR>
+
+" substitue
 nnoremap <c-space> :%s/
 vnoremap <c-space> y:%s/<C-R>"/
 
@@ -358,6 +380,9 @@ inoremap <c-V> <Esc>"+pa
 
 " }}}
 " => Working with Code ----------------------------------------------{{{
+
+" strip all trailing whitespaces in the current file
+autocmd BufWritePre * %s/\s\+$//e
 
 " compile markdown file
 function! CompilteMarkdown()
@@ -412,8 +437,8 @@ map 0 ^
 " jump 10 lines up or down/characters left/right
 nmap <c-j> 10j
 nmap <c-k> 10k
-nmap <c-h> 10h
-nmap <c-l> 10l
+" nmap <c-h> 10h
+" nmap <c-l> 10l
 
 " insert empty line below/above and stay in normal mode
 nmap # o<esc>
@@ -436,6 +461,19 @@ nnoremap k gk
 " useful mappings for managing tabs
 map <c-t> :tabnew<cr>
 "map <c-w> :tabclose<cr>
+
+" }}}
+" => Auto-commands --------------------------------------------------{{{
+
+" source init.vim when writing file (no need to restart, but only loads new changes)
+autocmd bufwritepost Dotfiles/nvim/.config/nvim/init.vim source %
+
+" reload .Xresources with xrdb when writing file
+autocmd bufwritepost ~/.Xresources !xrdb %
+
+autocmd bufwritepost ~/.bashrc !source %
+
+autocmd bufwritepost ~/Gits/st/config.h !sudo -A make -C ~/Gits/st/ install
 
 " }}}
 " => Unused Stuff ---------------------------------------------------{{{
@@ -505,6 +543,13 @@ map <c-t> :tabnew<cr>
 " }}}
 " => Stuff to remember ----------------------------------------------{{{
 
-
+" <leader>W         remove trailing whitespaces
+" <leader>f         set foldmethod=
+" <shift>f          toggle fold
+" <f8>              run code and create window
+" <f9>              rerun code and update output
+" zm                fold more (z looks like folded paper)
+"
 
 " }}}
+" vim: set foldmethod=marker

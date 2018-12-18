@@ -10,7 +10,7 @@
     "hide_header/main": true,
     "hinterland/hinterland": true,
     "code_font_size/code_font_size": true,
-    "notify/notify": true
+    "notify/notify": false
   },
   "hinterland": {
     "hint_delay": "200"

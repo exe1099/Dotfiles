@@ -1,2 +1,0 @@
-#!/bin/bash
-termite --class="ranger_terminal" -d "$(pwd)" &

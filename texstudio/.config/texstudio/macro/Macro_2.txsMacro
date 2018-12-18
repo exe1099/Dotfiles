@@ -1,0 +1,25 @@
+{
+"name" : "fold manual folds" ,
+"tag" : [
+ "%SCRIPT",
+ "var t1 = editor.document().textLines();",
+ "var regEx = /\%BEGIN_FOLD/;",
+ "var match;",
+ "",
+ "for (var i=0; i<t1.length; i++) {",
+ "	match = regEx.exec(t1[i]);",
+ "	if (match) {",
+ "		editor.document().foldBlockAt(false, i)	",
+ "	}",
+ "",
+ "}",
+ ""
+ ],
+"description" : [
+ ""
+ ],
+"abbrev" : "" ,
+"trigger" : "" ,
+"menu" : "" ,
+"shortcut" : ""
+}

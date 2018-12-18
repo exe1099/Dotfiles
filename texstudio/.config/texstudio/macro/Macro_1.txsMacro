@@ -1,0 +1,15 @@
+{
+"name" : "list" ,
+"tag" : [
+ "\begin{itemize}",
+ "	\item %<item%>",
+ "\end{itemize}"
+ ],
+"description" : [
+ ""
+ ],
+"abbrev" : "" ,
+"trigger" : "" ,
+"menu" : "" ,
+"shortcut" : ""
+}

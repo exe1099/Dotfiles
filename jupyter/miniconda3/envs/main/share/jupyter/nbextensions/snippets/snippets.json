@@ -21,9 +21,9 @@
 		        "import pandas as pd",
 		        "phc = c.physical_constants",
 		        "import sys",
-		        "sys.path.append(os.path.join(os.path.expanduser('~'), 'Cloud/Informatik/Python/'))",
+		        "sys.path.append(os.path.join(os.path.expanduser('~'), 'Info/Python/'))",
 		        "from my_functions import general",
-                "plt.style.use('~/Cloud/Informatik/Python/matplotlibrc/notebook')"
+                "plt.style.use('~/Info/Python/matplotlibrc/notebook')"
     			]
         },
 

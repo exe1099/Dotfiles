@@ -1,2 +1,2 @@
 #!/bin/bash
-zenity --password --title=Authentication
+zenity --password --title=Authentication --timeout=10
