@@ -38,7 +38,7 @@
     tool = vimdiff
 
 [core]
-	editor = vim
+	editor = nvim
 	pager = diff-so-fancy | less --tabs=4 -RFX
 
 # diff-so-fancy custom colors
