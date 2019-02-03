@@ -1,13 +1,46 @@
 #!/bin/sh
-# A dmenu prompt to unmount drives.
-# Provides you with mounted partitions, select one to unmount.
-# Drives mounted at /, /boot and /home will not be options to unmount.
-# This can be changed by modifying the awk command in $drives.
-PASSWD="$(zenity --password --title=Authentication)"
-COLS="name,type,size,mountpoint"
 
-drives=$(lsblk -rpo "$COLS" | awk '$2=="part"&&$4!~/boot|home|SWAP/&&length($4)>1{printf "%s (%s) on %s\n",$1,$3,$4}')
-[ -z "$drives" ] && exit
-chosen=$(echo "$drives" | dmenu -i -p "Unmount which drive?" | awk '{print $1}')
-[ -z "$chosen" ] && exit
-echo $PASSWD | sudo -S umount "$chosen" && pgrep -x dunst && notify-send "$chosen unmounted."
+
+# check if dmenu already running
+pgrep -x dmenu && exit
+
+
+unmount_usb() {
+    [ -z "$drives" ] && exit
+    chosen=$(echo "$drives" | dmenu -i -p "Unmount which drive?" | awk '{print $1}')
+    [ -z "$chosen" ] && exit
+    sudo -A umount "$chosen" && pgrep -x dunst && notify-send "$chosen unmounted."
+}
+
+
+unmount_android() {
+    chosen=$(awk '/simple-mtpfs/ {print $2}' /etc/mtab | dmenu -i -p "Unmount which device?")
+    [ -z "$chosen" ] && exit
+    fusermount -u "$chosen" && pgrep -x dunst && notify-send "$chosen unmounted."
+}
+
+
+ask_type() {
+        case $(printf "USB\\nAndroid" | dmenu -i -p "Unmount a USB drive or Android device?") in
+        USB) unmount_usb ;;
+        Android) unmount_android ;;
+    esac
+}
+
+
+drives=$(lsblk -nrpo "name,type,size,mountpoint" | awk '$2=="part"&&$4!~/\/boot|\/home$|SWAP/&&length($4)>1{printf "%s (%s)\n",$4,$3}')
+
+if ! grep simple-mtpfs /etc/mtab; then
+    [ -z "$drives" ] && echo "No drives to unmount." && exit
+    echo "Unmountable USB drive detected."
+    unmount_usb
+else
+    if [ -z "$drives" ]
+    then
+        echo "Unmountable Android device detected."
+        unmount_android
+    else
+        echo "Unmountable USB drive(s) and Android device(s) detected."
+        ask_type
+    fi
+fi

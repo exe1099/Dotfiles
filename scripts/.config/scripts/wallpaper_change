@@ -3,7 +3,7 @@
 # $1: dir in wallpapers directory to use
 
 
-wp_path=~/Cruzer/Pictures/Wallpapers/$1
+wp_path=~/Devices/Cruzer/Pictures/Wallpapers/$1
 image=$(ls $wp_path | grep -E '(jpg|png)$' | sort -R | tail -1)
 
 feh --bg-scale $wp_path/$image

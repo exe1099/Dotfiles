@@ -17,7 +17,7 @@ set noswapfile
 set mouse=a                    " use mouse to switch between panels + scroll
 set incsearch                  " show search matches as you type
 set nocompatible
-set colorcolumn=85
+set colorcolumn=89
 set number                     " Show current line number
 set relativenumber             " Show relative line numbers
 set autoindent
@@ -85,6 +85,11 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" write file with sudo
+" w pipes current buffer to STD_OUT; tee acts like a T-pip (splits input, one to STD_OUT,
+" one to file); hacky, need this for using sudo; forget STD_OUT, but file = current file (%)
+" cmap w!! w !sudo tee > /dev/null %
+
 " ignore compiled files
 " set wildignore=*.o,*~,*.pyc
 " if has("win16") || has("win32")
@@ -100,10 +105,10 @@ set tm=500
 set foldcolumn=1
 
 " toggle current fold
-nnoremap F za
+nnoremap <leader>f za
 
 " rewrite set foldmethod command
-nnoremap <leader>f :set foldmethod=
+" nnoremap <leader>f :set foldmethod=
 
 " create fold
 vnoremap <C-f> zf
@@ -159,10 +164,15 @@ Plug 'scrooloose/nerdtree'  " file explorer
 " Plug 'python-mode/python-mode', { 'branch': 'develop' }  " Python Stuff for editor
 " Plug 'stevearc/vim-arduino'
 " Plug 'wincent/command-t'  " fuzzy-finder
+
+Plug 'takac/vim-hardtime'  " disable repetetive use of h/j/k/l
 call plug#end()
 
 
 " Options for plugins
+
+" Sneak
+" let g:sneak#label = 1
 
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
@@ -180,6 +190,7 @@ let NERDTreeDirArrows = 1  " astethics
 
 " nnoremap <F5> :UndotreeToggle<cr>
 
+let g:hardtime_default_on = 1
 
 " let g:pymode = 0 " turn on the whole plugin
 " let g:pymode_python = 'python3' " Python3 syntax checking
@@ -336,7 +347,7 @@ set breakindentopt=shift:2"}}}
 nnoremap <space> /
 
 " search for current selection
-vnoremap <space> y/<C-R>"<CR>
+" vnoremap <space> y/<C-R>"<CR>
 
 " substitue
 nnoremap <c-space> :%s/
@@ -435,10 +446,8 @@ map <leader>s? z=
 map 0 ^
 
 " jump 10 lines up or down/characters left/right
-nmap <c-j> 10j
-nmap <c-k> 10k
-" nmap <c-h> 10h
-" nmap <c-l> 10l
+nmap <c-j> <c-d>
+nmap <c-k> <c-u>
 
 " insert empty line below/above and stay in normal mode
 nmap # o<esc>
@@ -465,14 +474,17 @@ map <c-t> :tabnew<cr>
 " }}}
 " => Auto-commands --------------------------------------------------{{{
 
-" source init.vim when writing file (no need to restart, but only loads new changes)
+" source init.vim when writing file (no need to restart;
+" only overwrites changes --> doesn't forget setting (e.g. if commenting something out)
 autocmd bufwritepost Dotfiles/nvim/.config/nvim/init.vim source %
 
-" reload .Xresources with xrdb when writing file
+" reload .Xresources with xrdb after editing
 autocmd bufwritepost ~/.Xresources !xrdb %
 
+" source .bashrc after editing
 autocmd bufwritepost ~/.bashrc !source %
 
+" recompile and istall simple terminal after changing config
 autocmd bufwritepost ~/Gits/st/config.h !sudo -A make -C ~/Gits/st/ install
 
 " }}}
@@ -549,6 +561,8 @@ autocmd bufwritepost ~/Gits/st/config.h !sudo -A make -C ~/Gits/st/ install
 " <f8>              run code and create window
 " <f9>              rerun code and update output
 " zm                fold more (z looks like folded paper)
+" H/M/L             move to high/middle/low of screen
+" Ctrl+D/U          move half page down/up
 "
 
 " }}}

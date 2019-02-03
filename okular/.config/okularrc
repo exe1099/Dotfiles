@@ -9,8 +9,8 @@ ShowLeftPanel=false
 
 [MainWindow]
 Height 1080=1052
-Height 768=732
-State=AAAA/wAAAAD9AAAAAAAABVYAAALAAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+Height 768=750
+State=AAAA/wAAAAD9AAAAAAAABVYAAALOAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
 Width 1366=1366
 Width 1920=950
@@ -19,26 +19,26 @@ Width 1920=950
 SyncThumbnailsViewport=false
 
 [Recent Files]
-File1[$e]=$HOME/Documents/Studies/Ex5b/deep_inelastic_scattering.pdf
-File10[$e]=$HOME/Downloads/Scraped/DeepLearning/deep_learning_2018_lecture_09(bestviewedacrobat+flash+win).pdf
-File2[$e]=$HOME/Documents/Studies/Ex5b/helicity_of_neutrinos.pdf
-File3[$e]=$HOME/Downloads/Scraped/Astro/talks,_dates_and_speakers.pdf
-File4[$e]=$HOME/LatexDocs/BachelorThesisPresi/BA_slides_FINAL.pdf
-File5[$e]=$HOME/LatexDocs/CVSample/CV_sample.pdf
-File6[$e]=$HOME/LatexDocs/AstroStellarNeighbourhood/StellarNeighbourhood.pdf
-File7[$e]=$HOME/Downloads/Scraped/Astro/abstracts_for_participant_talks.pdf
-File8[$e]=$HOME/Downloads/Scraped/DeepLearning/deep_learning_2018_lecture_07_update.pdf
-File9[$e]=$HOME/Downloads/Scraped/DeepLearning/deep_learning_2018_lecture_08_update.pdf
-Name1[$e]=deep_inelastic_scattering.pdf
-Name10[$e]=deep_learning_2018_lecture_09(bestviewedacrobat+flash+win).pdf
-Name2[$e]=helicity_of_neutrinos.pdf
-Name3[$e]=talks,_dates_and_speakers.pdf
-Name4[$e]=BA_slides_FINAL.pdf
-Name5[$e]=CV_sample.pdf
-Name6[$e]=StellarNeighbourhood.pdf
-Name7[$e]=abstracts_for_participant_talks.pdf
-Name8[$e]=deep_learning_2018_lecture_07_update.pdf
-Name9[$e]=deep_learning_2018_lecture_08_update.pdf
+File1[$e]=$HOME/AAAUni/DeepLearning/Sheet08/dl_sheet08.pdf
+File10[$e]=$HOME/AAAUni/DeepLearning/dl_13_Variational_Autoencoder_and_Wasserstein_Autoencoder.okular
+File2[$e]=$HOME/AAAUni/DeepLearning/dl_08_Convolutional_Neural_Networks.okular
+File3[$e]=$HOME/AAAUni/DeepLearning/dl_06_Multilayer_Perceptron_and_Optimizers.okular
+File4[$e]=$HOME/AAAUni/DeepLearning/dl_07_Cross_Correlation_and_Convolution.okular
+File5[$e]=$HOME/AAAUni/DeepLearning/dl_11_Deep_Embeddings.okular
+File6[$e]=$HOME/Downloads/7583v1.0(G52-75831X2)(P55-GD65).pdf
+File7[$e]=$HOME/AAAUni/DeepLearning/dl_03_Logistic_and_Softmax_Regression.okular
+File8[$e]=$HOME/AAAUni/DeepLearning/dl_12_Generative_Adversarial_Networks.okular
+File9[$e]=$HOME/Downloads/Deep_Learning_2018_Lecture_13.pdf
+Name1[$e]=dl_sheet08.pdf
+Name10[$e]=dl_13_Variational_Autoencoder_and_Wasserstein_Autoencoder.okular
+Name2[$e]=dl_08_Convolutional_Neural_Networks.okular
+Name3[$e]=dl_06_Multilayer_Perceptron_and_Optimizers.okular
+Name4[$e]=dl_07_Cross_Correlation_and_Convolution.okular
+Name5[$e]=dl_11_Deep_Embeddings.okular
+Name6[$e]=7583v1.0(G52-75831X2)(P55-GD65).pdf
+Name7[$e]=dl_03_Logistic_and_Softmax_Regression.okular
+Name8[$e]=dl_12_Generative_Adversarial_Networks.okular
+Name9[$e]=Deep_Learning_2018_Lecture_13.pdf
 
 [Reviews]
 AnnotationTools=<tool id="1" type="highlight"><engine type="TextSelector" color="#ffff00"><annotation opacity="0.8" type="Highlight" color="#ffff00"/></engine><shortcut>1</shortcut></tool>,<tool id="2" type="highlight" name="Highlighter2"><engine type="TextSelector" color="#00ff00"><annotation opacity="0.5" type="Highlight" color="#00ff00"/></engine><shortcut>2</shortcut></tool>,<tool id="3" type="note-inline"><engine type="PickPoint" color="#ffff00" block="true" hoverIcon="tool-note-inline"><annotation font="Hack\\,7\\,-1\\,5\\,50\\,0\\,0\\,0\\,0\\,0\\,Regular" type="FreeText" color="#ffff00" width="0.4"/></engine><shortcut>3</shortcut></tool>,<tool id="4" type="straight-line"><engine type="PolyLine" color="#ffff00" points="2"><annotation type="Line" color="#ffff00" width="2"/></engine><shortcut>4</shortcut></tool>,<tool id="5" type="ellipse"><engine type="PickPoint" color="#00ff00" block="true"><annotation opacity="0.85" type="GeomCircle" color="#00ff00" width="1.7"/></engine><shortcut>5</shortcut></tool>,<tool id="6" type="ink"><engine type="SmoothLine" color="#00ff00"><annotation type="Ink" color="#00ff00" width="2"/></engine><shortcut>6</shortcut></tool>,<tool id="7" type="note-linked"><engine type="PickPoint" color="#ffff00" hoverIcon="tool-note"><annotation type="Text" color="#ffff00" icon="Note"/></engine><shortcut>7</shortcut></tool>,<tool id="8" type="polygon"><engine type="PolyLine" color="#007eee" points="-1"><annotation type="Line" color="#007eee" width="1"/></engine><shortcut>8</shortcut></tool>,<tool id="9" type="stamp"><engine type="PickPoint" block="true" size="64" hoverIcon="okular"><annotation type="Stamp" icon="okular"/></engine><shortcut>9</shortcut></tool>,<tool id="10" type="underline"><engine type="TextSelector" color="#000000"><annotation type="Underline" color="#000000"/></engine></tool>

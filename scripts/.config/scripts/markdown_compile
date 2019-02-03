@@ -5,8 +5,8 @@
 
 
 if [ $# -ne 1 ]
-then 
-    echo "Too many parameters."
+then
+    echo "Too many/little parameters."
     exit 1
 fi
 

@@ -1,24 +1,67 @@
 #!/bin/sh
-# Gives a dmenu prompt to mount unmounted drives.
-# If they're in /etc/fstab, they'll be mounted automatically.
-# Otherwise, you'll be prompted to give a mountpoint from already existsing directories.
-# If you input a novel directory, it will prompt you to create that directory.
-pgrep -x dmenu && exit
-PASSWD="$(zenity --password --title=Authentication)"
-COLS="name,type,size,mountpoint"
 
-drives="$(lsblk -rpo "$COLS" | awk '$2=="part"&&$4==""{printf "%s (%s)\n",$1,$3}')"
-[ -z "$drives" ] && exit 1
-chosen="$(echo "$drives" | dmenu -i -p "Mount which drive?" | awk '{print $1}')"
-[ -z "$chosen" ] && exit 1
-echo $PASSWD | sudo -S mount "$chosen" && exit 0
-# You may want to change the line below for more suggestions for mounting.
-# I.e. you can increase the depth of the search, or add directories.
-# This will increase the load time briefly though.
-mp="$(find /mnt -type d -maxdepth 1 2>/dev/null | dmenu -i -p "Type in mount point.")"
-[ "$mp" = "" ] && exit 1
-if [ ! -d "$mp" ]; then
-	mkdiryn=$(printf "No\\nYes" | dmenu -i -p "$mp does not exist. Create it?")
-	[ "$mkdiryn" = "Yes" ] && sudo mkdir -p "$mp"
+
+# check if dmenu already running
+pgrep -x dmenu && exit
+
+
+get_mount() {
+    # check if drive got selected
+    [ -z "$chosen" ] && exit 1
+    # select mount point; listing specified dirs in beginning
+    mp="$(find $1 | dmenu -i -p "Type in mount point:")"
+    # check for empty input
+    [ -z "$mp" ] && exit 1
+    # if dir non existing, ask for make dir; run as sudo if needed
+    if [ ! -d "$mp" ]; then
+        mkdir_yn=$(printf "No\\nYes" | dmenu -i -p "$mp doe not exist. Create it?")
+        [ "$mkdir_yn" = "Yes" ] && (mkdir -p "$mp" || sudo -A mkdir -p "$mp")
+    fi
+}
+
+
+mount_usb() {
+    chosen="$(echo "$usbdrives" | dmenu -p "Mount which drive?" | awk '{print $1}')"
+    # try mount without mount point; doesn't work if drive not in fstab
+    sudo -A mount "chosen" && notify-send "$chosen mounted." && exit 0
+    # get mount point and mount
+    get_mount "$HOME/Devices -maxdepth 1 -type d"
+    sudo -A mount "$chosen" "$mp" && notify-send "$chosen mounted to $mp."
+}
+
+
+mount_android() {
+    # choose drive and select drive number (e.g. from "1: Samsung Galaxy")
+    chosen=$(echo "$android_drives" | dmenu -p "Which Android device?" | cut -d : -f 1)
+    # get mount point
+    get_mount "$HOME/Devices -maxdepth 1 -type d"
+    # mount
+    simple-mtpfs --device "$chosen" "$mp"
+    notify-send "Android deivce mounted to $mp."
+}
+
+
+ask_type() {
+    case $(printf "USB\\nAndroid" | dmenu -i -p "Mount a USB drive or Android device?") in
+        USB) mount_usb ;;
+        Android) mount_android ;;
+    esac
+}
+
+
+android_drives=$(simple-mtpfs -l 2>/dev/null)
+usb_drives="$(lsblk -rpo "name,type,size,mountpoint" | awk '$2=="part"&&$4==""{printf "%s (%s)\n",$1,$3}')"
+
+if [ -z "$usb_drives" ]; then
+    [ -z "$android_drives" ] && echo "Nothing detected" && exit
+    echo "Android device(s) found."
+    mount_android
+else
+    if [ -z "$android_drives" ]; then
+        echo "USB drive(s) detected."
+        mount_usb
+    else
+        echo "Mountable USB drive(s) and Android device(s) detected."
+        ask_type
+    fi
 fi
-sudo mount "$chosen" "$mp" && pgrep -x dunst && notify-send "$chosen mounted to $mp."

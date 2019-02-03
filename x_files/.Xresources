@@ -2,7 +2,7 @@
 
 !
 *.font: Hack Nerd Font Mono-10;
-*termname: st-256color
+!!*termname: st-256color
 *shell: /bin/sh
 !! transparency (0-255):
 *.alpha: 180

@@ -1,0 +1,81 @@
+#!/usr/bin/env python
+# author: exe1099
+
+import argparse
+import sys
+import shutil
+from pathlib import Path
+import os
+
+
+bookmark_file = "/home/exe/Backups/LINKED/Okular/bookmarks.xml"
+
+
+# parsing command line arguments
+parser = argparse.ArgumentParser(
+    description="Rename file and substitue paths in okular bookmarksfile accordingly "
+    "to preserve bookmarks. Navigate to directory and provide old filename and new filename as arguments."
+)
+parser.add_argument(
+    "old_filename", action="store", help="The current name of the file."
+)
+parser.add_argument(
+    "new_filename", action="store", help="The name the filename should be changed to."
+)
+inputs = parser.parse_args()
+# can't use os.getcwd() because it resolves softlinks, but okular doesn't
+directory = os.getenv("PWD")
+old = str(Path(directory, inputs.old_filename))
+new = str(Path(directory, inputs.new_filename))
+
+
+### checking for multiple sources of errors ###
+
+if "/" in inputs.old_filename:
+    print(
+        "This scripts doesn't work with paths. Please navigate to directory and "
+        "only provide filenames."
+    )
+    quit()
+
+# 'Cloud/' shouldn't be in path, because softlinks to Cloud-subdirectories are used
+# (should be in home directory)
+if "Cloud/" in old:
+    print(
+        "You're inside 'Coud/', which shouldn't be the case. "
+        "Please access from softlinks in home directory."
+    )
+    quit()
+
+# check if old path in bookmarks file
+content = list()
+with open(bookmark_file) as file:
+    for line in file.readlines():
+        content.append(line)
+for line in content:
+    if old in line:
+        break
+else:
+    print(
+        "Old path not contained in bookmarks file. "
+        "Check if pdf contains bookmarks, if not, it's save to rename manual."
+    )
+    quit()
+
+
+# renaming file
+try:
+    shutil.move(old, new)
+except FileNotFoundError:
+    print("File not found!")
+    quit()
+
+
+# substituting in okular's bookmarks file
+with open(bookmark_file, "w") as file:
+    for line in content:
+        changed_line = line.replace(old, new)
+        file.write(changed_line + "\n")
+
+print(f"Substituted: {old}")
+print(f"       with: {new}")

@@ -117,17 +117,13 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 # stuff from manjaro
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nm-applet
 # exec --no-startup-id xfce4-power-manager
-# exec --no-startup-id pamac-tray
-exec --no-startup-id clipit
-# exec --no-startup-id blueman-applet
+exec --no-startup-id clipit  # clipboard manager
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
 # exec --no-startup-id xautolock -time 10 -locker blurlock
-# exec_always --no-startup-id ff-theme-util
-# exec_always --no-startup-id fix_xcursor
+exec_always --no-startup-id fix_xcursor
 
 # wallpaper script
 exec --no-startup-id ~/.config/scripts/wallpaper_change Current
@@ -141,32 +137,32 @@ exec --no-startup-id nm-applet
 # exec --no-startup-id wicd-curses
 
 # compositor for transparency
-exec --no-startup-id compton -b
+exec --no-startup-id compton --daemon
 
 # cloud services
-exec --no-startup-id dropbox start
-exec --no-startup-id ~/bin/pcloud
+exec --no-startup-id dropbox
+exec --no-startup-id ~/Bins/pcloud
 
 # unclutter makes the mouse invisible after a brief period
-# hides mouse pointer; makes problems with ideavim (I think)
+# makes problem with mod+h/l for selecting different window
 # exec --no-startup-id unclutter
 
 # }}}
 # => Autostart Programs in Workspaces/Scratchpad ----------{{{
 
-exec --no-startup-id i3-msg 'workspace $ws1; exec firefox; workspace $ws2'
+exec --no-startup-id i3-msg 'workspace $ws1; exec firefox'
 # exec --no-startup-id i3-msg 'workspace $ws2; exec $TERMINAL ranger; workspace $ws4'
-exec --no-startup-id i3-msg 'workspace $ws4; exec $TERMINAL nvr ~/d; workspace $ws8'
 exec --no-startup-id i3-msg 'workspace $ws8; exec thunderbird'
 exec --no-startup-id $TERMINAL -c="scratchpad" python3
+exec --no-startup-id $TERMINAL -c="neovim_remote" nvr ~/d'
 
 # }}}
-# => Assign Windows to Workspaces/Scratchpad---------------{{{
+# => Assign Windows to Workspaces/Scratchpad --------------{{{
 
-# assign [class="ranger_terminal"] → $ws3
 assign [class="okular"] → $ws6
 assign [class="libreoffice-startcenter|Soffice"] → $ws7
 assign [class="Thunderbird"] → $ws8
+assign [title="nvr"] → $ws4
 
 # for presentations with pdfpc
 for_window [class="Pdfpc" window_role="presentation"] move to output up
@@ -175,7 +171,7 @@ for_window [class="Pdfpc" window_role="presenter"] move to output down
 for_window [class="scratchpad"] move scratchpad
 
 # }}}
-# => Window Managment -------------------------------------{{{
+# => Window Managment Shorcuts ----------------------------{{{
 
 # use mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -225,6 +221,13 @@ bindsym $mod+Shift+l move right
 # bindsym $mod+v split v
 
 # }}}
+# => Window Sizes -----------------------------------------{{{
+
+# for_window [name="Open File"] resize set 640 480
+floating_minimum_size 75 x 50
+floating_maximum_size 1000 x 600
+
+# }}}
 # => Multimedia and Function Keys--------------------------{{{
 
 # change volume; send signal 10 to i3blocks, which triggers volume block (executes volume script)
@@ -260,6 +263,7 @@ bindsym $mod+f              fullscreen toggle
 bindsym $mod+s              scratchpad show
 bindsym $mod+Shift+s        move scratchpad
 bindsym $mod+r              exec $TERMINAL ranger
+# bindsym $mod+h              exec $TERMINAL htop
 bindsym $mod+p              exec $TERMINAL python3
 # can't use ~/d here
 bindsym $mod+v              exec $TERMINAL nvr ~/d
@@ -298,4 +302,4 @@ for_window [class="Xfburn"] floating enable
 
 # }}}
 # vim:filetype=i3
-# vim: set foldmethod=marker
+# vim:foldmethod=marker

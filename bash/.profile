@@ -11,7 +11,7 @@
 [ -f ~/.bashrc ] && source ~/.bashrc
 
 # set PATH so it includes user's private bin if it exists
-[ -d ~/bin ] && PATH="$PATH:$HOME/bin"
+[ -d ~/Bins ] && PATH="$PATH:$HOME/Bins"
 
 # lots of bins get installed to this directory
 [ -d ~/.local/bin ] && PATH="$PATH:$HOME/.local/bin"
@@ -26,3 +26,4 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 export EDITOR="nvim"
 export TERMINAL="st"
 export BROWSER=/usr/bin/firefox
+export SUDO_ASKPASS="$HOME/.config/scripts/askpass"
