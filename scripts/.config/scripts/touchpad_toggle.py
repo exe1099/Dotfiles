@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+
+import os
+import subprocess
+
+command = "xinput --list-props 10"
+output = subprocess.run(
+    command, check=True, capture_output=True, shell=True, text=True, encoding="utf-8"
+).stdout
+
+enabled = int(output.split("\n")[1].replace("\t", " ")[-1])
+
+if enabled:
+    subprocess.run("xinput --set-prop 10 149 0", shell=True)
+else:
+    subprocess.run("xinput --set-prop 10 149 1", shell=True)

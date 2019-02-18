@@ -130,7 +130,7 @@ exec --no-startup-id ~/.config/scripts/wallpaper_change Current
 
 # touchpad options (inverse scrolling, palm rejection etc.)
 # exec --no-startup-id synclient VertScrollDelta=-112 VertEdgeScroll=0 HorizTwoFingerScroll=1 HorizScrollDelta=-112 PalmDetect=1
-exec --no-startup-id xinput set-prop 10 295 1
+exec --no-startup-id xinput --set-prop 10 295 1
 
 # network manager
 exec --no-startup-id nm-applet
@@ -236,13 +236,12 @@ bindsym $mod+Ctrl+m                 exec $TERMINAL alsamixer
 bindsym XF86AudioRaiseVolume        exec --no-startup-id amixer set Master 5%+ && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioLowerVolume        exec --no-startup-id amixer set Master 5%- && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMute               exec --no-startup-id amixer set Master toggle && pkill -RTMIN+10 i3blocks
-# bindsym XF86WakeUp                exec --no-startup-id ~/.config/scripts/display_select
 
 # display manager
 bindsym XF86Display                 exec --no-startup-id ~/.config/scripts/display_select
 
-# enable/disable touchpad
-# bindsym XF86ScreenSaver           exec --no-startup-id  ~/.config/scripts/touchpad_toggle
+# enable/disable touchpad (only this works, doesn't work without the python here)
+bindsym XF86TouchpadToggle          exec --no-startup-id python ~/.config/scripts/touchpad_toggle.py
 
 # brightness control
 bindsym XF86MonBrightnessUp         exec --no-startup-id ~/.config/scripts/brightness 1

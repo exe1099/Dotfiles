@@ -21,7 +21,6 @@ alias diff='icdiff'  # color diff
 
 # programming
 alias jn='conda activate main; screen -d -m jupyter notebook; exit'
-alias pycharm='screen -d -m ./PyCharm/bin/pycharm.sh; exit'
 alias uni_scrape='conda activate uni_scraper && cd ~/Info/Python/UniScraper && python uni_scraper.py'
 alias connect_four='conda activate connect_four && python /home/exe/Cloud/Info/Python/ConnectFour/connect_four.py'
 alias main='conda activate main'
@@ -47,3 +46,6 @@ alias group_drive_mount='sudo sshfs lbinn@linux.zdv.uni-mainz.de:/uni-mainz.de/g
 alias group_drive_umount='sudo fusermount -u /mnt/GroupDrive'
 alias screens_one='~/.screenlayout/screens_one.sh'
 alias screens_two='~/.screenlayout/screens_two.sh'
+
+# unused stuff
+# alias pycharm='screen -d -m ./PyCharm/bin/pycharm.sh; exit'

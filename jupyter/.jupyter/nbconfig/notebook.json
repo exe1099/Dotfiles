@@ -13,7 +13,7 @@
     "notify/notify": false
   },
   "hinterland": {
-    "hint_delay": "200"
+    "hint_delay": "500"
   },
   "code_prettify": {
     "hotkeys": {
