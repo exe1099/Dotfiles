@@ -5,7 +5,7 @@
 "   \_/  |___|_|  |_|_| \_\\____|
 "
 
-" => General --------------------------------------------------------{{{
+" General --------------------------------------------------------{{{
 
 set timeoutlen=1000            " time to wait for next keypress in combos
 
@@ -17,11 +17,11 @@ set noswapfile
 set mouse=a                    " use mouse to switch between panels + scroll
 set incsearch                  " show search matches as you type
 set nocompatible
-set colorcolumn=89
 set number                     " Show current line number
 set relativenumber             " Show relative line numbers
 set autoindent
 set laststatus=2
+set conceallevel=2             " show _italic_ as italic (e.g. in markdown)
 
 set splitright
 set splitbelow
@@ -39,6 +39,7 @@ set history=500
 " enable filetype plugins
 filetype plugin on
 filetype indent on
+filetype plugin indent on       " needed for nelstrom/vim-markdown-folding
 
 " auto read when a file is changed from the outside
 set autoread
@@ -46,8 +47,11 @@ set autoread
 let mapleader = "," " map leader key
 
 " }}}
-" => VIM User Interface ---------------------------------------------{{{
-"
+" VIM User Interface ---------------------------------------------{{{
+
+set colorcolumn=89
+let g:markdown_fold_override_foldtext = 0
+
 " keep space between coursor and top/bottom
 set so=8
 
@@ -99,7 +103,7 @@ set tm=500
 " endif
 
 " }}}
-" => Folding --------------------------------------------------------{{{
+" Folding --------------------------------------------------------{{{
 
 " add a bit extra margin to the left
 set foldcolumn=1
@@ -126,8 +130,10 @@ function! MyFoldText() " {{{
     let line = substitute(line, '\t', onetab, 'g')
 
     let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
-    let fillcharcount = windowwidth - len(line) - len(foldedlinecount)
-    return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
+    let endoflinecount = 85 - len(line) - len(foldedlinecount)
+    let fillcharcount = windowwidth - len(line) - len(foldedlinecount) - endoflinecount
+    " return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
+    return '=> ' . line . ' ' . repeat("-",endoflinecount) . foldedlinecount . ' ' . repeat(' ',fillcharcount)
 endfunction " }}}
 set foldtext=MyFoldText()
 
@@ -136,7 +142,7 @@ set foldtext=MyFoldText()
 " autocmd BufWinEnter *.* silent loadview
 
 " }}}
-" => Plugins --------------------------------------------------------{{{
+" Plugins --------------------------------------------------------{{{
 
 " autoinstall vim-plug if not installed already
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
@@ -157,8 +163,10 @@ Plug 'https://github.com/lambdalisue/suda.vim'  " write file with sudo
 Plug 'vim-scripts/restore_view.vim'  " remembers cursor position and view (folds etc.)
 Plug 'PotatoesMaster/i3-vim-syntax'  " syntax for i3 file
 Plug 'tpope/vim-surround'  " add surrounding motions
+" Plug 'plasticboy/vim-markdown' " markdown stuff
 " Plug 'junegunn/fzf'  " fuzzy finder
 Plug 'scrooloose/nerdtree'  " file explorer
+Plug 'nelstrom/vim-markdown-folding' " markdown folding, not working
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 " Plug 'https://github.com/mbbill/undotree/'
 " Plug 'python-mode/python-mode', { 'branch': 'develop' }  " Python Stuff for editor
@@ -171,12 +179,17 @@ call plug#end()
 
 " Options for plugins
 
+" vim-markdown-folding
+" keep my custom fold text
+let g:markdown_fold_override_foldtext = 0
+
 " Sneak
 " let g:sneak#label = 1
 
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 command! W w suda://%
+
 
 " NERDTree
 set viewoptions=cursor,folds,slash,unix
@@ -231,7 +244,7 @@ let g:NERDTrimTrailingWhitespace = 1
 let g:airline_powerline_fonts = 1 " needed for status line
 " set noshowmode " hide -- INSERT --
 let g:airline_theme='minimalist_2'
-let g:airline_powerline_fonts = 1
+" let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 " show buffers if only single tab open
 let g:airline#extensions#tabline#show_buffers = 0
@@ -242,7 +255,7 @@ let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#show_tab_nr = 0
 
 " }}}
-" => Tabs, Windows, Buffers -----------------------------------------{{{
+" Tabs, Windows, Buffers -----------------------------------------{{{
 
 map <C-h> <C-w>h
 map <C-l> <C-w>l
@@ -253,7 +266,7 @@ set hid
 " au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif"}}}
 
 " }}}
-" => Movement with Tabs, Windows, Buffers----------------------------{{{
+" Movement with Tabs, Windows, Buffers----------------------------{{{
 
 " set wildcharm=<C-z>
 " nnoremap <leader>b :buffer <C-z><S-Tab>
@@ -300,7 +313,7 @@ set hid
 " endtry
 
 " }}}
-" => Colors and Fonts------------------------------------------------{{{
+" Colors and Fonts------------------------------------------------{{{
 "
 colorscheme minimalist_2
 
@@ -316,8 +329,22 @@ set ffs=unix,dos,mac
 " use truecolor (rgb) in terminal
 set termguicolors
 
+" execute :call GetSyntax() when cursor over text to get highlight settings
+function! GetSyntaxID()
+    return synID(line('.'), col('.'), 1)
+endfunction
+
+function! GetSyntaxParentID()
+    return synIDtrans(GetSyntaxID())
+endfunction
+
+function! GetSyntax()
+    echo synIDattr(GetSyntaxID(), 'name')
+    exec "hi ".synIDattr(GetSyntaxParentID(), 'name')
+endfunction
+
 " }}}
-" => Text, Wrap, Indent ---------------------------------------------{{{
+" Text, Wrap, Indent ---------------------------------------------{{{
 
 " use spaces instead of tabs
 set expandtab
@@ -342,16 +369,17 @@ set wrap linebreak nolist " wrap lines
 command! -nargs=* Wrap set wrap linebreak nolist
 set breakindent
 set breakindentopt=shift:2"}}}
-" => Searching ------------------------------------------------------{{{
+" Searching ------------------------------------------------------{{{
 
 nnoremap <space> /
+nnoremap <c-space> ?
 
 " search for current selection
 " vnoremap <space> y/<C-R>"<CR>
 
 " substitue
-nnoremap <c-space> :%s/
-vnoremap <c-space> y:%s/<C-R>"/
+nnoremap <leader>s :%s/
+vnoremap <leader>s y:%s/<C-R>"/
 
 " disable highlight when pressed
 nnoremap <CR> :nohlsearch<cr>
@@ -368,7 +396,7 @@ set hlsearch
 set incsearch
 
 " }}}
-" => Working with Text ----------------------------------------------{{{
+" Working with Text ----------------------------------------------{{{
 
 " move a line of text using ALT+[jk]
 nnoremap <A-j> :m .+1<CR>==
@@ -390,7 +418,7 @@ nnoremap <c-V> "+p
 inoremap <c-V> <Esc>"+pa
 
 " }}}
-" => Working with Code ----------------------------------------------{{{
+" Working with Code ----------------------------------------------{{{
 
 " strip all trailing whitespaces in the current file
 autocmd BufWritePre * %s/\s\+$//e
@@ -429,7 +457,7 @@ endfunction
 :nmap <F9> :call ExecNDisplay()<CR>
 
 " }}}
-" => Spell Checking -------------------------------------------------{{{
+" Spell Checking -------------------------------------------------{{{
 
 " toggle spell checking
 map <leader>ss :setlocal spell!<cr>
@@ -440,7 +468,7 @@ map <leader>sa zg
 map <leader>s? z=
 
 "}}}
-" => Movement -------------------------------------------------------{{{
+" Movement -------------------------------------------------------{{{
 
 " remap to first non-blank character
 map 0 ^
@@ -454,14 +482,14 @@ nmap # o<esc>
 nmap ' O<esc>
 
 " deactive arrow keys
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+" nnoremap <up> <nop>
+" nnoremap <down> <nop>
+" nnoremap <left> <nop>
+" nnoremap <right> <nop>
+" inoremap <up> <nop>
+" inoremap <down> <nop>
+" inoremap <left> <nop>
+" inoremap <right> <nop>
 
 " move along screen lines, not file lines
 nnoremap j gj
@@ -472,7 +500,7 @@ map <c-t> :tabnew<cr>
 "map <c-w> :tabclose<cr>
 
 " }}}
-" => Auto-commands --------------------------------------------------{{{
+" Auto-commands --------------------------------------------------{{{
 
 " source init.vim when writing file (no need to restart;
 " only overwrites changes --> doesn't forget setting (e.g. if commenting something out)
@@ -481,14 +509,20 @@ autocmd bufwritepost Dotfiles/nvim/.config/nvim/init.vim source %
 " reload .Xresources with xrdb after editing
 autocmd bufwritepost ~/.Xresources !xrdb %
 
+" reload .Xmodmap after editing
+autocmd bufwritepost ~/.Xmodmap !xmodmap %
+
 " source .bashrc after editing
 autocmd bufwritepost ~/.bashrc !source %
 
 " recompile and istall simple terminal after changing config
 autocmd bufwritepost ~/Gits/st/config.h !sudo -A make -C ~/Gits/st/ install
 
+" deactive error highlighting in markdown-files (avoids --> marked as error)
+autocmd bufread *.markdown :highlight Error guibg=None
+
 " }}}
-" => Unused Stuff ---------------------------------------------------{{{
+" Unused Stuff ---------------------------------------------------{{{
 
 " Delete trailing white space on save, useful for some filetypes ;)
 " fun! CleanExtraSpaces()
@@ -553,17 +587,18 @@ autocmd bufwritepost ~/Gits/st/config.h !sudo -A make -C ~/Gits/st/ install
 " endfunction
 
 " }}}
-" => Stuff to remember ----------------------------------------------{{{
+" Stuff to remember ----------------------------------------------{{{
 
 " <leader>W         remove trailing whitespaces
-" <leader>f         set foldmethod=
-" <shift>f          toggle fold
+" <leader>f/za      toggle fold
+" zm                fold more (z looks like folded paper)
+" zr                reduce fold
 " <f8>              run code and create window
 " <f9>              rerun code and update output
-" zm                fold more (z looks like folded paper)
 " H/M/L             move to high/middle/low of screen
-" Ctrl+D/U          move half page down/up
+" Ctrl+D/U / Ctrl+j/k   move half page down/up
+" :call GetSyntax() print currently applied syntax highlighting to cursor position
 "
-
+" vim: foldmethod=manual:colorcolumn=89
+"
 " }}}
-" vim: set foldmethod=marker

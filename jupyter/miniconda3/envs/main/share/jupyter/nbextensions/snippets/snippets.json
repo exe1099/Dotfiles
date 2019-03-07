@@ -39,7 +39,7 @@
         {
             "name" : "plot_style",
             "code" : [
-                "plt.style.use('~/Cloud/Informatik/Python/matplotlibrc/notebook')"
+                "plt.style.use('~/Cloud/Info/Python/matplotlibrc/notebook')"
                 ]
         },
         {

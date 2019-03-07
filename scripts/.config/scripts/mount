@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 # check if dmenu already running
 pgrep -x dmenu && exit
 

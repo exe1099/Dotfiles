@@ -10,5 +10,5 @@ UUID=21fd58de-72cc-476e-9f8e-7a0c95e59dc0   swap                        swap    
 tmpfs                                       /tmp                        tmpfs   defaults,noatime,mode=1777          0       0
 
 UUID=00407E64684CFA84                       /home/exe/Devices/Cruzer    auto    defaults,nofail,umask=0000          0       0
-UUID=16C0-0FEF                              /home/exe/Devices/KeyStick  auto    defaults,nofail,umask=0000          0       0
-UUID=0141-50F0                              /home/exe/Devices/OldSD     auto    defaults,nofail,umask=0000          0       0
+# UUID=16C0-0FEF                              /home/exe/Devices/KeyStick  auto    defaults,nofail,umask=0000          0       0
+# UUID=0141-50F0                              /home/exe/Devices/OldSD     auto    defaults,nofail,umask=0000          0       0

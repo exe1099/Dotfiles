@@ -262,7 +262,7 @@ bindsym $mod+f              fullscreen toggle
 bindsym $mod+s              scratchpad show
 bindsym $mod+Shift+s        move scratchpad
 bindsym $mod+r              exec $TERMINAL ranger
-# bindsym $mod+h              exec $TERMINAL htop
+# bindsym $mod+h              exec $TERMINAL sudo htop
 bindsym $mod+p              exec $TERMINAL python3
 # can't use ~/d here
 bindsym $mod+v              exec $TERMINAL nvr ~/d
