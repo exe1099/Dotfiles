@@ -14,7 +14,8 @@ bookmark_file = "/home/exe/Backups/LINKED/Okular/bookmarks.xml"
 # parsing command line arguments
 parser = argparse.ArgumentParser(
     description="Rename file and substitue paths in okular bookmarksfile accordingly "
-    "to preserve bookmarks. Navigate to directory and provide old filename and new filename as arguments."
+    "to preserve bookmarks. Navigate to directory and provide old filename and new "
+    "filename as arguments."
 )
 parser.add_argument(
     "old_filename", action="store", help="The current name of the file."

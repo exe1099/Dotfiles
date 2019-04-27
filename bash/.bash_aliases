@@ -20,8 +20,9 @@ alias egrep='egrep --color=auto'
 alias diff='icdiff'  # color diff
 
 # programming
-alias connect_four='conda activate connect_four && python /home/exe/Cloud/Info/Python/ConnectFour/connect_four.py'
+alias connect_four='conda activate main && python /home/exe/Cloud/Info/Python/ConnectFour/connect_four.py'
 alias jn='conda activate main; screen -d -m jupyter notebook; exit'
+alias jndlp='conda activate dlp; screen -d -m jupyter notebook; exit'
 alias main='conda activate main'
 alias uni_scrape='conda activate uni_scraper && cd ~/Info/Python/UniScraper && python uni_scraper.py'
 

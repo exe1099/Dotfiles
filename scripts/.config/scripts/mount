@@ -20,7 +20,7 @@ get_mount() {
 
 
 mount_usb() {
-    chosen="$(echo "$usbdrives" | dmenu -p "Mount which drive?" | awk '{print $1}')"
+    chosen="$(echo "$usb_drives" | dmenu -p "Mount which drive?" | awk '{print $1}')"
     # try mount without mount point; doesn't work if drive not in fstab
     sudo -A mount "chosen" && notify-send "$chosen mounted." && exit 0
     # get mount point and mount

@@ -9,8 +9,8 @@ ShowLeftPanel=false
 
 [MainWindow]
 Height 1080=1062
-Height 768=732
-State=AAAA/wAAAAD9AAAAAAAABVYAAALAAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+Height 768=750
+State=AAAA/wAAAAD9AAAAAAAABVYAAALSAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
 Width 1366=1366
 Width 1920=1920
@@ -19,22 +19,24 @@ Width 1920=1920
 SyncThumbnailsViewport=false
 
 [Recent Files]
-File1[$e]=$HOME/Devices/Cruzer/FPrak/FP_group_lucas_daniel/HelloWorld/hello_world_b.pdf
-File2[$e]=$HOME/Devices/Cruzer/FPrak/66_Labview2.pdf
-File3[$e]=$HOME/Devices/Cruzer/FPrak/FP_group_lucas_daniel/Pythagorean/pythagorean_b.pdf
-File4[$e]=$HOME/Devices/Cruzer/FPrak/FP_group_lucas_daniel/Converter/conv_3_b.pdf
-File5[$e]=$HOME/Devices/Cruzer/FPrak/FP_group_lucas_daniel/Cluster/cluster_b.pdf
-File6[$e]=$HOME/Devices/Cruzer/FPrak/FP_group_lucas_daniel/DAQ/daq_1V_b.pdf
-File7[$e]=$HOME/Devices/Cruzer/FPrak/FP_group_lucas_daniel/DAQ/daq_sinus_b.pdf
-File8[$e]=$HOME/AAAUni/Teilchenphysik/Modern_Particle_Physics_-_Thomson.pdf
-Name1[$e]=hello_world_b.pdf
-Name2[$e]=66_Labview2.pdf
-Name3[$e]=pythagorean_b.pdf
-Name4[$e]=conv_3_b.pdf
-Name5[$e]=cluster_b.pdf
-Name6[$e]=daq_1V_b.pdf
-Name7[$e]=daq_sinus_b.pdf
-Name8[$e]=Modern_Particle_Physics_-_Thomson.pdf
+File1[$e]=$HOME/AAAUni/Statistik/chapter1.okular
+File2[$e]=$HOME/AAAUni/Old/5.Semester/CW/Statistik/chapter1a.pdf
+File3[$e]=$HOME/AAAUni/Old/5.Semester/CW/Statistik/chapter1b.pdf
+File4[$e]=$HOME/AAAUni/Old/5.Semester/CW/Statistik/chapter2d.pdf
+File5[$e]=$HOME/AAAUni/Statistik/chapter0.okular
+File6[$e]=$HOME/Devices/Cruzer/FPrak/66_Labview2.pdf
+File7[$e]=$HOME/AAAUni/Teilchenphysik/Lecture1.pdf
+File8[$e]=$HOME/pCloudDrive/Julia/Hydraulik/hydraulik_bibel_bollrich.pdf
+File9[$e]=$HOME/AAAUni/Teilchenphysik/ex1.pdf
+Name1[$e]=chapter1.okular
+Name2[$e]=chapter1a.pdf
+Name3[$e]=chapter1b.pdf
+Name4[$e]=chapter2d.pdf
+Name5[$e]=chapter0.okular
+Name6[$e]=66_Labview2.pdf
+Name7[$e]=Lecture1.pdf
+Name8[$e]=hydraulik_bibel_bollrich.pdf
+Name9[$e]=ex1.pdf
 
 [Reviews]
 AnnotationTools=<tool id="1" type="highlight"><engine type="TextSelector" color="#ffff00"><annotation opacity="0.8" type="Highlight" color="#ffff00"/></engine><shortcut>1</shortcut></tool>,<tool id="2" type="highlight" name="Highlighter2"><engine type="TextSelector" color="#00ff00"><annotation opacity="0.5" type="Highlight" color="#00ff00"/></engine><shortcut>2</shortcut></tool>,<tool id="3" type="note-inline"><engine type="PickPoint" color="#ffff00" block="true" hoverIcon="tool-note-inline"><annotation font="Hack\\,7\\,-1\\,5\\,50\\,0\\,0\\,0\\,0\\,0\\,Regular" type="FreeText" color="#ffff00" width="0.4"/></engine><shortcut>3</shortcut></tool>,<tool id="4" type="straight-line"><engine type="PolyLine" color="#ffff00" points="2"><annotation type="Line" color="#ffff00" width="2"/></engine><shortcut>4</shortcut></tool>,<tool id="5" type="ellipse"><engine type="PickPoint" color="#00ff00" block="true"><annotation opacity="0.85" type="GeomCircle" color="#00ff00" width="1.7"/></engine><shortcut>5</shortcut></tool>,<tool id="6" type="ink"><engine type="SmoothLine" color="#00ff00"><annotation type="Ink" color="#00ff00" width="2"/></engine><shortcut>6</shortcut></tool>,<tool id="7" type="note-linked"><engine type="PickPoint" color="#ffff00" hoverIcon="tool-note"><annotation type="Text" color="#ffff00" icon="Note"/></engine><shortcut>7</shortcut></tool>,<tool id="8" type="polygon"><engine type="PolyLine" color="#007eee" points="-1"><annotation type="Line" color="#007eee" width="1"/></engine><shortcut>8</shortcut></tool>,<tool id="9" type="stamp"><engine type="PickPoint" block="true" size="64" hoverIcon="okular"><annotation type="Stamp" icon="okular"/></engine><shortcut>9</shortcut></tool>,<tool id="10" type="underline"><engine type="TextSelector" color="#000000"><annotation type="Underline" color="#000000"/></engine></tool>

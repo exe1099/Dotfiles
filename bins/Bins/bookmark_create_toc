@@ -1,0 +1,56 @@
+#!/usr/bin/env python
+# author: exe1099
+
+import xml.etree.ElementTree as ET
+import argparse
+from pathlib import Path
+
+# parse command-line arguments
+parser = argparse.ArgumentParser(
+    description="Create table of content from bookmarks for matched files."
+)
+parser.add_argument(
+    "matching_substring",
+    help="only files with this substring in their path are used to create the toc",
+)
+parser.add_argument("filename", help="toc is saved in this file (should end with .md)")
+args = parser.parse_args()
+matching_substring = args.matching_substring
+filename = args.filename
+
+# parse bookmarks file
+tree = ET.parse("/home/exe/Backups/LINKED/Okular/bookmarks.xml")
+root = tree.getroot()
+
+if Path(filename).is_file():
+    raise Exception("File already exists.")
+file = open(filename, "w")
+
+for document in root:
+    title = str(document[0].text.split("/")[-1].split(".")[-2])
+    if matching_substring not in title:
+        continue
+    # create headlines in toc
+    title = title[3:].replace("_", " ")
+    file.write(f"{title.upper()}\n")
+    file.write("=" * len(title) + "\n")
+
+    bookmarks = document[1:]
+    bookmark_list = []
+
+    for bookmark in bookmarks:
+        bookmark_name = bookmark[0].text
+        try:
+            page_number = int(bookmark.attrib["href"].split("#")[-1])
+        except ValueError:
+            page_umber = "XX"
+        bookmark_list.append((page_number, bookmark_name))
+
+    sorted_bookmark_list = sorted(bookmark_list, key=lambda x: x[0])
+
+    for page_number, bookmark_name in sorted_bookmark_list:
+        file.write(f"{page_number:>2} - {bookmark_name}\n")
+
+    file.write("\n")
+
+file.close()
