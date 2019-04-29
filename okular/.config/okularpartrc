@@ -9,7 +9,6 @@ RecolorBackground=39,39,39
 RecolorForeground=182,182,182
 
 [Document]
-ChangeColors=true
 RenderMode=Recolor
 
 [Main View]
@@ -26,7 +25,6 @@ SyncThumbnailsViewport=false
 
 [PageView]
 BackgroundColor=71,71,71
-MouseMode=TextSelect
 UseCustomBackgroundColor=true
 
 [Recent Files]

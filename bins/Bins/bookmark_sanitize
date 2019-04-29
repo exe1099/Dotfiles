@@ -20,6 +20,6 @@ for document in root:
     i += 1
     # select file paths
     path = Path(document[0].text)
-    if not path.is_file:
+    if not path.is_file():
         print(f"File doesn't exist: {path}")
 print(f"Checked {i} files!")
