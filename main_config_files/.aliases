@@ -4,6 +4,7 @@
 #  \ \_\ \_\\ \_____\\ \_\\ \_\ \_\\/\_____\\ \_____\\/\_____\
 #   \/_/\/_/ \/_____/ \/_/ \/_/\/_/ \/_____/ \/_____/ \/_____/
 #
+# (sourced by ~/.config/fish/config.fish)
 
 
 # use exa instead of ls; exa is modern ls

@@ -1,5 +1,5 @@
-# source bash aliases
-[ -f ~/.bash_aliases ] && . ~/.bash_aliases
+# source aliases
+[ -f ~/.aliases ] && . ~/.aliases
 
 # remove greeting message
 set fish_greeting

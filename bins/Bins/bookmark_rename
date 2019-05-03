@@ -13,11 +13,11 @@ bookmark_file = "/home/exe/Backups/LINKED/Okular/bookmarks.xml"
 ### parsing command-line arguments ###
 parser = argparse.ArgumentParser(description="Rename file and substitue paths in okular's "
     "bookmark-file accordingly to preserve bookmarks. Navigate to directory and provide "
-    "old filename and new filename as arguments."
-
+    "old filename and new filename as arguments.")
 parser.add_argument("old", help="The current name of the file or directory.")
 parser.add_argument("new", help="blabla")
 inputs = parser.parse_args()
+
 current_dir = os.getenv("PWD")
 # check if old is absolute or relative
 if inputs.old[0] == "/":
@@ -47,23 +47,35 @@ if "../" in (str(old_path) + inputs.new):
 
 
 # check if old path even in bookmarks file
-# content = list()
-# with open(bookmark_file) as file:
-#     for line in file.readlines():
-#         content.append(line)
-# for line in content:
-#     if old_path in line:
-#         break
-# else:
-#     print(
-#         "Old path not contained in bookmarks file. "
-#         "Check if pdf contains bookmarks, if not, it's save to rename manual."
-#     )
-#     quit()
+content = list()
+with open(bookmark_file) as file:
+    for line in file.readlines():
+        content.append(line)
+for line in content:
+    if str(old_path) in line:
+        break
+else:
+    print(
+        "Old path not contained in bookmarks file. "
+    )
+    print("Want to rename anyway? y/n")
+    user_input = str(input())
+    if user_input == "y":
+        pass
+    elif user_input =="n":
+        quit()
+    else:
+        print("No proper input.")
+        quit()
 
 
 ### moving and replacing ###
-new_path = Path(shutil.move(inputs.old, inputs.new))
+try:
+    new_path = Path(shutil.move(inputs.old, inputs.new))
+except FileNotFoundError:
+    print("File not found!")
+    quit()
+
 if str(new_path)[0] == "/":
     pass
 else:
@@ -72,3 +84,9 @@ else:
 print(f"Old: {old_path}")
 print(f"New: {new_path}")
 
+with open(bookmark_file, "w") as file:
+    for line in content:
+        modified_line = line.replace(str(old_path), str(new_path))
+        file.write(modified_line)
+
+print("Done!")

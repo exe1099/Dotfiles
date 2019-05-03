@@ -1,4 +1,5 @@
 ! .Xresources file
+! (sourced by lightdm from /etc/lightdm/Xsession)
 
 !
 *.font: Hack Nerd Font Mono-10;

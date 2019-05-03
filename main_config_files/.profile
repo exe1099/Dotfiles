@@ -5,6 +5,7 @@
 # |_|   |_|  \___/|_| |_|_|\___|
 #
 # runs on login
+# (sourced by lightdm from /etc/lightdm/Xsession)
 
 
 # source .bashrc

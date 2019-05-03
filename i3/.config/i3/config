@@ -248,7 +248,7 @@ bindsym XF86MonBrightnessUp         exec --no-startup-id ~/.config/scripts/brigh
 bindsym XF86MonBrightnessDown       exec --no-startup-id ~/.config/scripts/brightness -1
 
 # }}}
-# => More Bindings-----------------------------------------{{{
+# => Bindings-------------------------------------------------{{{
 
 bindsym $mod+Return exec $TERMINAL
 
