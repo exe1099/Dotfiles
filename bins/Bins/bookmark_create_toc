@@ -31,7 +31,7 @@ for document in root:
     if matching_substring not in title:
         continue
     # create headlines in toc
-    title = title[3:].replace("_", " ")
+    title = title[:].replace("_", " ")
     file.write(f"{title.upper()}\n")
     file.write("=" * len(title) + "\n")
 

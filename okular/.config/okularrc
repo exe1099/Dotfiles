@@ -10,7 +10,7 @@ ShowLeftPanel=false
 [MainWindow]
 Height 1080=1062
 Height 768=750
-State=AAAA/wAAAAD9AAAAAAAABVYAAALQAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAAAABVYAAALSAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
 Width 1024=1024
 Width 1366=1366
@@ -20,26 +20,22 @@ Width 1920=1920
 SyncThumbnailsViewport=false
 
 [Recent Files]
-File1[$e]=$HOME/AAAUni/DLP/dnn_chapter1_to_3.okular
-File10[$e]=$HOME/Dropbox/Bachelor/SetupLaser/Data/run07_uncoated_per_2.pdf
-File2[$e]=$HOME/Documents/BA.pdf
-File3[$e]=$HOME/AAAUni/ML/Sheet01/Sheet-1.pdf
-File4[$e]=$HOME/AAAUni/Statistik/Sheet02/exercise02.pdf
-File5[$e]=$HOME/AAAUni/Statistik/chapter1.pdf
-File6[$e]=$HOME/Downloads/UniScraper/Statistik/chapter1.pdf
-File7[$e]=$HOME/AAAUni/Statistik/stat_num_meth_datenanalyse.okular
-File8[$e]=$HOME/AAAUni/Statistik/part2.okular
-File9[$e]=$HOME/AAAUni/Statistik/part1.okular
-Name1[$e]=dnn_chapter1_to_3.okular
-Name10[$e]=run07_uncoated_per_2.pdf
-Name2[$e]=BA.pdf
-Name3[$e]=Sheet-1.pdf
-Name4[$e]=exercise02.pdf
-Name5[$e]=chapter1.pdf
-Name6[$e]=chapter1.pdf
-Name7[$e]=stat_num_meth_datenanalyse.okular
-Name8[$e]=part2.okular
-Name9[$e]=part1.okular
+File1[$e]=$HOME/AAAUni/Statistik/Sheet04/exercise04.pdf
+File2[$e]=$HOME/AAAUni/Teilchenphysik/modern_particle_physics_thomson.pdf
+File3[$e]=$HOME/AAAUni/Statistik/Lecture/part3.okular
+File4[$e]=$HOME/AAAUni/Statistik/Lecture/chapter4.okular
+File5[$e]=$HOME/AAAUni/MAMI/Anleitung-V55-LongAkzeptMAMI_deu.okular
+File6[$e]=$HOME/AAAUni/Teilchenphysik/Sheet04/el_currents.pdf
+File7[$e]=$HOME/AAAUni/Teilchenphysik/modern_particle_physics_solutions.pdf
+File8[$e]=$HOME/AAAUni/Statistik/Lecture/chapter3.okular
+Name1[$e]=exercise04.pdf
+Name2[$e]=modern_particle_physics_thomson.pdf
+Name3[$e]=part3.okular
+Name4[$e]=chapter4.okular
+Name5[$e]=Anleitung-V55-LongAkzeptMAMI_deu.okular
+Name6[$e]=el_currents.pdf
+Name7[$e]=modern_particle_physics_solutions.pdf
+Name8[$e]=chapter3.okular
 
 [Reviews]
 AnnotationTools=<tool id="1" type="highlight"><engine type="TextSelector" color="#ffff00"><annotation opacity="0.8" type="Highlight" color="#ffff00"/></engine><shortcut>1</shortcut></tool>,<tool id="2" type="highlight" name="Highlighter2"><engine type="TextSelector" color="#00ff00"><annotation opacity="0.5" type="Highlight" color="#00ff00"/></engine><shortcut>2</shortcut></tool>,<tool id="3" type="note-inline"><engine type="PickPoint" color="#ffff00" block="true" hoverIcon="tool-note-inline"><annotation font="Hack\\,7\\,-1\\,5\\,50\\,0\\,0\\,0\\,0\\,0\\,Regular" type="FreeText" color="#ffff00" width="0.4"/></engine><shortcut>3</shortcut></tool>,<tool id="4" type="straight-line"><engine type="PolyLine" color="#ffff00" points="2"><annotation type="Line" color="#ffff00" width="2"/></engine><shortcut>4</shortcut></tool>,<tool id="5" type="ellipse"><engine type="PickPoint" color="#00ff00" block="true"><annotation opacity="0.85" type="GeomCircle" color="#00ff00" width="1.7"/></engine><shortcut>5</shortcut></tool>,<tool id="6" type="ink"><engine type="SmoothLine" color="#00ff00"><annotation type="Ink" color="#00ff00" width="2"/></engine><shortcut>6</shortcut></tool>,<tool id="7" type="note-linked"><engine type="PickPoint" color="#ffff00" hoverIcon="tool-note"><annotation type="Text" color="#ffff00" icon="Note"/></engine><shortcut>7</shortcut></tool>,<tool id="8" type="polygon"><engine type="PolyLine" color="#007eee" points="-1"><annotation type="Line" color="#007eee" width="1"/></engine><shortcut>8</shortcut></tool>,<tool id="9" type="stamp"><engine type="PickPoint" block="true" size="64" hoverIcon="okular"><annotation type="Stamp" icon="okular"/></engine><shortcut>9</shortcut></tool>,<tool id="10" type="underline"><engine type="TextSelector" color="#000000"><annotation type="Underline" color="#000000"/></engine></tool>

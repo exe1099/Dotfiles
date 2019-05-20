@@ -160,6 +160,8 @@ exec --no-startup-id $TERMINAL nvr ~/d'
 # => Assign Windows to Workspaces/Scratchpad --------------{{{
 
 assign [class="okular"] → $ws6
+assign [class="viewnior"] → $ws6
+assign [class="vlc"] → $ws9
 assign [class="libreoffice-startcenter|Soffice"] → $ws7
 assign [class="Thunderbird"] → $ws8
 assign [title="nvr"] → $ws4
