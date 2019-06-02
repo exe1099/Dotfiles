@@ -141,7 +141,7 @@ exec --no-startup-id compton --daemon
 
 # cloud services
 exec --no-startup-id dropbox
-exec --no-startup-id ~/Bins/pcloud
+# exec --no-startup-id ~/Bins/pcloud
 
 # unclutter makes the mouse invisible after a brief period
 # makes problem with mod+h/l for selecting different window

@@ -11,11 +11,14 @@ parser = argparse.ArgumentParser(
 )
 parser.add_argument(
     "matching_substring",
-    help="only files with this substring in their path are used to create the toc",
-)
+    help="only files with this substring in their path are used to create the toc")
+parser.add_argument(
+    "remove_substring",
+    help="remove this substring from filename when writing as headlines in toc")
 parser.add_argument("filename", help="toc is saved in this file (should end with .md)")
 args = parser.parse_args()
 matching_substring = args.matching_substring
+remove_substring = args.remove_substring
 filename = args.filename
 
 # parse bookmarks file
@@ -31,6 +34,7 @@ for document in root:
     if matching_substring not in title:
         continue
     # create headlines in toc
+    title = title[:].replace(remove_substring, "")
     title = title[:].replace("_", " ")
     file.write(f"{title.upper()}\n")
     file.write("=" * len(title) + "\n")
