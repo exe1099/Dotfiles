@@ -22,8 +22,9 @@ alias diff='icdiff'  # color diff
 
 # programming
 alias connect_four='conda activate main && python /home/exe/Cloud/Info/Python/ConnectFour/connect_four.py'
-alias jn='conda activate main; screen -d -m jupyter notebook; exit'
-alias jndlp='conda activate dlp; screen -d -m jupyter notebook; exit'
+alias jn='conda activate main; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
+alias jndlp='conda activate dlp; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
+# alias jnroot='conda activate ROOT; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
 alias main='conda activate main'
 alias uni_scrape='conda activate uni_scraper && cd ~/Info/Python/UniScraper && python uni_scraper.py'
 

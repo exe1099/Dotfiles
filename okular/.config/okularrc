@@ -24,18 +24,26 @@ Height 768=500
 Width 1366=600
 
 [Recent Files]
-File1[$e]=$HOME/AAAUni/Old/DeepLearning/AAALecture/dl_01_Linear_Regression.okular
-File2[$e]=$HOME/AAAUni/Old/5.Semester/EiS/AAALecture/EIS_SS16_03.pdf
-File3[$e]=$HOME/Documents/Drucken/bayes_theorem_p7.pdf
-File4[$e]=$HOME/Documents/Drucken/group_action_p6.pdf
-File5[$e]=$HOME/Documents/Drucken/group_vectorspace_etc.pdf
-File6[$e]=$HOME/AAAUni/Teilchenphysik/Sheet04/sheet04.pdf
-Name1[$e]=dl_01_Linear_Regression.okular
-Name2[$e]=EIS_SS16_03.pdf
-Name3[$e]=bayes_theorem_p7.pdf
-Name4[$e]=group_action_p6.pdf
-Name5[$e]=group_vectorspace_etc.pdf
-Name6[$e]=sheet04.pdf
+File1[$e]=$HOME/AAAUni/Statistik/AAALecture/Final/chapter6.okular
+File10[$e]=$HOME/AAAUni/Old/DeepLearning/AAALecture/dl_07_Cross_Correlation_and_Convolution.okular
+File2[$e]=$HOME/Downloads/UniScraper/Statistik/chapter5.pdf
+File3[$e]=$HOME/Downloads/UniScraper/Statistik/chapter4.pdf
+File4[$e]=$HOME/AAAUni/Teilchenphysik/Sheet05/variables_of_cms_ttree.okular
+File5[$e]=$HOME/Dropbox/Bachelor/SetupLaser/BuyLaser/Final/ThorLabs Order Form 2019-06-06 - WOM.pdf
+File6[$e]=$HOME/Dropbox/Bachelor/SetupLaser/BuyLaser/Final/ThorLabs Order Form 2019-06-06 - Project8.pdf
+File7[$e]=$HOME/Test/ThorLabs Order Form 2019-06-06 - WOM.pdf
+File8[$e]=$HOME/AAAUni/Statistik/AAALecture/Final/chapter7.okular
+File9[$e]=$HOME/AAAUni/Teilchenphysik/Sheet06/sheet06.pdf
+Name1[$e]=chapter6.okular
+Name10[$e]=dl_07_Cross_Correlation_and_Convolution.okular
+Name2[$e]=chapter5.pdf
+Name3[$e]=chapter4.pdf
+Name4[$e]=variables_of_cms_ttree.okular
+Name5[$e]=ThorLabs Order Form 2019-06-06 - WOM.pdf
+Name6[$e]=ThorLabs Order Form 2019-06-06 - Project8.pdf
+Name7[$e]=ThorLabs Order Form 2019-06-06 - WOM.pdf
+Name8[$e]=chapter7.okular
+Name9[$e]=sheet06.pdf
 
 [Reviews]
 AnnotationTools=<tool id="1" type="highlight"><engine type="TextSelector" color="#ffff00"><annotation opacity="0.8" type="Highlight" color="#ffff00"/></engine><shortcut>1</shortcut></tool>,<tool id="2" type="highlight" name="Highlighter2"><engine type="TextSelector" color="#00ff00"><annotation opacity="0.5" type="Highlight" color="#00ff00"/></engine><shortcut>2</shortcut></tool>,<tool id="3" type="note-inline"><engine type="PickPoint" color="#ffff00" block="true" hoverIcon="tool-note-inline"><annotation font="Hack\\,7\\,-1\\,5\\,50\\,0\\,0\\,0\\,0\\,0\\,Regular" type="FreeText" color="#ffff00" width="0.4"/></engine><shortcut>3</shortcut></tool>,<tool id="4" type="straight-line"><engine type="PolyLine" color="#ffff00" points="2"><annotation type="Line" color="#ffff00" width="2"/></engine><shortcut>4</shortcut></tool>,<tool id="5" type="ellipse"><engine type="PickPoint" color="#00ff00" block="true"><annotation opacity="0.85" type="GeomCircle" color="#00ff00" width="1.7"/></engine><shortcut>5</shortcut></tool>,<tool id="6" type="ink"><engine type="SmoothLine" color="#00ff00"><annotation type="Ink" color="#00ff00" width="2"/></engine><shortcut>6</shortcut></tool>,<tool id="7" type="note-linked"><engine type="PickPoint" color="#ffff00" hoverIcon="tool-note"><annotation type="Text" color="#ffff00" icon="Note"/></engine><shortcut>7</shortcut></tool>,<tool id="8" type="polygon"><engine type="PolyLine" color="#007eee" points="-1"><annotation type="Line" color="#007eee" width="1"/></engine><shortcut>8</shortcut></tool>,<tool id="9" type="stamp"><engine type="PickPoint" block="true" size="64" hoverIcon="okular"><annotation type="Stamp" icon="okular"/></engine><shortcut>9</shortcut></tool>,<tool id="10" type="underline"><engine type="TextSelector" color="#000000"><annotation type="Underline" color="#000000"/></engine></tool>
