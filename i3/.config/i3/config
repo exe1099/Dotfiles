@@ -63,10 +63,10 @@ set $ws2 "2:"
 set $ws3 "3:"
 set $ws4 "4:"
 set $ws5 "5:^"
-set $ws6 "6:F1"
-set $ws7 "7:F2"
-set $ws8 "8:"
-set $ws9 "9"
+set $ws6 "6:"
+set $ws7 "7:"
+set $ws8 "8:"
+set $ws9 "9:"
 set $ws10 "10"
 
 # switch to urgent workspace
@@ -100,7 +100,7 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+F2 workspace $ws7
 bindsym $mod+Shift+F2 move container to workspace $ws7
-bindsym XF86Launch1 workspace $ws8
+bindsym XF86Launch1 workspace $ws9
 bindsym $mod+8 workspace $ws8
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+F3 workspace $ws8
@@ -152,7 +152,7 @@ exec --no-startup-id pcloud
 
 exec --no-startup-id i3-msg 'workspace $ws1; exec firefox'
 # exec --no-startup-id i3-msg 'workspace $ws2; exec $TERMINAL ranger; workspace $ws4'
-exec --no-startup-id i3-msg 'workspace $ws8; exec thunderbird'
+exec --no-startup-id i3-msg 'workspace $ws9; exec thunderbird'
 exec --no-startup-id $TERMINAL -c="scratchpad" ~/miniconda3/envs/main/bin/python
 exec --no-startup-id $TERMINAL nvr ~/d'
 
@@ -161,9 +161,9 @@ exec --no-startup-id $TERMINAL nvr ~/d'
 
 assign [class="okular"] → $ws6
 assign [class="viewnior"] → $ws6
-assign [class="vlc"] → $ws9
+assign [class="vlc"] → $ws8
 assign [class="libreoffice-startcenter|Soffice"] → $ws7
-assign [class="Thunderbird"] → $ws8
+assign [class="Thunderbird"] → $ws9
 assign [title="nvr"] → $ws4
 
 # for presentations with pdfpc

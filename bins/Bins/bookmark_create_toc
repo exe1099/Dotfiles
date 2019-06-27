@@ -26,7 +26,17 @@ tree = ET.parse("/home/exe/Backups/LINKED/Okular/bookmarks.xml")
 root = tree.getroot()
 
 if Path(filename).is_file():
-    raise Exception("File already exists.")
+    print("File already exists.")
+    print("Overwrite? y/n")
+    user_input = str(input())
+    if user_input == "y":
+        pass
+    elif user_input == "n":
+        quit()
+    else:
+        print("No proper input.")
+        quit()
+
 file = open(filename, "w")
 
 for document in root:
@@ -58,3 +68,4 @@ for document in root:
     file.write("\n")
 
 file.close()
+print("Done!")
