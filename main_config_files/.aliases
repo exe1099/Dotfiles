@@ -18,13 +18,17 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-alias diff='icdiff'  # color diff
+# alias diff='icdiff'  # color diff
 
 # programming
 alias connect_four='conda activate main && python /home/exe/Cloud/Info/Python/ConnectFour/connect_four.py'
 alias jn='conda activate main; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
+alias jnroot='conda activate ROOT; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
+alias jnc='export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
 alias jndlp='conda activate dlp; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
 # alias jnroot='conda activate ROOT; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
+alias jtd='jt -t monokai -f hack -fs 10 -tfs 10 -nfs 115 -cursc g -T -tf fira -cellw 70%'
+alias jtl='jt -f hack -fs 10 -tfs 10 -nfs 115 -cursc g -T -tf fira -cellw 70%'
 alias main='conda activate main'
 alias uni_scrape='conda activate uni_scraper && cd ~/Info/Python/UniScraper && python uni_scraper.py'
 
@@ -37,6 +41,7 @@ alias list_devices='sudo fdisk -l | grep -A 2 Device'
 alias openf='xdg-open '
 alias r='python ~/Gits/ranger/ranger.py ~'
 alias ranger='python ~/Gits/ranger/ranger.py ~'
+alias root='root -l'
 alias sr='sudo python ~/Gits/ranger/ranger.py ~'
 alias v='nvr ~/d'
 alias vim='nvim'

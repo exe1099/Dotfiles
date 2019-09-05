@@ -13,7 +13,7 @@
     "notify/notify": false
   },
   "hinterland": {
-    "hint_delay": "500"
+    "hint_delay": "1000"
   },
   "code_prettify": {
     "hotkeys": {
@@ -63,7 +63,7 @@
     }
   },
   "Notebook": {
-    "Header": false,
+    "Header": true,
     "Toolbar": true
   }
 }

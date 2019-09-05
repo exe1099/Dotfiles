@@ -26,8 +26,8 @@ set conceallevel=2             " show _italic_ as italic (e.g. in markdown)
 set splitright
 set splitbelow
 
-map yx :wq<cr>
-map yy :w<cr>
+" map yx :wq<cr>
+" map yy :w<cr>
 " map xx :q<cr>
 
 " highlight line if in insert mode
@@ -109,13 +109,13 @@ set tm=500
 set foldcolumn=1
 
 " toggle current fold
-nnoremap <leader>f za
+" nnoremap <leader>f za
 
 " rewrite set foldmethod command
 " nnoremap <leader>f :set foldmethod=
 
 " create fold
-vnoremap <C-f> zf
+" vnoremap <C-f> zf
 
 " custom fold text
 function! MyFoldText() " {{{
@@ -456,6 +456,9 @@ endfunction
 :nmap <F8> :call Setup_ExecNDisplay()<CR>
 :nmap <F9> :call ExecNDisplay()<CR>
 
+" compile C++ files
+:nmap <F10> :w <bar> make %<<CR>
+
 " }}}
 " Spell Checking -------------------------------------------------{{{
 
@@ -480,16 +483,6 @@ nmap <c-k> <c-u>
 " insert empty line below/above and stay in normal mode
 nmap # o<esc>
 nmap ' O<esc>
-
-" deactive arrow keys
-" nnoremap <up> <nop>
-" nnoremap <down> <nop>
-" nnoremap <left> <nop>
-" nnoremap <right> <nop>
-" inoremap <up> <nop>
-" inoremap <down> <nop>
-" inoremap <left> <nop>
-" inoremap <right> <nop>
 
 " move along screen lines, not file lines
 nnoremap j gj
@@ -598,6 +591,10 @@ autocmd bufread *.markdown :highlight Error guibg=None
 " H/M/L             move to high/middle/low of screen
 " Ctrl+D/U / Ctrl+j/k   move half page down/up
 " :call GetSyntax() print currently applied syntax highlighting to cursor position
+"
+" insert empty line below/above and stay in normal mode
+" nmap # o<esc>
+" nmap ' O<esc>
 "
 " vim: foldmethod=manual:colorcolumn=89
 "

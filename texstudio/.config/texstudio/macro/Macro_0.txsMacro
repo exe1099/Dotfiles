@@ -1,17 +1,18 @@
 {
-"name" : "figure" ,
-"tag" : [
- "\begin{figure}[H]",
- "	\centering",
- "	\includegraphics[width=1.0\textwidth]{%<file%>}",
- "	\tiny{\cite{%<cite%>}}",
- "\end{figure}"
- ],
-"description" : [
- ""
- ],
-"abbrev" : "" ,
-"trigger" : "" ,
-"menu" : "" ,
-"shortcut" : ""
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "figure",
+    "shortcut": "",
+    "tag": [
+        "\\begin{figure}[H]",
+        "\t\\centering",
+        "\t\\includegraphics[width=1.0\\textwidth]{%<file%>}",
+        "\t\\tiny{\\cite{%<cite%>}}",
+        "\\end{figure}"
+    ],
+    "trigger": ""
 }

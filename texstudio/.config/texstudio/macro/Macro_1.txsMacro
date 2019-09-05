@@ -1,15 +1,16 @@
 {
-"name" : "list" ,
-"tag" : [
- "\begin{itemize}",
- "	\item %<item%>",
- "\end{itemize}"
- ],
-"description" : [
- ""
- ],
-"abbrev" : "" ,
-"trigger" : "" ,
-"menu" : "" ,
-"shortcut" : ""
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "list",
+    "shortcut": "",
+    "tag": [
+        "\\begin{itemize}",
+        "\t\\item %<item%>",
+        "\\end{itemize}"
+    ],
+    "trigger": ""
 }
