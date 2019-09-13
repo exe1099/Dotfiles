@@ -173,7 +173,7 @@ Plug 'nelstrom/vim-markdown-folding' " markdown folding, not working
 " Plug 'stevearc/vim-arduino'
 " Plug 'wincent/command-t'  " fuzzy-finder
 
-Plug 'takac/vim-hardtime'  " disable repetetive use of h/j/k/l
+" Plug 'takac/vim-hardtime'  " disable repetetive use of h/j/k/l
 call plug#end()
 
 

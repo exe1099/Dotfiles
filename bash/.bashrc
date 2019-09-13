@@ -32,8 +32,8 @@ shopt -s checkwinsize
 . ~/miniconda3/etc/profile.d/conda.sh
 
 # fuzzyfind in bash
-. /usr/share/fzf/key-bindings.bash
-. /usr/share/fzf/completion.bash
+#. /usr/share/fzf/key-bindings.bash
+#. /usr/share/fzf/completion.bash
 
 # st doesn't seem to set this properly
 # TERM=st-256color

@@ -6,14 +6,14 @@
 	email = exe1099@exe1099.com
 
 [color]
-    ui = auto
+	ui = true
 
 [alias]
     a = add
 	st = status
-    dc = diff --cached
-    ds = diff --stat=160,120
-    dcw = diff --word-diff --cached
+    ds = diff --staged  # is same as --cached
+    #ds = diff --stat=160,120
+    dcw = diff --word-diff --staged
     di = diff
     aa = add --all
     us = reset
@@ -33,6 +33,8 @@
 
     # fancy logging
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    lgf = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --name-only
+
 
 [merge]
     tool = vimdiff

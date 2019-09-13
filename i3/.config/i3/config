@@ -173,6 +173,7 @@ for_window [class="Pdfpc" window_role="presenter"] move to output down
 for_window [class="scratchpad"] move scratchpad
 
 for_window [class="Zenity"] resize set 1000 600
+# for_window [class="Fit Panel"]
 
 # }}}
 # => Window Managment Shorcuts ----------------------------{{{
@@ -210,10 +211,10 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+h move left 60px
+bindsym $mod+Shift+j move down 60px
+bindsym $mod+Shift+k move up   60px
+bindsym $mod+Shift+l move right 60px
 
 # focus the child container
 #bindsym $mod+d focus child
