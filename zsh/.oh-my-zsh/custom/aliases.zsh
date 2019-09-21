@@ -4,7 +4,6 @@
 #  \ \_\ \_\\ \_____\\ \_\\ \_\ \_\\/\_____\\ \_____\\/\_____\
 #   \/_/\/_/ \/_____/ \/_/ \/_/\/_/ \/_____/ \/_____/ \/_____/
 #
-# (sourced by ~/.config/fish/config.fish)
 
 
 # use exa instead of ls; exa is modern ls
@@ -36,7 +35,7 @@ alias uni_scrape='conda activate uni_scraper && cd ~/Info/Python/UniScraper && p
 alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
 alias ccat='highlight --out-format=ansi' # color cat - print file with syntax highlighting
 alias download='aria2c'
-# alias sh='sudo htop'
+alias sh='sudo htop'
 alias list_devices='sudo fdisk -l | grep -A 2 Device'
 alias openf='xdg-open '
 alias r='python ~/Gits/ranger/ranger.py ~'

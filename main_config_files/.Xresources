@@ -4,9 +4,9 @@
 !
 *.font: Hack Nerd Font Mono-10;
 !!*termname: st-256color
-*shell: /bin/sh
+*shell: /bin/zsh
 !! transparency (0-255):
-*.alpha: 180
+*.alpha: 0.7
 
 
 
