@@ -11,6 +11,6 @@ output = subprocess.run(
 enabled = int(output.split("\n")[1].replace("\t", " ")[-1])
 
 if enabled:
-    subprocess.run("xinput --set-prop 10 149 0", shell=True)
+    subprocess.run("xinput --set-prop 10 165 0", shell=True)
 else:
-    subprocess.run("xinput --set-prop 10 149 1", shell=True)
+    subprocess.run("xinput --set-prop 10 165 1", shell=True)

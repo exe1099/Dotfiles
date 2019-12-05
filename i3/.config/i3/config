@@ -250,7 +250,7 @@ bindsym $mod+m                      exec --no-startup-id amixer -c 1 set Mic tog
 bindsym XF86Display                 exec --no-startup-id ~/.config/scripts/display_select
 
 # enable/disable touchpad (only this works, doesn't work without the python here)
-bindsym XF86TouchpadToggle          exec --no-startup-id python ~/.config/scripts/touchpad_toggle.py
+bindsym XF86TouchpadToggle          exec --no-startup-id  ~/.config/scripts/touchpad_toggle
 
 # brightness control
 bindsym XF86MonBrightnessUp         exec --no-startup-id ~/.config/scripts/brightness 1
