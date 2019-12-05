@@ -35,7 +35,7 @@ markup=pango
 # See the script for details.
 [volume]
 # label=VOL
-label=
+label= 
 instance=Master
 #instance=PCM
 interval=once
@@ -95,7 +95,7 @@ interval=5
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [cpu_usage]
-label=
+label= 
 interval=5
 # min_width=CPU: 100.00%
 #separator=false
@@ -105,7 +105,7 @@ interval=5
 
 [temperature]
 instance=Core
-label=
+label= 
 interval=5
 
 # Temperature
@@ -122,7 +122,7 @@ interval=5
 # interval=60
 
 # Calendar
-# 
+#
 [calendar]
 # label=
 interval=1

@@ -1,4 +1,5 @@
 #!/bin/bash
+# dependencies: pacman -S acpi
 
 BATTERY=0
 BATTERY_INFO=$(acpi -b | grep "Battery ${BATTERY}")
@@ -13,20 +14,20 @@ if [[ "${BATTERY_STATE}" = "Charging" ]]; then
   echo ""  # color of output
 elif [[ "${BATTERY_STATE}" = "Discharging" ]]; then
   if [[ "$BATTERY_POWER" -le 35 ]]; then
-    echo " ${BATTERY_POWER}%"
-    echo " ${BATTERY_POWER}%"
+    echo "  ${BATTERY_POWER}%"
+    echo "  ${BATTERY_POWER}%"
     echo "#f44242"
   elif [[ "$BATTERY_POWER" -le 60 ]]; then
-    echo " ${BATTERY_POWER}%"
-    echo " ${BATTERY_POWER}%"
+    echo "  ${BATTERY_POWER}%"
+    echo "  ${BATTERY_POWER}%"
     echo ""
   elif [[ "$BATTERY_POWER" -le 85 ]]; then
-    echo " ${BATTERY_POWER}%"
-    echo " ${BATTERY_POWER}%"
+    echo "  ${BATTERY_POWER}%"
+    echo "  ${BATTERY_POWER}%"
     echo ""
   else
-    echo " ${BATTERY_POWER}%"
-    echo " ${BATTERY_POWER}%"
+    echo "  ${BATTERY_POWER}%"
+    echo "  ${BATTERY_POWER}%"
     echo ""
   fi
 else

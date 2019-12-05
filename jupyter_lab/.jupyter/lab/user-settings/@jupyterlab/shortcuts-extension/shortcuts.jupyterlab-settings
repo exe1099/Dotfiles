@@ -1,0 +1,70 @@
+{
+    "shortcuts": [
+        {
+            // disable old setting
+            "command": "application:activate-next-tab",
+            "keys": ["Ctrl Shift ]"],
+            "selector": "body",
+            "disabled": true  // disable old setting
+        },
+        {
+            // disable old setting
+            "command": "application:activate-previous-tab",
+            "keys": ["Ctrl Shift ["],
+            "selector": "body",
+            "disabled": true
+        },
+        {
+            // enable new shortcut key
+            "command": "application:activate-next-tab",
+            "keys": ["Ctrl 2"],
+            "selector": "body"
+        },
+        {
+            // enable new shortcut key
+            "command": "application:activate-previous-tab",
+            "keys": ["Ctrl 1"],
+            "selector": "body"
+        },
+        {
+            // enable new shortcut key
+            "command": "notebook:move-cell-down",
+            "keys": ["Alt J"],
+            "selector": ".jp-Notebook:focus",
+        },
+        {
+            // enable new shortcut key
+            "command": "notebook:move-cell-up",
+            "keys": ["Alt K"],
+            "selector": ".jp-Notebook:focus",
+        },
+        {
+            // disable old setting
+            "command": "notebook:merge-cells",
+            "keys": ["Shift M"],
+            "selector": ".jp-Notebook:focus",
+            "disabled": true  
+        },
+        {
+            // enable new shortcut key
+            "command": "notebook:merge-cells",
+            "keys": ["M"],
+            "selector": ".jp-Notebook:focus"
+        },
+        {
+            "command": "Collapsible_Headings:Toggle_Collapse",
+            "keys": ["H"],
+            "selector": ".jp-Notebook.jp-mod-commandMode"
+        },
+        {
+            "command": "docmanager:rename",
+            "keys": ["F2"],
+            "selector": ".jp-Notebook:focus"
+        },
+        {
+            "command": "kernelmenu:restart",
+            "keys": ["0 0"],
+            "selector": ".jp-Notebook:focus"
+        },
+    ]
+}

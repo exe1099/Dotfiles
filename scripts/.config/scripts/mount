@@ -22,10 +22,11 @@ get_mount() {
 mount_usb() {
     chosen="$(echo "$usb_drives" | dmenu -p "Mount which drive?" | awk '{print $1}')"
     # try mount without mount point; doesn't work if drive not in fstab
-    sudo -A mount "chosen" && notify-send "$chosen mounted." && exit 0
+    # sudo -A mount "$chosen" && notify-send "$chosen mounted." && exit 0
     # get mount point and mount
-    get_mount "$HOME/Devices -maxdepth 1 -type d"
-    sudo -A mount "$chosen" "$mp" && notify-send "$chosen mounted to $mp."
+    # get_mount "$HOME/Devices -maxdepth 1 -type d"
+    mp=$(printf "Cruzer\\nSDCard" | dmenu -i -p "Mount to ~/Devices/?")
+    pmount "$chosen" "$mp" && notify-send "$chosen mounted to ~/Devices/$mp"
 }
 
 

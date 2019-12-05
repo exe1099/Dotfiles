@@ -4,6 +4,7 @@
 import xml.etree.ElementTree as ET
 import argparse
 from pathlib import Path
+import os
 
 # parse command-line arguments
 parser = argparse.ArgumentParser(
@@ -37,25 +38,53 @@ if Path(filename).is_file():
         print("No proper input.")
         quit()
 
+def extract_title_headline(path):
+    # extract filename without .pdf
+    filename = path.split("/")[-1].split(".")[-2]
+    headline = filename.replace(remove_substring, "")
+    headline = headline.replace("_", " ")
+    return [filename, headline]
+
+# open output file in write-modus
 file = open(filename, "w")
 
+# get content of current dir to only grep bookmarks from those files
+current_dir_files = os.listdir()
+
+# sort bookmark file
+root[:] = sorted(root, key=lambda child: extract_title_headline(child[0].text)[1])
+
+# loop through bookmark file
 for document in root:
-    title = str(document[0].text.split("/")[-1].split(".")[-2])
-    if matching_substring not in title:
+
+    filename, headline = extract_title_headline(document[0].text)
+
+    # check if bookmarks from current file wanted
+    if matching_substring not in filename:
         continue
-    # create headlines in toc
-    title = title[:].replace(remove_substring, "")
-    title = title[:].replace("_", " ")
-    file.write(f"{title.upper()}\n")
-    file.write("=" * len(title) + "\n")
+    skip = True
+    for f in current_dir_files:
+        if filename in f:
+            skip = False
+            break
+    if skip:
+        continue
+
+    # create headlines in toc with == underneath
+    file.write(f"{headline}\n")
+    file.write("=" * len(headline) + "\n")
 
     bookmarks = document[1:]
     bookmark_list = []
 
+    # iterate through bookmarks and append to bookmark_list, which is later
+    # sorted and written to output-file
     for bookmark in bookmarks:
         bookmark_name = bookmark[0].text
         try:
-            page_number = int(bookmark.attrib["href"].split("#")[-1])
+            bookmark_position = bookmark.attrib["href"].split("#")[-1]
+            # need to add 1 because okular starts counting pages at 0
+            page_number = int(bookmark_position.split(";")[0]) + 1
         except ValueError:
             page_umber = "XX"
         bookmark_list.append((page_number, bookmark_name))
@@ -63,7 +92,7 @@ for document in root:
     sorted_bookmark_list = sorted(bookmark_list, key=lambda x: x[0])
 
     for page_number, bookmark_name in sorted_bookmark_list:
-        file.write(f"{page_number:>2} - {bookmark_name}\n")
+        file.write(f"{page_number:>2}  {bookmark_name}\n")
 
     file.write("\n")
 

@@ -11,7 +11,7 @@
 
 current_val=$(cat /sys/class/backlight/intel_backlight/brightness)
 max_val=$(cat /sys/class/backlight/intel_backlight/max_brightness)
-step=$(( $max_val / 16))
+step=$(( $max_val / 20))
 
 [ $1 -eq -1 ] && step=$((-step))
 

@@ -9,7 +9,7 @@
     "collapsible_headings/main": true,
     "hide_header/main": true,
     "hinterland/hinterland": true,
-    "code_font_size/code_font_size": true,
+    "code_font_size/code_font_size": false,
     "notify/notify": false
   },
   "hinterland": {

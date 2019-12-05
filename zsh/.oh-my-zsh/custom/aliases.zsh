@@ -7,10 +7,11 @@
 
 
 # use exa instead of ls; exa is modern ls
-alias l='exa --group-directories-first'
-alias la='exa --group-directories-first -a'
-alias ll='exa --group-directories-first -l --git'
-alias lla='exa --group-directories-first -l -a --git'
+alias ls='exa --group-directories-first'
+alias l='exa --group-directories-first -l --git'
+alias la='exa --group-directories-first -la --git'
+# alias ll='exa --group-directories-first -l --git'
+# alias lla='exa --group-directories-first -l -a --git'
 
 # use colors
 alias grep='grep --color=auto'
@@ -22,6 +23,7 @@ alias egrep='egrep --color=auto'
 # programming
 alias connect_four='conda activate main && python /home/exe/Cloud/Info/Python/ConnectFour/connect_four.py'
 alias jn='conda activate main; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
+alias jnlab='conda activate lab; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter lab; exit'
 alias jnroot='conda activate ROOT; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
 alias jnc='export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
 alias jndlp='conda activate dlp; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
@@ -35,13 +37,13 @@ alias uni_scrape='conda activate uni_scraper && cd ~/Info/Python/UniScraper && p
 alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
 alias ccat='highlight --out-format=ansi' # color cat - print file with syntax highlighting
 alias download='aria2c'
-alias sh='sudo htop'
+# alias sh='sudo htop'
 alias list_devices='sudo fdisk -l | grep -A 2 Device'
 alias openf='xdg-open '
-alias r='python ~/Gits/ranger/ranger.py ~'
-alias ranger='python ~/Gits/ranger/ranger.py ~'
+# alias r='python ~/Gits/ranger/ranger.py ~'
+# alias ranger='python ~/Gits/ranger/ranger.py ~'
 alias root='root -l'
-alias sr='sudo python ~/Gits/ranger/ranger.py ~'
+alias sr='sudo ranger'
 alias v='nvr ~/d'
 alias vim='nvim'
 alias wlan='wicd-curses'

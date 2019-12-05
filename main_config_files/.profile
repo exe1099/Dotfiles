@@ -5,11 +5,7 @@
 # |_|   |_|  \___/|_| |_|_|\___|
 #
 # runs on login
-# (sourced by lightdm from /etc/lightdm/Xsession)
 
-
-# source .bashrc
-[ -f ~/.bashrc ] && source ~/.bashrc
 
 # set PATH so it includes user's private bin if it exists
 [ -d ~/Bins ] && PATH="$PATH:$HOME/Bins"
@@ -18,7 +14,7 @@
 [ -d ~/.local/bin ] && PATH="$PATH:$HOME/.local/bin"
 
 # add texlive installation to PATH
-PATH="/usr/local/texlive/2018/bin/x86_64-linux:$PATH"
+# PATH="/usr/local/texlive/2018/bin/x86_64-linux:$PATH"
 
 # to tell app to use qt5ct theme
 export QT_QPA_PLATFORMTHEME="qt5ct"
@@ -28,3 +24,4 @@ export EDITOR="nvim"
 export TERMINAL="st"
 export BROWSER=/usr/bin/firefox
 export SUDO_ASKPASS="$HOME/.config/scripts/askpass"
+# export ZDOTDIR="$HOME/.config/zsh"  # so config files don't clutter home dir

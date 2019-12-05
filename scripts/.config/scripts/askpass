@@ -1,2 +1,5 @@
 #!/bin/bash
-zenity --password --title=Authentication --timeout=10
+
+# shellcheck disable=2046
+hidden=black
+dmenu -p "Enter Password:" -nf "$hidden" -nb "$hidden" <&-
