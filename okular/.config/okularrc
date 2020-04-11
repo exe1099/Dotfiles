@@ -7,7 +7,7 @@ FullScreen=false
 [MainWindow]
 Height 1080=1063
 Height 768=751
-State=AAAA/wAAAAD9AAAAAAAABVYAAALcAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAAAABVYAAALbAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
 Width 1366=1366
 Width 1920=1920
@@ -16,26 +16,26 @@ Width 1920=1920
 SyncThumbnailsViewport=false
 
 [Recent Files]
-File1[$e]=$HOME/AAAUni/Theo6/AAALecture/theo6_10.pdf
-File10[$e]=$HOME/AAAUni/Theo6/AAALecture/theo6_16_Quantization_EM_Field.pdf
-File2[$e]=$HOME/AAAUni/Theo6/AAALecture/theo6_09.pdf
-File3[$e]=$HOME/AAAUni/Theo6/AAALecture/theo6_12.pdf
-File4[$e]=$HOME/AAAUni/Theo6/AAALecture/theo6_14.pdf
-File5[$e]=$HOME/AAAUni/Theo6/AAALecture/theo6_13_S_Matrix.pdf
-File6[$e]=$HOME/AAAUni/Theo6/AAALecture/theo6_11_Scattering_Theory.pdf
-File7[$e]=$HOME/AAAUni/Ex5a/atomic_physics_[foot].pdf
-File8[$e]=$HOME/Documents/Studies/Ex5b/clebsch_gordan.pdf
-File9[$e]=$HOME/AAAUni/Theo6/AAALecture/theo6_15_LSZ_Reduction_Formula.pdf
-Name1[$e]=theo6_10.pdf
-Name10[$e]=theo6_16_Quantization_EM_Field.pdf
-Name2[$e]=theo6_09.pdf
-Name3[$e]=theo6_12.pdf
-Name4[$e]=theo6_14.pdf
-Name5[$e]=theo6_13_S_Matrix.pdf
-Name6[$e]=theo6_11_Scattering_Theory.pdf
-Name7[$e]=atomic_physics_[foot].pdf
-Name8[$e]=clebsch_gordan.pdf
-Name9[$e]=theo6_15_LSZ_Reduction_Formula.pdf
+File1[$e]=$HOME/AAAUni/Theo6/AAALecture/theo6_26_Crossing_Symmetry.pdf
+File10[$e]=$HOME/Downloads/end_of_pulse.pdf
+File2[$e]=$HOME/AAAUni/Theo6/AAALecture/theo6_18.pdf
+File3[$e]=$HOME/AAAUni/Theo6/AAALecture/theo6_30_Charge_Renormalization_Vertex_Function.pdf
+File4[$e]=$HOME/AAAUni/Theo6/AAALecture/theo6_17.pdf
+File5[$e]=$HOME/LatexDocs/PrecisionMeasurementMuonTau/Final/PrecisionMeasurementMuonTau.pdf
+File6[$e]=$HOME/AAAUni/PSI/AAAStuffAlmostFinal/BR_NotesMarten.pdf
+File7[$e]=$HOME/Downloads/PhysRevD.98.030001.pdf
+File8[$e]=$HOME/Downloads/PSI_2019.pdf
+File9[$e]=$HOME/Downloads/output-figure0(3).pdf
+Name1[$e]=theo6_26_Crossing_Symmetry.pdf
+Name10[$e]=end_of_pulse.pdf
+Name2[$e]=theo6_18.pdf
+Name3[$e]=theo6_30_Charge_Renormalization_Vertex_Function.pdf
+Name4[$e]=theo6_17.pdf
+Name5[$e]=PrecisionMeasurementMuonTau.pdf
+Name6[$e]=BR_NotesMarten.pdf
+Name7[$e]=PhysRevD.98.030001.pdf
+Name8[$e]=PSI_2019.pdf
+Name9[$e]=output-figure0(3).pdf
 
 [Reviews]
 AnnotationTools=<tool id="1" type="highlight"><engine type="TextSelector" color="#ffff00"><annotation opacity="0.8" type="Highlight" color="#ffff00"/></engine><shortcut>1</shortcut></tool>,<tool id="2" type="highlight" name="Highlighter2"><engine type="TextSelector" color="#00ff00"><annotation opacity="0.5" type="Highlight" color="#00ff00"/></engine><shortcut>2</shortcut></tool>,<tool id="3" type="note-inline"><engine type="PickPoint" color="#ffff00" block="true" hoverIcon="tool-note-inline"><annotation font="Hack\\,7\\,-1\\,5\\,50\\,0\\,0\\,0\\,0\\,0\\,Regular" type="FreeText" color="#ffff00" width="0.4"/></engine><shortcut>3</shortcut></tool>,<tool id="4" type="straight-line"><engine type="PolyLine" color="#ffff00" points="2"><annotation type="Line" color="#ffff00" width="2"/></engine><shortcut>4</shortcut></tool>,<tool id="5" type="ellipse"><engine type="PickPoint" color="#00ff00" block="true"><annotation opacity="0.85" type="GeomCircle" color="#00ff00" width="1.7"/></engine><shortcut>5</shortcut></tool>,<tool id="6" type="ink"><engine type="SmoothLine" color="#00ff00"><annotation type="Ink" color="#00ff00" width="2"/></engine><shortcut>6</shortcut></tool>,<tool id="7" type="note-linked"><engine type="PickPoint" color="#ffff00" hoverIcon="tool-note"><annotation type="Text" color="#ffff00" icon="Note"/></engine><shortcut>7</shortcut></tool>,<tool id="8" type="polygon"><engine type="PolyLine" color="#007eee" points="-1"><annotation type="Line" color="#007eee" width="1"/></engine><shortcut>8</shortcut></tool>,<tool id="9" type="stamp"><engine type="PickPoint" block="true" size="64" hoverIcon="okular"><annotation type="Stamp" icon="okular"/></engine><shortcut>9</shortcut></tool>,<tool id="10" type="underline"><engine type="TextSelector" color="#000000"><annotation type="Underline" color="#000000"/></engine></tool>

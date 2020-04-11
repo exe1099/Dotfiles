@@ -18,8 +18,6 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-# alias diff='icdiff'  # color diff
-
 # programming
 alias connect_four='conda activate main && python /home/exe/Cloud/Info/Python/ConnectFour/connect_four.py'
 alias jn='conda activate main; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
@@ -34,6 +32,7 @@ alias main='conda activate main'
 alias uni_scrape='conda activate uni_scraper && cd ~/Info/Python/UniScraper && python uni_scraper.py'
 
 # utility
+alias sizes="du -had 1"
 alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
 alias ccat='highlight --out-format=ansi' # color cat - print file with syntax highlighting
 alias download='aria2c'
@@ -58,6 +57,7 @@ alias group_drive_umount='sudo fusermount -u /mnt/GroupDrive'
 alias gs='git st'
 alias startP='pdfpc -g ~/pCloud/LatexDocs/BA_slides/BA_slides.pdf'
 alias starwars='telnet towel.blinkenlights.nl' # watch Star Wars A New Hope in ASCII Art
+alias pomeron='sshpass -p "vminusa19" ssh -XYv psi2019@pomeron.physi.uni-heidelberg.de'
 
 # unused stuff
 # alias pycharm='screen -d -m ./PyCharm/bin/pycharm.sh; exit'

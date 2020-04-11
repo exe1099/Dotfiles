@@ -110,6 +110,7 @@ set foldcolumn=1
 
 " toggle current fold
 " nnoremap <leader>f za
+nnoremap <A-h> za
 
 " rewrite set foldmethod command
 " nnoremap <leader>f :set foldmethod=
@@ -417,11 +418,15 @@ vnoremap <c-C> "*y :let @+=@*<CR>
 nnoremap <c-V> "+p
 inoremap <c-V> <Esc>"+pa
 
+" execute macros with leader
+nnoremap <leader>q @q
+nnoremap <leader>w @w
+
 " }}}
 " Working with Code ----------------------------------------------{{{
 
 " strip all trailing whitespaces in the current file
-autocmd BufWritePre * %s/\s\+$//e
+" autocmd BufWritePre * %s/\s\+$//e
 
 " compile markdown file
 function! CompilteMarkdown()
@@ -599,3 +604,5 @@ autocmd bufread *.markdown :highlight Error guibg=None
 " vim: foldmethod=manual:colorcolumn=89
 "
 " }}}
+" vim:filetype=i3
+" vim:foldmethod=marker

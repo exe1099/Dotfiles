@@ -65,9 +65,9 @@ set $ws4 "4: "
 set $ws5 "5:^ "
 set $ws6 "6: "
 set $ws7 "7:"
-set $ws8 "8: "
+set $ws8 "8: "
 set $ws9 "9: "
-set $ws10 "10"
+set $ws0 "0: "
 
 # switch to urgent workspace
 bindsym $mod+y [urgent=latest] focus
@@ -109,8 +109,10 @@ bindsym $mod+9 workspace $ws9
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+F4 workspace $ws9
 bindsym $mod+Shift+F4 move container to workspace $ws9
-bindsym $mod+0 workspace $ws10
-bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+0 workspace $ws0
+bindsym $mod+Shift+0 move container to workspace $ws0
+bindsym $mod+F5 workspace $ws0
+bindsym $mod+Shift+F5 move container to workspace $ws0
 
 # }}}
 # => Autostart External Scripts----------------------------{{{
@@ -129,11 +131,12 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id ~/.config/scripts/wallpaper_change Current
 
 # touchpad options (inverse scrolling, palm rejection etc.)
+# old, do this in /etc/X11/xorg.conf.d/30-touchpad.conf
 # xinput list
 # xinput list-props <device>
 # exec --no-startup-id synclient VertScrollDelta=-112 VertEdgeScroll=0 HorizTwoFingerScroll=1 HorizScrollDelta=-112 PalmDetect=1
-exec --no-startup-id xinput --set-prop 'SynPS/2 Synaptics TouchPad' 311 1
-exec --no-startup-id xinput --set-prop 'SynPS/2 Synaptics TouchPad' 303 1
+# exec --no-startup-id xinput --set-prop 'SynPS/2 Synaptics TouchPad' 311 1
+# exec --no-startup-id xinput --set-prop 'SynPS/2 Synaptics TouchPad' 303 1
 
 # network manager
 exec --no-startup-id nm-applet
@@ -164,7 +167,7 @@ exec --no-startup-id $TERMINAL nvr ~/d.md'
 
 assign [class="okular"] → $ws6
 assign [class="viewnior"] → $ws6
-assign [class="vlc"] → $ws8
+assign [class="vlc"] → $ws0
 assign [class="libreoffice-startcenter|Soffice"] → $ws7
 assign [class="Thunderbird"] → $ws9
 assign [title="nvr"] → $ws4
