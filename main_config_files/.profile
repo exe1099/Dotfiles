@@ -13,6 +13,9 @@
 # lots of bins get installed to this directory
 [ -d ~/.local/bin ] && PATH="$PATH:$HOME/.local/bin"
 
+# lattice diamond bins
+[ -d /usr/local/diamond/3.11_x64/bin/lin64 ] && PATH="$PATH:/usr/local/diamond/3.11_x64/bin/lin64"
+
 # add texlive installation to PATH
 # PATH="/usr/local/texlive/2018/bin/x86_64-linux:$PATH"
 
