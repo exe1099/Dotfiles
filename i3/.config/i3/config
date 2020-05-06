@@ -194,13 +194,13 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+# bindsym $mod+a focus parent
 
 # resizing current window
-bindsym $mod+Shift+z        resize shrink width 10 px or 10 ppt
+bindsym $mod+Shift+o        resize shrink width 10 px or 10 ppt
 bindsym $mod+Shift+u        resize grow height 10 px or 10 ppt
 bindsym $mod+Shift+i        resize shrink height 10 px or 10 ppt
-bindsym $mod+Shift+o        resize grow width 10 px or 10 ppt
+bindsym $mod+Shift+z        resize grow width 10 px or 10 ppt
 
 # change container layout (stacked, tabbed, toggle split)
 # bindsym $mod+s layout stacking
@@ -243,11 +243,11 @@ floating_maximum_size 1000 x 600
 
 # change volume; send signal 10 to i3blocks, which triggers volume block (executes volume script)
 # exec --no-startup-id volumeicon
-bindsym $mod+Shift+a                      exec $TERMINAL alsamixer
-bindsym XF86AudioRaiseVolume        exec --no-startup-id amixer set Master 5%+ && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioLowerVolume        exec --no-startup-id amixer set Master 5%- && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioMute               exec --no-startup-id amixer set Master toggle && pkill -RTMIN+10 i3blocks
-bindsym $mod+m                      exec --no-startup-id amixer -c 1 set Mic toggle && notify-send -u low "Mic toggled"
+bindsym $mod+a                      exec pavucontrol
+bindsym XF86AudioRaiseVolume        exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume        exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute               exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -RTMIN+10 i3blocks
+bindsym $mod+m                      exec --no-startup-id pactl set-source-mute alsa_input.usb-Samson_Technologies_Samson_GoMic-00.mono-fallback toggle && pkill -RTMIN+11 i3blocks
 
 # display manager
 bindsym XF86Display                 exec --no-startup-id ~/.config/scripts/display_select

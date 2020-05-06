@@ -1,0 +1,23 @@
+#!/bin/bash
+# author: exe1099
+# volume notification script
+# dependencies: dunstify (for notifications), amixer (to get volume)
+# notification time
+time=2000
+
+function get_volume {
+    # pipe to xargs removes surrounding whitespaces
+    pacmd list-sources | grep -A 6 "Samson" | grep % | cut -d % -f 1 | cut -d / -f 2 | xargs
+}
+
+function is_mute {
+    # pipe to /dev/null because we don't want any output
+    pacmd list-sources | grep -A 10 "Samson" | grep "muted" | grep "yes" > /dev/null
+}
+
+# adjust notification if muted
+if is_mute ; then
+    echo "Mute"
+else
+    get_volume
+fi

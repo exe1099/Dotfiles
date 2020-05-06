@@ -28,6 +28,17 @@ command=~/.config/i3blocks/bin/$BLOCK_NAME
 separator_block_width=20
 markup=pango
 
+# Microfon indicator
+#
+[microphone]
+# label=VOL
+label= 
+instance=Master
+#instance=PCM
+interval=once
+signal=11
+interval=5
+
 # Volume indicator
 #
 # The first parameter sets the step (and units to display)
