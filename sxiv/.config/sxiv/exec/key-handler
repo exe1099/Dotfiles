@@ -22,6 +22,8 @@ rotate() {
 	done
 }
 
+# first press control+x, then control+whatever
+
 case "$1" in
 "C-x")      xclip -in -filter | tr '\n' ' ' | xclip -in -selection clipboard ;;
 # "C-c")      while read file; do xclip -selection clipboard -target image/png "$file"; done ;;
