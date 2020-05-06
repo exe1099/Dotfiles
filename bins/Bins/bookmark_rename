@@ -13,9 +13,10 @@ bookmark_file = "/home/exe/Backups/LINKED/Okular/bookmarks.xml"
 ### parsing command-line arguments ###
 parser = argparse.ArgumentParser(description="Rename file and substitue paths in okular's "
     "bookmark-file accordingly to preserve bookmarks. Navigate to directory and provide "
-    "old filename and new filename as arguments.")
-parser.add_argument("old", help="The current name of the file or directory.")
-parser.add_argument("new", help="blabla")
+    "old filename and new filename as arguments. "
+    "Use similar to sh mv command, works with dirs, not sure if * implemented yet.")
+parser.add_argument("old", help="Current name of the file or directory.")
+parser.add_argument("new", help="New name or directory.")
 inputs = parser.parse_args()
 
 current_dir = os.getenv("PWD")
@@ -32,7 +33,7 @@ else:
 # (should be in home directory)
 if "Cloud" in str(old_path):
     print(
-        "You're inside 'Coud/', which shouldn't be the case. "
+        "You're inside 'Cloud/', which shouldn't be the case. "
         "Please access from softlinks in home directory."
     )
     quit()
