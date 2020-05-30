@@ -64,7 +64,7 @@ set $ws3 "3: "
 set $ws4 "4: "
 set $ws5 "5:^ "
 set $ws6 "6: "
-set $ws7 "7:"
+set $ws7 "7: "
 set $ws8 "8: "
 set $ws9 "9: "
 set $ws0 "0: "
@@ -244,8 +244,8 @@ floating_maximum_size 1000 x 600
 # change volume; send signal 10 to i3blocks, which triggers volume block (executes volume script)
 # exec --no-startup-id volumeicon
 bindsym $mod+a                      exec pavucontrol
-bindsym XF86AudioRaiseVolume        exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioLowerVolume        exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioRaiseVolume        exec --no-startup-id pactl set-sink-volume 0 +10% && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume        exec --no-startup-id pactl set-sink-volume 0 -10% && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMute               exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -RTMIN+10 i3blocks
 bindsym $mod+m                      exec --no-startup-id pactl set-source-mute alsa_input.usb-Samson_Technologies_Samson_GoMic-00.mono-fallback toggle && pkill -RTMIN+11 i3blocks
 

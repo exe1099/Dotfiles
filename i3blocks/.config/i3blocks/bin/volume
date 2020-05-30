@@ -22,7 +22,6 @@ function send_notification {
     # dependecies:
     # sudo apt install libxss-dev libnotify-dev
     # https://www.reddit.com/r/linuxquestions/comments/7n1b18/where_will_the_file_libnotifypc_be_found/
-    # dunstify -i audio-volume-muted-blocking -t $time -r 2593 -u low "$volume"
     dunstify -i audio-volume-muted-blocking -t $time -r 1593 -u low "$volume"
     echo $volume
 }
