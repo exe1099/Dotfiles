@@ -1,0 +1,4 @@
+# need to run this every time unplug/plug programmer
+# https://wiki.archlinux.org/index.php/Lattice_Diamond#Programming_with_FTDI_cables_doesn%27t_work
+sudo --askpass rmmod ftdi_sio
+diamond
