@@ -1,9 +1,0 @@
-# gets sourced by Light-DM from /etc/lightdm/Xsession
-# when running an X user session
-# (doesn't need to be sourced when no GUI)
-
-# xset r rate 300 50 &    # speed xrate up - not sure if this needed?
-# unclutter &		        # remove mouse when idle
-# xcompmgr &	            # xcompmgr for transparency
-# dunst &			        # dunst for notifications
-# udiskie -t &            # mounting with tray icon
