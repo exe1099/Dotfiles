@@ -1,0 +1,35 @@
+#!/bin/bash
+# author: exe1099
+# volume notification script
+# dependencies: dunstify (for notifications), amixer (to get volume)
+# notification time
+time=2000
+
+function get_volume {
+    # pipe to xargs to remove surrounding whitespaces
+    pacmd list-sinks | grep "volume: front-left" | cut -d % -f 1 | cut -d / -f 2 | xargs
+}
+
+function is_mute {
+    # pipe to /dev/null because we don't want any output
+    pacmd list-sinks | grep muted | grep yes > /dev/null
+}
+
+function send_notification {
+    volume=$(get_volume)
+    # need to use dunstify for r-option (to overwrite existing notification)
+    # compile dunstify from dunst repository with make dunstify and copy in bin path
+    # dependecies:
+    # sudo apt install libxss-dev libnotify-dev
+    # https://www.reddit.com/r/linuxquestions/comments/7n1b18/where_will_the_file_libnotifypc_be_found/
+    dunstify -i audio-volume-muted-blocking -t $time -r 1593 -u low "$volume"
+    echo $volume
+}
+
+# adjust notification if muted
+if is_mute ; then
+    dunstify -i audio-volume-muted -t $time -r 1593 -u low "Mute"
+    echo "Mute"
+else
+send_notification
+fi

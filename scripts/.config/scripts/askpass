@@ -1,5 +1,6 @@
 #!/bin/bash
 
 # shellcheck disable=2046
+notify-send -t 1000 "Input Password"
 hidden=black
 dmenu -p "Enter Password:" -nf "$hidden" -nb "$hidden" <&-

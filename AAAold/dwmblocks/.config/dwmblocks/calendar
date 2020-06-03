@@ -1,0 +1,20 @@
+#! /bin/sh
+# dependencies: yad
+
+width=200
+height=190
+datefmt="+%a %d.%m.%Y %H:%M:%S"
+
+
+case "$BLOCK_BUTTON" in
+  1|2|3)
+
+	# the position of the upper left corner of the popup
+	/* posX=$(($BLOCK_X - $width / 2)) */
+	/* posY=$(($BLOCK_Y - $height)) */
+    posX=1130
+    posY=17
+
+	yad --calendar --width=$width --height=$height --undecorated --fixed --close-on-unfocus --no-buttons --posx=$posX --posy=$posY > /dev/null
+esac
+date "$datefmt"

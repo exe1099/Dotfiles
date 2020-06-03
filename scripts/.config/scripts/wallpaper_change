@@ -5,5 +5,6 @@
 
 wp_path=~/Devices/Cruzer/Pictures/Wallpapers/$1
 image=$(ls $wp_path | grep -E '(jpg|png)$' | sort -R | tail -1)
+cp $wp_path/$image ~/Pictures/Background/current.jpg
 
-feh --bg-scale $wp_path/$image
+feh --bg-scale ~/Pictures/Background/current.jpg

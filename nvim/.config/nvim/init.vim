@@ -160,14 +160,14 @@ Plug 'vim-airline/vim-airline'  " fancy status bar
 Plug 'vim-airline/vim-airline-themes'  " themes for fancy status bar
 Plug 'scrooloose/nerdcommenter'  " comment/uncomment plugin
 Plug 'exe1099/minimalist_2'  " color-scheme
-Plug 'https://github.com/lambdalisue/suda.vim'  " write file with sudo
-Plug 'vim-scripts/restore_view.vim'  " remembers cursor position and view (folds etc.)
+Plug 'lambdalisue/suda.vim'  " write file with sudo
 Plug 'PotatoesMaster/i3-vim-syntax'  " syntax for i3 file
 Plug 'tpope/vim-surround'  " add surrounding motions
-" Plug 'plasticboy/vim-markdown' " markdown stuff
+Plug 'vim-scripts/restore_view.vim'  " remembers cursor position and view (folds etc.)
+Plug 'plasticboy/vim-markdown' " markdown stuff, use it mostly for markdown folding
+" Plug 'nelstrom/vim-markdown-folding' " markdown folding, not working
+" Plug 'scrooloose/nerdtree'  " file explorer
 " Plug 'junegunn/fzf'  " fuzzy finder
-Plug 'scrooloose/nerdtree'  " file explorer
-Plug 'nelstrom/vim-markdown-folding' " markdown folding, not working
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 " Plug 'https://github.com/mbbill/undotree/'
 " Plug 'python-mode/python-mode', { 'branch': 'develop' }  " Python Stuff for editor
@@ -182,7 +182,7 @@ call plug#end()
 
 " vim-markdown-folding
 " keep my custom fold text
-let g:markdown_fold_override_foldtext = 0
+" let g:markdown_fold_override_foldtext = 0
 
 " Sneak
 " let g:sneak#label = 1
@@ -193,11 +193,11 @@ command! W w suda://%
 
 
 " NERDTree
-set viewoptions=cursor,folds,slash,unix
-nnoremap <C-O> :NERDTreeToggle<Cr>
-let NERDTreeQuitOnOpen = 1  " automatically close when opening a file
-let NERDTreeMinimalUI = 1  " astethics
-let NERDTreeDirArrows = 1  " astethics
+" set viewoptions=cursor,folds,slash,unix
+" nnoremap <C-O> :NERDTreeToggle<Cr>
+" let NERDTreeQuitOnOpen = 1  " automatically close when opening a file
+" let NERDTreeMinimalUI = 1  " astethics
+" let NERDTreeDirArrows = 1  " astethics
 " let g:skipview_files = ['*\.vim']
 
 " let g:fzf_nvim_statusline = 0 " disable statusline overwriting
@@ -510,14 +510,14 @@ autocmd bufwritepost ~/.Xresources !xrdb %
 " reload .Xmodmap after editing
 autocmd bufwritepost ~/.Xmodmap !xmodmap %
 
-" source .bashrc after editing
-autocmd bufwritepost ~/.bashrc !source %
-
 " recompile and istall simple terminal after changing config
-autocmd bufwritepost ~/Gits/st/config.h !sudo -A make -C ~/Gits/st/ install
+autocmd bufwritepost ~/Gits/st_luke/config.h !sudo -A make -C ~/Gits/st_luke/ install
+autocmd bufwritepost ~/Gits/dwm/config.h !sudo -A make -C ~/Gits/dwm/ install
+autocmd bufwritepost ~/Gits/dwm_luke/config.h !sudo -A make -C ~/Gits/dwm_luke/ install
+autocmd bufwritepost ~/Gits/dwmblocks_luke/config.h !sudo -A make -C ~/Gits/dwmblocks_luke/ install && { killall -q dwmblocks;setsid dwmblocks & }
 
 " deactive error highlighting in markdown-files (avoids --> marked as error)
-autocmd bufread *.markdown :highlight Error guibg=None
+" autocmd bufread *.markdown :highlight Error guibg=None
 
 " }}}
 " Unused Stuff ---------------------------------------------------{{{
@@ -601,8 +601,5 @@ autocmd bufread *.markdown :highlight Error guibg=None
 " nmap # o<esc>
 " nmap ' O<esc>
 "
-" vim: foldmethod=manual:colorcolumn=89
-"
 " }}}
-" vim:filetype=i3
 " vim:foldmethod=marker

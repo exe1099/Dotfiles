@@ -31,7 +31,7 @@ bindsym $mod+Shift+Esc exec i3-msg exit
 smart_borders on
 
 smart_gaps on
-for_window [class="^.*"] border pixel 5
+for_window [class="^.*"] border pixel 3
 gaps inner 0
 gaps outer 0
 
@@ -58,16 +58,17 @@ for_window [class="Yad"] floating enable
 # => Workspaces related -----------------------------------{{{
 
 # worspace variables
+set $ws0 "0:^ "
 set $ws1 "1: "
 set $ws2 "2: "
 set $ws3 "3: "
 set $ws4 "4: "
-set $ws5 "5:^ "
-set $ws6 "6: "
-set $ws7 "7: "
+set $ws5 "5: "
+set $ws6 "6: "
+set $ws7 "7: "
 set $ws8 "8: "
-set $ws9 "9: "
-set $ws0 "0: "
+set $ws9 "9: "
+set $ws10 "10: "
 
 # switch to urgent workspace
 bindsym $mod+y [urgent=latest] focus
@@ -80,39 +81,50 @@ bindsym $mod+Shift+Next		move container to workspace next
 bindsym $mod+Tab		workspace back_and_forth
 
 # switch/move window to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+asciicircum workspace $ws5
-bindsym $mod+Shift+asciicircum move container to workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+F1 workspace $ws6
-bindsym $mod+Shift+F1 move container to workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+F2 workspace $ws7
-bindsym $mod+Shift+F2 move container to workspace $ws7
-bindsym XF86Launch1 workspace $ws9
-bindsym $mod+8 workspace $ws8
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+F3 workspace $ws8
-bindsym $mod+Shift+F3 move container to workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+F4 workspace $ws9
-bindsym $mod+Shift+F4 move container to workspace $ws9
 bindsym $mod+0 workspace $ws0
 bindsym $mod+Shift+0 move container to workspace $ws0
-bindsym $mod+F5 workspace $ws0
-bindsym $mod+Shift+F5 move container to workspace $ws0
+bindsym $mod+asciicircum workspace $ws0
+bindsym $mod+Shift+asciicircum move container to workspace $ws0
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+Shift+1 move container to workspace $ws1
+
+bindsym $mod+2 workspace $ws2
+bindsym $mod+Shift+2 move container to workspace $ws2
+
+bindsym $mod+3 workspace $ws3
+bindsym $mod+Shift+3 move container to workspace $ws3
+
+bindsym $mod+4 workspace $ws4
+bindsym $mod+Shift+4 move container to workspace $ws4
+
+bindsym $mod+5 workspace $ws5
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+F1 workspace $ws5
+bindsym $mod+Shift+F1 move container to workspace $ws5
+
+bindsym $mod+6 workspace $ws6
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+F2 workspace $ws6
+bindsym $mod+Shift+F2 move container to workspace $ws6
+
+bindsym $mod+7 workspace $ws7
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+F3 workspace $ws7
+bindsym $mod+Shift+F3 move container to workspace $ws7
+
+bindsym $mod+8 workspace $ws8
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+F4 workspace $ws8
+bindsym $mod+Shift+F4 move container to workspace $ws8
+
+bindsym $mod+9 workspace $ws9
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+F5 workspace $ws9
+bindsym $mod+Shift+F5 move container to workspace $ws9
+
+bindsym XF86Launch1 workspace $ws10
+bindsym Shift+XF86Launch1 move container to workspace $ws10
 
 # }}}
 # => Autostart External Scripts----------------------------{{{
@@ -140,36 +152,40 @@ exec --no-startup-id ~/.config/scripts/wallpaper_change Current
 
 # network manager
 exec --no-startup-id nm-applet
-# exec --no-startup-id wicd-curses
 
 # compositor for transparency
-exec --no-startup-id compton --daemon
+exec --no-startup-id xcompmgr
 
 # cloud services
-exec --no-startup-id dropbox
 exec --no-startup-id pcloud
+# exec --no-startup-id dropbox
 
 # unclutter makes the mouse invisible after a brief period
 # makes problem with mod+h/l for selecting different window
 exec --no-startup-id unclutter
+
+# dunst
+exec --no-startup-id dunst
+
+# mounting with tray icon
+exec --no-startup-id udiskie -t
 
 # }}}
 # => Autostart Programs in Workspaces/Scratchpad ----------{{{
 
 exec --no-startup-id i3-msg 'workspace $ws1; exec firefox'
 # exec --no-startup-id i3-msg 'workspace $ws2; exec $TERMINAL ranger; workspace $ws4'
-exec --no-startup-id i3-msg 'workspace $ws9; exec thunderbird'
+exec --no-startup-id i3-msg 'workspace $ws10; exec thunderbird'
 exec --no-startup-id $TERMINAL -c="scratchpad" ~/miniconda3/envs/main/bin/python
 exec --no-startup-id $TERMINAL nvr ~/d.md'
 
 # }}}
 # => Assign Windows to Workspaces/Scratchpad --------------{{{
 
-assign [class="okular"] → $ws6
-assign [class="viewnior"] → $ws6
-assign [class="vlc"] → $ws0
-assign [class="libreoffice-startcenter|Soffice"] → $ws7
-assign [class="Thunderbird"] → $ws9
+assign [class="okular"] → $ws5
+assign [class="vlc"] → $ws9
+assign [class="libreoffice-startcenter|Soffice"] → $ws6
+assign [class="Thunderbird"] → $ws10
 assign [title="nvr"] → $ws4
 
 # for presentations with pdfpc
@@ -179,7 +195,6 @@ for_window [class="Pdfpc" window_role="presenter"] move to output down
 for_window [class="scratchpad"] move scratchpad
 
 for_window [class="Zenity"] resize set 1000 600
-# for_window [class="Fit Panel"]
 
 # }}}
 # => Window Managment Shorcuts ----------------------------{{{
@@ -197,10 +212,10 @@ bindsym $mod+space focus mode_toggle
 # bindsym $mod+a focus parent
 
 # resizing current window
-bindsym $mod+Shift+o        resize shrink width 10 px or 10 ppt
-bindsym $mod+Shift+u        resize grow height 10 px or 10 ppt
-bindsym $mod+Shift+i        resize shrink height 10 px or 10 ppt
-bindsym $mod+Shift+z        resize grow width 10 px or 10 ppt
+bindsym $mod+o        resize shrink width 8 px or 8 ppt
+bindsym $mod+u        resize grow height 8 px or 8 ppt
+bindsym $mod+i        resize shrink height 8 px or 8 ppt
+bindsym $mod+z        resize grow width 8 px or 8 ppt
 
 # change container layout (stacked, tabbed, toggle split)
 # bindsym $mod+s layout stacking
@@ -232,56 +247,11 @@ bindsym $mod+Shift+l move right 60px
 # bindsym $mod+v split v
 
 # }}}
-# => Window Sizes -----------------------------------------{{{
+# => Window Sizes + Floating Mode--------------------------{{{
 
 # for_window [name="Open File"] resize set 640 480
 floating_minimum_size 75 x 50
 floating_maximum_size 1000 x 600
-
-# }}}
-# => Multimedia and Function Keys--------------------------{{{
-
-# change volume; send signal 10 to i3blocks, which triggers volume block (executes volume script)
-# exec --no-startup-id volumeicon
-bindsym $mod+a                      exec pavucontrol
-bindsym XF86AudioRaiseVolume        exec --no-startup-id pactl set-sink-volume 0 +10% && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioLowerVolume        exec --no-startup-id pactl set-sink-volume 0 -10% && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioMute               exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -RTMIN+10 i3blocks
-bindsym $mod+m                      exec --no-startup-id pactl set-source-mute alsa_input.usb-Samson_Technologies_Samson_GoMic-00.mono-fallback toggle && pkill -RTMIN+11 i3blocks
-
-# display manager
-bindsym XF86Display                 exec --no-startup-id ~/.config/scripts/display_select
-
-# enable/disable touchpad (only this works, doesn't work without the python here)
-bindsym XF86TouchpadToggle          exec --no-startup-id  ~/.config/scripts/touchpad_toggle
-
-# brightness control
-bindsym XF86MonBrightnessUp         exec --no-startup-id ~/.config/scripts/brightness 1
-bindsym XF86MonBrightnessDown       exec --no-startup-id ~/.config/scripts/brightness -1
-
-# }}}
-# => Bindings-------------------------------------------------{{{
-
-bindsym $mod+Return exec $TERMINAL
-
-# start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
-
-bindsym $mod+q              kill
-bindsym $mod+Shift+q        kill
-bindsym $mod+t              split toggle
-bindsym $mod+f              fullscreen toggle
-bindsym $mod+s              scratchpad show
-bindsym $mod+Shift+s        move scratchpad
-bindsym $mod+r              exec $TERMINAL ranger
-# bindsym $mod+h              exec $TERMINAL sudo htop
-bindsym $mod+p              exec $TERMINAL python3
-# can't use ~/d here
-bindsym $mod+v              exec $TERMINAL nvr ~/d.md
-bindsym $mod+Shift+w        exec --no-startup-id ~/.config/scripts/wallpaper_change Current
-# bindsym $mod+m              exec --no-startup-id ~/.config/scripts/mount
-# bindsym $mod+Shift+m        exec --no-startup-id ~/.config/scripts/umount
-
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -312,5 +282,48 @@ for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 
 # }}}
-# vim:filetype=i3
-# vim:foldmethod=marker
+# => Multimedia and Function Keys--------------------------{{{
+
+# change volume; send signal 10 to i3blocks, which triggers volume block (executes volume script)
+# exec --no-startup-id volumeicon
+bindsym $mod+a                      exec pavucontrol
+bindsym XF86AudioRaiseVolume        exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume        exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute               exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -RTMIN+10 i3blocks
+bindsym $mod+m                      exec --no-startup-id pactl set-source-mute alsa_input.usb-Samson_Technologies_Samson_GoMic-00.mono-fallback toggle && pkill -RTMIN+11 i3blocks
+
+# display manager
+bindsym XF86Display                 exec --no-startup-id ~/.config/scripts/display_select
+
+# enable/disable touchpad (only this works, doesn't work without the python here)
+bindsym XF86TouchpadToggle          exec --no-startup-id  ~/.config/scripts/touchpad_toggle
+
+# brightness control
+bindsym XF86MonBrightnessUp         exec --no-startup-id ~/.config/scripts/brightness 1
+bindsym XF86MonBrightnessDown       exec --no-startup-id ~/.config/scripts/brightness -1
+
+# }}}
+# => Bindings----------------------------------------------{{{
+
+bindsym $mod+Return exec $TERMINAL
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec dmenu_run
+
+bindsym $mod+q              kill
+bindsym $mod+Shift+q        kill
+bindsym $mod+t              split toggle
+bindsym $mod+f              fullscreen toggle
+bindsym $mod+s              scratchpad show
+bindsym $mod+Shift+s        move scratchpad
+bindsym $mod+r              exec $TERMINAL ranger
+# bindsym $mod+h              exec $TERMINAL sudo htop
+bindsym $mod+p              exec $TERMINAL python3
+# can't use ~/d here
+bindsym $mod+v              exec $TERMINAL nvr ~/d.md
+bindsym $mod+Shift+w        exec --no-startup-id ~/.config/scripts/wallpaper_change Current
+# bindsym $mod+m              exec --no-startup-id ~/.config/scripts/mount
+# bindsym $mod+Shift+m        exec --no-startup-id ~/.config/scripts/umount
+
+# }}}
+# vim:filetype=i3:foldmethod=marker

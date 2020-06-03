@@ -19,12 +19,13 @@
 # add texlive installation to PATH
 # PATH="/usr/local/texlive/2018/bin/x86_64-linux:$PATH"
 
-# to tell app to use qt5ct theme
-export QT_QPA_PLATFORMTHEME="qt5ct"
+# to tell qt5-styleplugins to try to imitate gtk2 theme
+# set with lxappearance
+export QT_QPA_PLATFORMTHEME="gtk2"
 
 # variables
 export EDITOR="nvim"
 export TERMINAL="st"
 export BROWSER=/usr/bin/firefox
 export SUDO_ASKPASS="$HOME/.config/scripts/askpass"
-# export ZDOTDIR="$HOME/.config/zsh"  # so config files don't clutter home dir
+export ZDOTDIR="$HOME/.config/zsh"  # so config files don't clutter home dir

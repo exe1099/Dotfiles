@@ -5,22 +5,6 @@ width=200
 height=200
 datefmt="+%a %d.%m.%Y %H:%M:%S"
 
-OPTIND=1
-while getopts ":f:W:H:" opt; do
-    case $opt in
-        f) datefmt="$OPTARG" ;;
-        W) width="$OPTARG" ;;
-        H) height="$OPTARG" ;;
-        \?)
-            echo "Invalid option: -$OPTARG" >&2
-            exit 1
-            ;;
-        :)
-            echo "Option -$OPTARG requires an argument." >&2
-            exit 1
-            ;;
-    esac
-done
 
 case "$BLOCK_BUTTON" in
   1|2|3)
@@ -28,8 +12,8 @@ case "$BLOCK_BUTTON" in
 	# the position of the upper left corner of the popup
 	/* posX=$(($BLOCK_X - $width / 2)) */
 	/* posY=$(($BLOCK_Y - $height)) */
-    posX=1135
-    posY=20
+    posX=1160
+    posY=23
 
 	i3-msg -q "exec yad --calendar \
         --width=$width --height=$height \
