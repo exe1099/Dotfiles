@@ -518,6 +518,11 @@ autocmd bufwritepost ~/Gits/dwmblocks_luke/config.h !sudo -A make -C ~/Gits/dwmb
 
 " deactive error highlighting in markdown-files (avoids --> marked as error)
 " autocmd bufread *.markdown :highlight Error guibg=None
+"
+"
+" compile notes.md to notes.pdf
+autocmd bufwritepost notes.md !pandoc -s notes.md -o notes.pdf
+
 
 " }}}
 " Unused Stuff ---------------------------------------------------{{{

@@ -2,13 +2,13 @@
   "comment_uncomment_indent": true,
   "load_extensions": {
     "comment-uncomment/main": true,
-    "scratchpad/main": false,
     "move_selected_cells/main": true,
     "snippets/main": true,
     "code_prettify/code_prettify": true,
     "collapsible_headings/main": true,
     "hide_header/main": true,
     "hinterland/hinterland": true,
+    "scratchpad/main": false,
     "code_font_size/code_font_size": false,
     "notify/notify": false
   },
@@ -39,14 +39,14 @@
         "m": "jupyter-notebook:merge-selected-cells",
         "h": "collapsible_headings:collapse_heading",
         "f2": "jupyter-notebook:rename-notebook",
-        "ctrl-m": "jupyter-notebook:change-cell-to-markdown",
+        "shift-m": "jupyter-notebook:change-cell-to-markdown",
         "l": "collapsible_headings:uncollapse_heading",
         "u": "jupyter-notebook:undo-cell-deletion",
         "ctrl-z": "jupyter-notebook:undo-cell-deletion",
         "y": "jupyter-notebook:copy-cell",
         "p": "jupyter-notebook:paste-cell-below",
-        "ctrl-shift-c": "jupyter-notebook:change-cell-to-code",
-        "ctrl-r": "jupyter-notebook:change-cell-to-raw",
+        "shift-c": "jupyter-notebook:change-cell-to-code",
+        "shift-r": "jupyter-notebook:change-cell-to-raw",
         "o": "jupyter-notebook:toggle-cell-output-collapsed"
       },
       "unbind": [

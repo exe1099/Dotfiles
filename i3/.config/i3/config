@@ -125,6 +125,7 @@ bindsym $mod+Shift+F5 move container to workspace $ws9
 
 bindsym XF86Launch1 workspace $ws10
 bindsym Shift+XF86Launch1 move container to workspace $ws10
+bindsym $mod+Shift+XF86Launch1 move container to workspace $ws10
 
 # }}}
 # => Autostart External Scripts----------------------------{{{
@@ -142,13 +143,11 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # wallpaper script
 exec --no-startup-id ~/.config/scripts/wallpaper_change Current
 
-# touchpad options (inverse scrolling, palm rejection etc.)
-# old, do this in /etc/X11/xorg.conf.d/30-touchpad.conf
+# input options (touchpad, trackpoint, ...)
+# can also  do this in /etc/X11/xorg.conf.d/30-touchpad.conf
 # xinput list
 # xinput list-props <device>
-# exec --no-startup-id synclient VertScrollDelta=-112 VertEdgeScroll=0 HorizTwoFingerScroll=1 HorizScrollDelta=-112 PalmDetect=1
-# exec --no-startup-id xinput --set-prop 'SynPS/2 Synaptics TouchPad' 311 1
-# exec --no-startup-id xinput --set-prop 'SynPS/2 Synaptics TouchPad' 303 1
+exec --no-startup-id xinput set-prop "TPPS/2 IBM TrackPoint" "Coordinate Transformation Matrix" 0.5 0 0 0 0.5 0 0 0 1
 
 # network manager
 exec --no-startup-id nm-applet

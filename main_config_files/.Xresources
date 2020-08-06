@@ -1,7 +1,7 @@
 ! .Xresources file
 ! (sourced by lightdm from /etc/lightdm/Xsession)
 
-st.font: Hack Nerd Font Mono-10;
+st.font: Hack-10;
 st.termname: st-256color
 st.shell: /bin/zsh
 st.alpha: 0.7

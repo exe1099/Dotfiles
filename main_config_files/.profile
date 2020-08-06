@@ -21,7 +21,7 @@
 
 # to tell qt5-styleplugins to try to imitate gtk2 theme
 # set with lxappearance
-export QT_QPA_PLATFORMTHEME="gtk2"
+export QT_QPA_PLATFORMTHEME="qt5ct"
 
 # variables
 export EDITOR="nvim"
