@@ -5,7 +5,6 @@
 #   \/_____/   \/_____/   \/_/\/_/   \/_/ /_/   \/_____/
 #
 
-# zmodload zsh/zprof  # for timings of startup, also a command at end of file
 # oh-my-zsh -------------------------------------------------------------------------{{{
 
 # path to your oh-my-zsh installation
@@ -17,6 +16,9 @@ source $ZSH/oh-my-zsh.sh
 
 # }}}
 # Basic options ---------------------------------------------------------------------{{{
+
+# location of history file
+export HISTFILE="/home/exe/.config/zsh/.zsh_history"
 
 
 # }}}
@@ -63,4 +65,4 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # }}}
-# zprof
+# vim:foldmethod=marker
