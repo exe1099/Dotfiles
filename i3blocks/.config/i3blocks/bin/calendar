@@ -1,5 +1,5 @@
 #! /bin/sh
-# dependencies: yad
+# dependencies: pacman -S yad
 
 width=200
 height=200

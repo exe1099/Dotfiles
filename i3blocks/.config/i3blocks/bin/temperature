@@ -1,6 +1,6 @@
 #!/bin/bash
 # author: exe1099
-# dependecies: lm-sensors, bc
+# dependecies: pacman -S lm_sensors bc
 
 TEMP_DEVICE="${BLOCK_INSTANCE:-Core}"
 TEMP_OUTPUT=$(sensors | grep "${TEMP_DEVICE}")
