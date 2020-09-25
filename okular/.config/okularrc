@@ -11,9 +11,9 @@ shouldShowMenuBarComingFromFullScreen=true
 shouldShowToolBarComingFromFullScreen=false
 
 [MainWindow]
-Height 1080=1045
-Height 768=733
-State=AAAA/wAAAAD9AAAAAAAABVYAAAK9AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+Height 1080=1063
+Height 768=751
+State=AAAA/wAAAAD9AAAAAAAABVYAAALNAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAIgBhAG4AbgBvAHQAYQB0AGkAbwBuAFQAbwBvAGwAQgBhAHIAAAAAAP////8AAAAAAAAAAA==
 ToolBarsMovable=Disabled
 Width 1366=1366
 Width 1920=1920
@@ -22,26 +22,26 @@ Width 1920=1920
 SyncThumbnailsViewport=false
 
 [Recent Files]
-File1[$e]=$HOME/AAAUni/Teilchenphysik/Slides/Lecture on elastic e-p scattering.pdf
-File10[$e]=$HOME/AAAUni/Statistik/AAALecture/stat_2_RandomNumbers.pdf
-File2[$e]=$HOME/AAAUni/Teilchenphysik/Slides/Lecture on ep scattering at HERA.pdf
-File3[$e]=$HOME/AAAUni/Teilchenphysik/Slides/Lecture on Higgs, the Standard Model and Beyond.pdf
-File4[$e]=$HOME/AAAUni/Teilchenphysik/Slides/Lecture on neutrinos.pdf
-File5[$e]=$HOME/AAAUni/Teilchenphysik/Slides/Lecture on QCD.pdf
-File6[$e]=$HOME/AAAUni/Statistik/AAALecture/stat_0_Introduction.pdf
-File7[$e]=$HOME/AAAUni/Statistik/AAALecture/Old/st02_random_numbers.okular
-File8[$e]=$HOME/AAAUni/Statistik/AAALecture/Old/st01_probabilities.okular
-File9[$e]=$HOME/AAAUni/Statistik/AAALecture/stat_1_FundamentalConcepts.pdf
-Name1[$e]=Lecture on elastic e-p scattering.pdf
-Name10[$e]=stat_2_RandomNumbers.pdf
-Name2[$e]=Lecture on ep scattering at HERA.pdf
-Name3[$e]=Lecture on Higgs, the Standard Model and Beyond.pdf
-Name4[$e]=Lecture on neutrinos.pdf
-Name5[$e]=Lecture on QCD.pdf
-Name6[$e]=stat_0_Introduction.pdf
-Name7[$e]=st02_random_numbers.okular
-Name8[$e]=st01_probabilities.okular
-Name9[$e]=stat_1_FundamentalConcepts.pdf
+File1[$e]=$HOME/AAAUni/Statistik/AAALecture/stat_5_StatisticalHypothesisTesting.pdf
+File10[$e]=$HOME/Devices/Cruzer/Documents/fahrgastrechteformular.pdf
+File2[$e]=$HOME/AAAUni/Statistik/AAALecture/stat_x_BSpline.pdf
+File3[$e]=$HOME/AAAUni/Statistik/AAALecture/stat_x_EquivSampleSize.pdf
+File4[$e]=$HOME/AAAUni/Statistik/AAALecture/stat_x_LinearModel.pdf
+File5[$e]=$HOME/AAAUni/Statistik/AAALecture/stat_9_BayesianStatistics.pdf
+File6[$e]=$HOME/AAAUni/Statistik/AAALecture/stat_3_ParameterEstimation1.pdf
+File7[$e]=$HOME/AAAUni/Statistik/AAALecture/stat_1_FundamentalConcepts.pdf
+File8[$e]=$HOME/AAAUni/Teilchenphysik/Slides/Lecture on Weak Interactions.pdf
+File9[$e]=$HOME/AAAUni/Statistik/AAALecture/stat_2_RandomNumbers.pdf
+Name1[$e]=stat_5_StatisticalHypothesisTesting.pdf
+Name10[$e]=fahrgastrechteformular.pdf
+Name2[$e]=stat_x_BSpline.pdf
+Name3[$e]=stat_x_EquivSampleSize.pdf
+Name4[$e]=stat_x_LinearModel.pdf
+Name5[$e]=stat_9_BayesianStatistics.pdf
+Name6[$e]=stat_3_ParameterEstimation1.pdf
+Name7[$e]=stat_1_FundamentalConcepts.pdf
+Name8[$e]=Lecture on Weak Interactions.pdf
+Name9[$e]=stat_2_RandomNumbers.pdf
 
 [Reviews]
 AnnotationTools=<tool id="1" type="highlight"><engine type="TextSelector" color="#ffff00"><annotation opacity="0.8" type="Highlight" color="#ffff00"/></engine><shortcut>1</shortcut></tool>,<tool id="2" type="highlight" name="Highlighter2"><engine type="TextSelector" color="#00ff00"><annotation opacity="0.5" type="Highlight" color="#00ff00"/></engine><shortcut>2</shortcut></tool>,<tool id="3" type="note-inline"><engine type="PickPoint" color="#ffff00" block="true" hoverIcon="tool-note-inline"><annotation font="Hack\\,7\\,-1\\,5\\,50\\,0\\,0\\,0\\,0\\,0\\,Regular" type="FreeText" color="#ffff00" width="0.4"/></engine><shortcut>3</shortcut></tool>,<tool id="4" type="straight-line"><engine type="PolyLine" color="#ffff00" points="2"><annotation type="Line" color="#ffff00" width="2"/></engine><shortcut>4</shortcut></tool>,<tool id="5" type="ellipse"><engine type="PickPoint" color="#00ff00" block="true"><annotation opacity="0.85" type="GeomCircle" color="#00ff00" width="1.7"/></engine><shortcut>5</shortcut></tool>,<tool id="6" type="ink"><engine type="SmoothLine" color="#00ff00"><annotation type="Ink" color="#00ff00" width="2"/></engine><shortcut>6</shortcut></tool>,<tool id="7" type="note-linked"><engine type="PickPoint" color="#ffff00" hoverIcon="tool-note"><annotation type="Text" color="#ffff00" icon="Note"/></engine><shortcut>7</shortcut></tool>,<tool id="8" type="polygon"><engine type="PolyLine" color="#007eee" points="-1"><annotation type="Line" color="#007eee" width="1"/></engine><shortcut>8</shortcut></tool>,<tool id="9" type="stamp"><engine type="PickPoint" block="true" size="64" hoverIcon="okular"><annotation type="Stamp" icon="okular"/></engine><shortcut>9</shortcut></tool>,<tool id="10" type="underline"><engine type="TextSelector" color="#000000"><annotation type="Underline" color="#000000"/></engine></tool>

@@ -1,4 +1,5 @@
 #!/bin/sh
+# dependencies: pacman -S xorg-xrandr
 
 chosen=$(printf "single-monitor\\ndual-monitor\\ndual-monitor-mirror\\nmanual" | dmenu -i -p "Select display arrangement:")
 echo $chosen
