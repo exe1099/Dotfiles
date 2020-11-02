@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if pacmd list-sources | grep -q "Samson"
+then
+    pactl set-source-mute alsa_input.usb-Samson_Technologies_Samson_GoMic-00.mono-fallback toggle && pkill -RTMIN+11 i3blocks
+else
+    pactl set-source-mute alsa_input.usb-046d_HD_Pro_Webcam_C920_CB33176F-02.analog-stereo toggle && pkill -RTMIN+11 i3blocks
+fi

@@ -7,12 +7,22 @@ time=2000
 
 function get_volume {
     # pipe to xargs removes surrounding whitespaces
-    pacmd list-sources | grep -A 6 "Samson" | grep % | cut -d % -f 1 | cut -d / -f 2 | xargs
+    if pacmd list-sources | grep -q "Samson"
+    then
+        pacmd list-sources | grep -A 6 "Samson" | grep % | cut -d % -f 1 | cut -d / -f 2 | xargs
+    else
+        pacmd list-sources | grep -A 6 "C920" | grep % | cut -d % -f 1 | cut -d / -f 2 | xargs
+    fi
 }
 
 function is_mute {
     # pipe to /dev/null because we don't want any output
-    pacmd list-sources | grep -A 10 "Samson" | grep "muted" | grep "yes" > /dev/null
+    if pacmd list-sources | grep -q "Samson"
+    then
+        pacmd list-sources | grep -A 10 "Samson" | grep "muted" | grep "yes" > /dev/null
+    else
+        pacmd list-sources | grep -A 10 "C920" | grep "muted" | grep "yes" > /dev/null
+    fi
 }
 
 # adjust notification if muted
