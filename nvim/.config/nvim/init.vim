@@ -429,11 +429,11 @@ nnoremap <leader>w @w
 " autocmd BufWritePre * %s/\s\+$//e
 
 " compile markdown file
-function! CompilteMarkdown()
+function! CompileMarkdown()
     execute "w"
     execute "! pandoc -o %:p.pdf %:p"
 endfunction
-:nmap mc :call CompilteMarkdown()<CR><CR>
+:nmap mc :call CompileMarkdown()<CR><CR>
 
 " save and run current file and show output in vertical split
 function! Setup_ExecNDisplay()
@@ -521,7 +521,7 @@ autocmd bufwritepost ~/Gits/dwmblocks_luke/config.h !sudo -A make -C ~/Gits/dwmb
 "
 "
 " compile notes.md to notes.pdf
-autocmd bufwritepost notes.md !pandoc -s notes.md -o notes.pdf
+" autocmd bufwritepost notes.md !pandoc -s notes.md -o notes.pdf
 
 
 " }}}
