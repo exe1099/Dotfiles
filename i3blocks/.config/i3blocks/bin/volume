@@ -26,6 +26,19 @@ function send_notification {
     echo $volume
 }
 
+# buttons
+case "$BLOCK_BUTTON" in
+    1) # left click
+        pactl set-sink-volume 0 +5%
+        ;;
+    2) # middle click
+        pactl set-sink-mute 0 toggle
+        ;;
+    3) # right click
+        pactl set-sink-volume 0 -5%
+        ;;
+esac
+
 # adjust notification if muted
 if is_mute ; then
     dunstify -i audio-volume-muted -t $time -r 1593 -u low "Mute"
