@@ -36,7 +36,6 @@ alias sizes="du -had 1"
 alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
 alias ccat='highlight --out-format=ansi' # color cat - print file with syntax highlighting
 alias download='aria2c'
-# alias sh='sudo htop'
 alias list_devices='sudo fdisk -l | grep -A 2 Device'
 alias openf='xdg-open '
 # alias r='python ~/Gits/ranger/ranger.py ~'
@@ -45,19 +44,21 @@ alias root='root -l'
 alias sr='sudo ranger'
 alias v='nvr ~/d'
 alias vim='nvim'
-alias wlan='wicd-curses'
+
+# Raspberry Pi
+alias pi='ssh pi@exe1099.ddns.net'
+alias pi2='ssh pi@exe-pi2'
 
 # stuff
-alias screens_one='~/.screenlayout/screens_one.sh'
-alias screens_two='~/.screenlayout/screens_two.sh'
-alias group_drive_mount='sudo sshfs lbinn@linux.zdv.uni-mainz.de:/uni-mainz.de/groups/08/AGBoeser/IceCube/ /mnt/GroupDrive/'
-alias GPU13_mount='sshfs labor@129.129.144.97:/mnt/data/PSI2019/ ~/Devices/GPU13/'
-alias GPU13_umount='sudo fusermount -u ~/Devices/GPU13'
-alias group_drive_umount='sudo fusermount -u /mnt/GroupDrive'
 alias gs='git st'
-alias startP='pdfpc -g ~/pCloud/LatexDocs/BA_slides/BA_slides.pdf'
 alias starwars='telnet towel.blinkenlights.nl' # watch Star Wars A New Hope in ASCII Art
-alias pomeron='sshpass -p "vminusa19" ssh -XYv psi2019@pomeron.physi.uni-heidelberg.de'
 
 # unused stuff
+# alias sh='sudo htop'
 # alias pycharm='screen -d -m ./PyCharm/bin/pycharm.sh; exit'
+# alias startP='pdfpc -g ~/pCloud/LatexDocs/BA_slides/BA_slides.pdf'
+# alias pomeron='sshpass -p "vminusa19" ssh -XYv psi2019@pomeron.physi.uni-heidelberg.de'
+# alias group_drive_mount='sudo sshfs lbinn@linux.zdv.uni-mainz.de:/uni-mainz.de/groups/08/AGBoeser/IceCube/ /mnt/GroupDrive/'
+# alias GPU13_mount='sshfs labor@129.129.144.97:/mnt/data/PSI2019/ ~/Devices/GPU13/'
+# alias GPU13_umount='sudo fusermount -u ~/Devices/GPU13'
+# alias group_drive_umount='sudo fusermount -u /mnt/GroupDrive'
