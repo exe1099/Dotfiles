@@ -175,7 +175,7 @@ exec --no-startup-id udiskie -t
 exec --no-startup-id i3-msg 'workspace $ws1; exec firefox'
 # exec --no-startup-id i3-msg 'workspace $ws2; exec $TERMINAL ranger; workspace $ws4'
 exec --no-startup-id i3-msg 'workspace $ws10; exec thunderbird'
-exec --no-startup-id $TERMINAL -c="scratchpad" ~/miniconda3/envs/main/bin/python
+exec --no-startup-id $TERMINAL -c="scratchpad" ~/miniconda3/envs/main/bin/python -ic "import numpy as np"
 exec --no-startup-id $TERMINAL nvr ~/d.md'
 
 # }}}
@@ -307,7 +307,6 @@ bindsym XF86MonBrightnessDown       exec --no-startup-id ~/.config/scripts/brigh
 # => Bindings----------------------------------------------{{{
 
 bindsym $mod+Return exec $TERMINAL
-
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 

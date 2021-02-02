@@ -1,0 +1,4 @@
+#!/bin/sh
+conda activate main 
+export BROWSER=/usr/bin/google-chrome-stable 
+jupyter notebook

@@ -19,17 +19,18 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # programming
-alias connect_four='conda activate main && python /home/exe/Cloud/Info/Python/ConnectFour/connect_four.py'
+# alias connect_four='conda activate main && python /home/exe/Cloud/Info/Python/ConnectFour/connect_four.py'
 alias jn='conda activate main; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
-alias jnlab='conda activate lab; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter lab; exit'
-alias jnroot='conda activate ROOT; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
-alias jnc='export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
-alias jndlp='conda activate dlp; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
+alias jn2='tmux new-session -d -s "jn" /home/exe/.config/scripts/jupyter_notebook'
+# alias jnlab='conda activate lab; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter lab; exit'
 # alias jnroot='conda activate ROOT; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
-alias jtd='jt -t monokai -f hack -fs 10 -tfs 10 -nfs 115 -cursc g -T -tf fira -cellw 70%'
-alias jtl='jt -f hack -fs 10 -tfs 10 -nfs 115 -cursc g -T -tf fira -cellw 70%'
+# alias jnc='export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
+# alias jndlp='conda activate dlp; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
+# alias jnroot='conda activate ROOT; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
+# alias jtd='jt -t monokai -f hack -fs 10 -tfs 10 -nfs 115 -cursc g -T -tf fira -cellw 70%'
+# alias jtl='jt -f hack -fs 10 -tfs 10 -nfs 115 -cursc g -T -tf fira -cellw 70%'
 alias main='conda activate main'
-alias uni_scrape='conda activate uni_scraper && cd ~/Info/Python/UniScraper && python uni_scraper.py'
+# alias uni_scrape='conda activate uni_scraper && cd ~/Info/Python/UniScraper && python uni_scraper.py'
 
 # utility
 alias sizes="du -had 1"
@@ -46,8 +47,8 @@ alias v='nvr ~/d'
 alias vim='nvim'
 
 # Raspberry Pi
-alias pi='ssh pi@exe1099.ddns.net'
-alias pi2='ssh pi@exe-pi2'
+alias pi_home='ssh pi@pi_home'
+alias pi_uni='ssh pi@pi_uni'
 
 # stuff
 alias gs='git st'

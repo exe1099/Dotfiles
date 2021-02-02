@@ -10,8 +10,7 @@
 # path to your oh-my-zsh installation
 export ZSH="/home/exe/.oh-my-zsh"
 ZSH_THEME="eastwood"
-plugins=(   git 
-            sudo)
+plugins=(sudo)
 source $ZSH/oh-my-zsh.sh
 
 # }}}

@@ -23,13 +23,6 @@ set autoindent
 set laststatus=2
 set conceallevel=2             " show _italic_ as italic (e.g. in markdown)
 
-set splitright
-set splitbelow
-
-" map yx :wq<cr>
-" map yy :w<cr>
-" map xx :q<cr>
-
 " highlight line if in insert mode
 autocmd InsertEnter * set cul
 autocmd InsertLeave * set nocul
@@ -89,19 +82,6 @@ set novisualbell
 set t_vb=
 set tm=500
 
-" write file with sudo
-" w pipes current buffer to STD_OUT; tee acts like a T-pip (splits input, one to STD_OUT,
-" one to file); hacky, need this for using sudo; forget STD_OUT, but file = current file (%)
-" cmap w!! w !sudo tee > /dev/null %
-
-" ignore compiled files
-" set wildignore=*.o,*~,*.pyc
-" if has("win16") || has("win32")
-"     set wildignore+=.git\*,.hg\*,.svn\*
-" else
-"     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
-" endif
-
 " }}}
 " Folding --------------------------------------------------------{{{
 
@@ -109,14 +89,7 @@ set tm=500
 set foldcolumn=1
 
 " toggle current fold
-" nnoremap <leader>f za
 nnoremap <A-h> za
-
-" rewrite set foldmethod command
-" nnoremap <leader>f :set foldmethod=
-
-" create fold
-" vnoremap <C-f> zf
 
 " custom fold text
 function! MyFoldText() " {{{
@@ -137,10 +110,6 @@ function! MyFoldText() " {{{
     return '=> ' . line . ' ' . repeat("-",endoflinecount) . foldedlinecount . ' ' . repeat(' ',fillcharcount)
 endfunction " }}}
 set foldtext=MyFoldText()
-
-" autosave folds
-" autocmd BufWinLeave *.* mkview
-" autocmd BufWinEnter *.* silent loadview
 
 " }}}
 " Plugins --------------------------------------------------------{{{
@@ -165,14 +134,7 @@ Plug 'PotatoesMaster/i3-vim-syntax'  " syntax for i3 file
 Plug 'tpope/vim-surround'  " add surrounding motions
 Plug 'vim-scripts/restore_view.vim'  " remembers cursor position and view (folds etc.)
 Plug 'plasticboy/vim-markdown' " markdown stuff, use it mostly for markdown folding
-" Plug 'nelstrom/vim-markdown-folding' " markdown folding, not working
-" Plug 'scrooloose/nerdtree'  " file explorer
-" Plug 'junegunn/fzf'  " fuzzy finder
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
-" Plug 'https://github.com/mbbill/undotree/'
-" Plug 'python-mode/python-mode', { 'branch': 'develop' }  " Python Stuff for editor
-" Plug 'stevearc/vim-arduino'
-" Plug 'wincent/command-t'  " fuzzy-finder
+Plug 'vim-scripts/Tabmerge' " for going from tabs to splits
 
 " Plug 'takac/vim-hardtime'  " disable repetetive use of h/j/k/l
 call plug#end()
@@ -180,52 +142,11 @@ call plug#end()
 
 " Options for plugins
 
-" vim-markdown-folding
-" keep my custom fold text
-" let g:markdown_fold_override_foldtext = 0
-
-" Sneak
-" let g:sneak#label = 1
-
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 command! W w suda://%
 
-
-" NERDTree
-" set viewoptions=cursor,folds,slash,unix
-" nnoremap <C-O> :NERDTreeToggle<Cr>
-" let NERDTreeQuitOnOpen = 1  " automatically close when opening a file
-" let NERDTreeMinimalUI = 1  " astethics
-" let NERDTreeDirArrows = 1  " astethics
-" let g:skipview_files = ['*\.vim']
-
-" let g:fzf_nvim_statusline = 0 " disable statusline overwriting
-
-" nnoremap <F5> :UndotreeToggle<cr>
-
 let g:hardtime_default_on = 1
-
-" let g:pymode = 0 " turn on the whole plugin
-" let g:pymode_python = 'python3' " Python3 syntax checking
-" let g:pymode_trim_whitespaces = 1 " trim unused whitespaces on save
-" let g:pymode_options = 1 " set default python option (line length, ...)
-" let g:pymode_indent = 1 " pep8 compatible python ident
-" let g:pymode_doc = 1 " turn on documentation
-" let g:pymode_doc_bind = 'K' " bind key to documentation
-" let g:pymode_run = 1 " turn on run code
-" let g:pymode_run_bind = '<leader>r' " bind key to run code
-" autocmd BufEnter __run__,__doc__ :wincmd L " open doc-, run-windows on right
-" let g:pymode_rope = 1
-" let g:pymode_rope_completion = 1
-" let g:pymode_rope_complete_on_dot = 1
-" let g:pymode_rope_completion_bind = '<C-Space>'
-" let g:arduino_cmd = '/home/exe/Source/arduino-1.8.7/arduino'
-" let g:arduino_board = 'arduino:avr:uno'
-" let g:arduino_serial_port = '/dev/ttyACM3'
-" nnoremap <leader>av :w<cr>:ArduinoVerify<cr>
-" nnoremap <leader>au :w<cr>:ArduinoUpload<cr>
-" nnoremap <leader>as :ArduinoUploadAndSerial<cr>
 
 
 " NERDComToggleComment
@@ -256,18 +177,33 @@ let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#show_tab_nr = 0
 
 " }}}
-" Tabs, Windows, Buffers -----------------------------------------{{{
+" Tabs, Windows, Splits, Buffers -----------------------------------------{{{
 
+set splitright
+set splitbelow
+
+" resize split with + and -
+nnoremap + :vertical resize -5<cr>
+nnoremap - :vertical resize +5<cr>
+
+" open split and lets you choose buffer
+" nnoremap <C-w>v :ls<cr>:vsp<space>\|<space>b<space>
+
+nnoremap <C-w><C-v> :Tabmerge left<cr>
+
+" simpler switching
 map <C-h> <C-w>h
 map <C-l> <C-w>l
+
+" remove these mappings, need to get them out of muscle memory
+" this doesn't work
+nnoremap <C-w>o <cr>
+nnoremap <C-w><C-o> <cr>
+
+
 " a buffer becomes hidden when it is abandoned
 set hid
 
-" return to last edit position when opening files (You want this!){{{
-" au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif"}}}
-
-" }}}
-" Movement with Tabs, Windows, Buffers----------------------------{{{
 
 " set wildcharm=<C-z>
 " nnoremap <leader>b :buffer <C-z><S-Tab>
@@ -435,35 +371,6 @@ function! CompileMarkdown()
 endfunction
 :nmap mc :call CompileMarkdown()<CR><CR>
 
-" save and run current file and show output in vertical split
-function! Setup_ExecNDisplay()
-  " write file
-  execute "w"
-  " execute permission
-  execute "silent !chmod +x %:p"
-  " save filename in variable, not sure what :t is for
-  let n=expand('%:t')
-  " 2>&1 stderr to stdout (2>1 would be to file names 1)
-  " tee: write stdin to file
-  execute "silent !%:p 2>&1 | tee ~/.vim/tmp/out_".n
-  " create new vsplit
-  execute "vsplit ~/.vim/tmp/out_".n
-  execute "redraw!"
-  set autoread
-endfunction
-
-function! ExecNDisplay()
-  execute "w"
-  let n=expand('%:t')
-  execute "silent !%:p 2>&1 | tee ~/.vim/tmp/out_".n
-endfunction
-
-:nmap <F8> :call Setup_ExecNDisplay()<CR>
-:nmap <F9> :call ExecNDisplay()<CR>
-
-" compile C++ files
-:nmap <F10> :w <bar> make %<<CR>
-
 " }}}
 " Spell Checking -------------------------------------------------{{{
 
@@ -512,17 +419,9 @@ autocmd bufwritepost ~/.Xmodmap !xmodmap %
 
 " recompile and istall simple terminal after changing config
 autocmd bufwritepost ~/Gits/st_luke/config.h !sudo -A make -C ~/Gits/st_luke/ install
-autocmd bufwritepost ~/Gits/dwm/config.h !sudo -A make -C ~/Gits/dwm/ install
-autocmd bufwritepost ~/Gits/dwm_luke/config.h !sudo -A make -C ~/Gits/dwm_luke/ install
-autocmd bufwritepost ~/Gits/dwmblocks_luke/config.h !sudo -A make -C ~/Gits/dwmblocks_luke/ install && { killall -q dwmblocks;setsid dwmblocks & }
 
 " deactive error highlighting in markdown-files (avoids --> marked as error)
-" autocmd bufread *.markdown :highlight Error guibg=None
-"
-"
-" compile notes.md to notes.pdf
-" autocmd bufwritepost notes.md !pandoc -s notes.md -o notes.pdf
-
+autocmd bufread *.md :highlight Error guibg=None
 
 " }}}
 " Unused Stuff ---------------------------------------------------{{{
