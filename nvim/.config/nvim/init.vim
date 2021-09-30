@@ -135,7 +135,6 @@ Plug 'tpope/vim-surround'  " add surrounding motions
 Plug 'vim-scripts/restore_view.vim'  " remembers cursor position and view (folds etc.)
 Plug 'plasticboy/vim-markdown' " markdown stuff, use it mostly for markdown folding
 Plug 'vim-scripts/Tabmerge' " for going from tabs to splits
-
 " Plug 'takac/vim-hardtime'  " disable repetetive use of h/j/k/l
 call plug#end()
 
@@ -146,10 +145,10 @@ call plug#end()
 " (useful for handling the permission-denied error)
 command! W w suda://%
 
-let g:hardtime_default_on = 1
+" vim-hardtime
+" let g:hardtime_default_on = 1
 
-
-" NERDComToggleComment
+" nerdcommenter
 nnoremap <c-b> :call NERDComment(0,"toggle")<CR>
 vnoremap <c-b> :call NERDComment(0,"toggle")<CR>
 " add spaces after comment delimiters by default
@@ -160,7 +159,10 @@ let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1
 " enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
-
+" custom formats
+" (get filetype of file with: :set filetype?
+let g:NERDCustomDelimiters = { 'cpp': { 'left': '/*','right': '*/' } }
+"}}}
 
 " airline
 let g:airline_powerline_fonts = 1 " needed for status line
@@ -311,9 +313,6 @@ set breakindentopt=shift:2"}}}
 nnoremap <space> /
 nnoremap <c-space> ?
 
-" search for current selection
-" vnoremap <space> y/<C-R>"<CR>
-
 " substitue
 nnoremap <leader>s :%s/
 vnoremap <leader>s y:%s/<C-R>"/
@@ -356,7 +355,7 @@ inoremap <c-V> <Esc>"+pa
 
 " execute macros with leader
 nnoremap <leader>q @q
-nnoremap <leader>w @w
+noremap <leader>w @w
 
 " }}}
 " Working with Code ----------------------------------------------{{{
@@ -488,22 +487,27 @@ autocmd bufread *.md :highlight Error guibg=None
 "     let @" = l:saved_reg
 " endfunction
 
-" }}}
-" Stuff to remember ----------------------------------------------{{{
-
-" <leader>W         remove trailing whitespaces
-" <leader>f/za      toggle fold
-" zm                fold more (z looks like folded paper)
-" zr                reduce fold
-" <f8>              run code and create window
-" <f9>              rerun code and update output
-" H/M/L             move to high/middle/low of screen
-" Ctrl+D/U / Ctrl+j/k   move half page down/up
-" :call GetSyntax() print currently applied syntax highlighting to cursor position
-"
 " insert empty line below/above and stay in normal mode
 " nmap # o<esc>
 " nmap ' O<esc>
+"
+" }}}
+" Stuff to remember ----------------------------------------------{{{
+
+" <leader>q             @q (macro?)
+" <leader>w             @w (macro?)
+" <leader>W             remove trailing whitespaces
+" <leader>f/za          toggle fold
+" zm                    fold more (z looks like folded paper)
+" zr                    reduce fold
+" <f8>                  run code and create window
+" <f9>                  rerun code and update output
+" H/M/L                 move to high/middle/low of screen
+" Ctrl+D/U / Ctrl+j/k   move half page down/up
+" :call GetSyntax()     print currently applied syntax highlighting to cursor position
+" <leader>s             substitute (works in normal and visual mode)
+" 
+"
 "
 " }}}
 " vim:foldmethod=marker
