@@ -1,4 +1,10 @@
 ! only add modified lines, also problems with @ { [ ] etc
+! nothing shift 
+! run xmodmap -pke for a full list of current keycodes + assignments
+! run xev to get keycode of keypress
+! Key    Shift+Key   Mode_switch+Key Mode_switch+Shift+Key   ISO_Level3_Shift+Key    ISO_Level3_Shift+Shift+Key (?)
+keycode  21 = dead_acute grave dead_acute grave cedilla ogonek cedilla ogonek dead_acute grave cedilla ogonek
+keycode  57 = n N n N ntilde Ntilde ntilde
 keycode  66 = Escape NoSymbol Escape
 keycode 166 = Prior NoSymbol Prior
 keycode 167 = Next NoSymbol Next
