@@ -47,8 +47,10 @@ alias v='nvr ~/d'
 alias vim='nvim'
 
 # Raspberry Pi
-alias pi_home='ssh pi@pi_home'
-alias pi_uni='ssh pi@pi_uni'
+alias pi-home='ssh pi@pi-home'
+alias pi-lab-uni='ssh pi@pi-lab-uni'
+alias pi-office-uni='ssh pi@pi-office-uni'
+alias pi2-home='ssh pi@pi2-home'
 
 # stuff
 alias gs='git st'
