@@ -17,13 +17,13 @@
 		        "import sympy as sp",
                 "import scipy as sc",
 		        "sp.init_printing()",
-		        "import lmfit as fit",
+		        "import lmfit as lmf",
 		        "import pandas as pd",
 		        "phc = c.physical_constants",
 		        "import sys",
 		        "sys.path.append(os.path.join(os.path.expanduser('~'), 'Info/Python/'))",
 		        "from my_functions import general",
-                "plt.style.use('~/Info/Python/matplotlibrc/master')"
+                "plt.style.use('~/Info/Python/matplotlibrc/notebook')"
     			]
         },
 

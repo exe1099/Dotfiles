@@ -86,7 +86,7 @@ set tm=500
 " Folding --------------------------------------------------------{{{
 
 " add a bit extra margin to the left
-set foldcolumn=1
+" set foldcolumn=1  # this makes probblems in VSCode (when highlighting someting introduces offset
 
 " toggle current fold
 nnoremap <A-h> za
@@ -149,8 +149,8 @@ command! W w suda://%
 " let g:hardtime_default_on = 1
 
 " nerdcommenter
-nnoremap <c-b> :call NERDComment(0,"toggle")<CR>
-vnoremap <c-b> :call NERDComment(0,"toggle")<CR>
+nnoremap <c-b> :call nerdcommenter#Comment(0,"toggle")<CR>
+vnoremap <c-b> :call nerdcommenter#Comment(0,"toggle")<CR>
 " add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 " align line-wise comment delimiters flush left instead of following code indentation
@@ -161,8 +161,8 @@ let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 " custom formats
 " (get filetype of file with: :set filetype?
-let g:NERDCustomDelimiters = { 'cpp': { 'left': '/*','right': '*/' } }
-"}}}
+" let g:NERDCustomDelimiters = { 'cpp': { 'left': '/*','right': '*/' } }
+let g:NERDCustomDelimiters = { 'cpp': { 'left': '//' } }
 
 " airline
 let g:airline_powerline_fonts = 1 " needed for status line
@@ -346,12 +346,15 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 
-" use system clipboard
+" use system clipboard always
+set clipboard=unnamedplus
 " + clipboard
 " * primary selection ("mouse highlight")
-vnoremap <c-C> "*y :let @+=@*<CR>
-nnoremap <c-V> "+p
-inoremap <c-V> <Esc>"+pa
+" using two different clipboards doesn't work properly wit VSCode
+" vnoremap <c-C> "*y :let @+=@*<CR>
+" vnoremap <c-C> "+y
+" nnoremap <c-V> "+p
+" inoremap <c-V> <Esc>"+pa
 
 " execute macros with leader
 nnoremap <leader>q @q
@@ -363,12 +366,6 @@ noremap <leader>w @w
 " strip all trailing whitespaces in the current file
 " autocmd BufWritePre * %s/\s\+$//e
 
-" compile markdown file
-function! CompileMarkdown()
-    execute "w"
-    execute "! pandoc -o %:p.pdf %:p"
-endfunction
-:nmap mc :call CompileMarkdown()<CR><CR>
 
 " }}}
 " Spell Checking -------------------------------------------------{{{
@@ -424,6 +421,13 @@ autocmd bufread *.md :highlight Error guibg=None
 
 " }}}
 " Unused Stuff ---------------------------------------------------{{{
+
+" compile markdown file
+" function! CompileMarkdown()
+"     execute "w"
+"     execute "! pandoc -o %:p.pdf %:p"
+" endfunction
+" :nmap mc :call CompileMarkdown()<CR><CR>
 
 " Delete trailing white space on save, useful for some filetypes ;)
 " fun! CleanExtraSpaces()
