@@ -1,11 +1,15 @@
 ! only add modified lines, also problems with @ { [ ] etc
-! nothing shift 
 ! run xmodmap -pke for a full list of current keycodes + assignments
 ! run xev to get keycode of keypress
-! Key    Shift+Key   Mode_switch+Key Mode_switch+Shift+Key   ISO_Level3_Shift+Key    ISO_Level3_Shift+Shift+Key (?)
-keycode  21 = dead_acute grave dead_acute grave cedilla ogonek cedilla ogonek dead_acute grave cedilla ogonek
-keycode  57 = n N n N ntilde Ntilde ntilde
-keycode  66 = Escape NoSymbol Escape
-keycode 166 = Prior NoSymbol Prior
-keycode 167 = Next NoSymbol Next
+! run xmodmap -pm to see modifiers (they dont influence the config in this file!)
+! Mode_switch is a modifier key, that can be assigned to some keycode (I dont use it)
+! Key    Shift_L/R+Key   Mode_switch+Key   Mode_switch+Shift_L/R+Key   ISO_Level3_Shift+Key   ISO_Level3_Shift+Shift+Key
+
 clear lock
+keycode  15 = 6 asciicircum NoSymbol NoSymbol 6 asciicircum
+keycode  30 = u U NoSymbol NoSymbol uacute udiaeresis
+keycode  32 = o O NoSymbol NoSymbol oacute odiaeresis
+keycode  38 = a A NoSymbol NoSymbol aacute adiaeresis 
+keycode  48 = apostrophe quotedbl NoSymbol NoSymbol apostrophe quotedbl
+keycode  49 = grave asciitilde NoSymbol NoSymbol grave asciitilde
+keycode  66 = Escape NoSymbol NoSymbol NoSymbol Escape NoSymbol

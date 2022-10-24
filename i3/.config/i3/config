@@ -13,9 +13,6 @@ set $mod Mod4
 # }}}
 # => i3 Specific ------------------------------------------{{{
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
@@ -42,7 +39,7 @@ bar {
     i3bar_command i3bar
     status_command /usr/bin/i3blocks -c ~/.config/i3blocks/config
     position top
-    font pango:Hack Nerd Font 7
+    font pango:Hack Nerd Font 10
     strip_workspace_numbers no
     bindsym button4 nop
     bindsym button5 nop
@@ -58,7 +55,7 @@ for_window [class="Yad"] floating enable
 # => Workspaces related -----------------------------------{{{
 
 # worspace variables
-set $ws0 "0:^ "
+set $ws0 "0:~"
 set $ws1 "1: "
 set $ws2 "2: "
 set $ws3 "3: "
@@ -66,9 +63,7 @@ set $ws4 "4: "
 set $ws5 "5: "
 set $ws6 "6: "
 set $ws7 "7: "
-set $ws8 "8: "
-set $ws9 "9: "
-set $ws10 "10: "
+set $ws8 "8: "
 
 # switch to urgent workspace
 bindsym $mod+y [urgent=latest] focus
@@ -83,8 +78,8 @@ bindsym $mod+Tab		workspace back_and_forth
 # switch/move window to workspace
 bindsym $mod+0 workspace $ws0
 bindsym $mod+Shift+0 move container to workspace $ws0
-bindsym $mod+asciicircum workspace $ws0
-bindsym $mod+Shift+asciicircum move container to workspace $ws0
+bindsym $mod+grave workspace $ws0
+bindsym $mod+Shift+grave move container to workspace $ws0
 
 bindsym $mod+1 workspace $ws1
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -118,14 +113,6 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+F4 workspace $ws8
 bindsym $mod+Shift+F4 move container to workspace $ws8
 
-bindsym $mod+9 workspace $ws9
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+F5 workspace $ws9
-bindsym $mod+Shift+F5 move container to workspace $ws9
-
-bindsym XF86Launch1 workspace $ws10
-bindsym Shift+XF86Launch1 move container to workspace $ws10
-bindsym $mod+Shift+XF86Launch1 move container to workspace $ws10
 
 # }}}
 # => Autostart External Scripts----------------------------{{{
@@ -174,7 +161,7 @@ exec --no-startup-id udiskie -t
 
 exec --no-startup-id i3-msg 'workspace $ws1; exec firefox'
 # exec --no-startup-id i3-msg 'workspace $ws2; exec $TERMINAL ranger; workspace $ws4'
-exec --no-startup-id i3-msg 'workspace $ws10; exec thunderbird'
+exec --no-startup-id i3-msg 'workspace $ws8; exec thunderbird'
 exec --no-startup-id $TERMINAL -c="scratchpad" ~/miniconda3/envs/main/bin/python -ic "import numpy as np"
 exec --no-startup-id $TERMINAL nvr ~/d.md'
 
@@ -182,9 +169,8 @@ exec --no-startup-id $TERMINAL nvr ~/d.md'
 # => Assign Windows to Workspaces/Scratchpad --------------{{{
 
 assign [class="okular"] → $ws5
-assign [class="vlc"] → $ws9
 assign [class="libreoffice-startcenter|Soffice"] → $ws6
-assign [class="Thunderbird"] → $ws10
+assign [class="Thunderbird"] → $ws8
 assign [title="nvr"] → $ws4
 assign [class="skype"] → $ws8
 
@@ -300,15 +286,15 @@ bindsym XF86Display                 exec --no-startup-id ~/.config/scripts/displ
 bindsym XF86TouchpadToggle          exec --no-startup-id  ~/.config/scripts/touchpad_toggle
 
 # brightness control
-bindsym XF86MonBrightnessUp         exec --no-startup-id ~/.config/scripts/brightness 1
-bindsym XF86MonBrightnessDown       exec --no-startup-id ~/.config/scripts/brightness -1
+bindsym XF86MonBrightnessUp         exec brightnessctl set +10%
+bindsym XF86MonBrightnessDown       exec brightnessctl set 10%-
 
 # }}}
 # => Bindings----------------------------------------------{{{
 
 bindsym $mod+Return exec $TERMINAL
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -fn "Hack-13"
 
 bindsym $mod+q              kill
 bindsym $mod+Shift+q        kill

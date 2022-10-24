@@ -14,14 +14,15 @@
 [ -d ~/.local/bin ] && PATH="$PATH:$HOME/.local/bin"
 
 # lattice diamond bins
-[ -d /usr/local/diamond/3.11_x64/bin/lin64 ] && PATH="$PATH:/usr/local/diamond/3.11_x64/bin/lin64"
+#[ -d /usr/local/diamond/3.11_x64/bin/lin64 ] && PATH="$PATH:/usr/local/diamond/3.11_x64/bin/lin64"
 
 # add texlive installation to PATH
 # PATH="/usr/local/texlive/2018/bin/x86_64-linux:$PATH"
 
+export QT_STYLE_OVERRIDE=kvantum
 # to tell qt5-styleplugins to try to imitate gtk2 theme
 # set with lxappearance
-export QT_QPA_PLATFORMTHEME="qt5ct"
+#export QT_QPA_PLATFORMTHEME="qt5ct"
 
 # variables
 export EDITOR="nvim"

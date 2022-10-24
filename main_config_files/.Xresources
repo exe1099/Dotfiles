@@ -1,7 +1,10 @@
 ! .Xresources file
 ! (sourced by lightdm from /etc/lightdm/Xsession)
 
-st.font: Hack Nerd Font-10;
+! increase fonts etc for high resolution displays
+Xft.dpi: 144
+
+st.font: Hack Nerd Font-13;
 st.termname: st-256color
 st.shell: /bin/zsh
 st.alpha: 0.7
