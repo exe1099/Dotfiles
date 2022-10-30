@@ -66,7 +66,7 @@ set $ws7 "7: "
 set $ws8 "8: "
 
 # switch to urgent workspace
-bindsym $mod+y [urgent=latest] focus
+# bindsym $mod+y [urgent=latest] focus
 
 # previous/next workspace
 bindsym $mod+Prior		workspace prev
@@ -283,7 +283,8 @@ bindsym XF86AudioMute               exec --no-startup-id pactl set-sink-mute "$(
 bindsym XF86AudioMicMute            exec --no-startup-id ~/.config/scripts/mic_mute
 
 # display manager
-bindsym XF86Display                 exec --no-startup-id ~/.config/scripts/display_select
+# this is actually Fn + F9
+bindsym $mod+p                      exec --no-startup-id ~/.config/scripts/display_select
 
 # enable/disable touchpad (only this works, doesn't work without the python here)
 bindsym XF86TouchpadToggle          exec --no-startup-id  ~/.config/scripts/touchpad_toggle
@@ -291,6 +292,9 @@ bindsym XF86TouchpadToggle          exec --no-startup-id  ~/.config/scripts/touc
 # brightness control
 bindsym XF86MonBrightnessUp         exec brightnessctl set +10%
 bindsym XF86MonBrightnessDown       exec brightnessctl set 10%-
+
+# dunst (remove notification)
+bindsym ctrl+space                  exec dunstctl close
 
 # }}}
 # => Bindings----------------------------------------------{{{
@@ -307,7 +311,6 @@ bindsym $mod+s              scratchpad show
 bindsym $mod+Shift+s        move scratchpad
 bindsym $mod+r              exec $TERMINAL ranger
 # bindsym $mod+h              exec $TERMINAL sudo htop
-bindsym $mod+p              exec $TERMINAL python3
 # can't use ~/d here
 bindsym $mod+v              exec $TERMINAL nvr ~/d.md
 bindsym $mod+Shift+w        exec --no-startup-id ~/.config/scripts/wallpaper_change Current
