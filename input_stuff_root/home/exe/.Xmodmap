@@ -7,9 +7,10 @@
 
 clear lock
 keycode  15 = 6 asciicircum NoSymbol NoSymbol 6 asciicircum
-keycode  30 = u U NoSymbol NoSymbol uacute udiaeresis
-keycode  32 = o O NoSymbol NoSymbol oacute odiaeresis
-keycode  38 = a A NoSymbol NoSymbol aacute adiaeresis 
+keycode  30 = u U NoSymbol NoSymbol uacute Uacute
+keycode  32 = o O NoSymbol NoSymbol oacute Oacute
+keycode  38 = a A NoSymbol NoSymbol aacute Aacute
 keycode  48 = apostrophe quotedbl NoSymbol NoSymbol apostrophe quotedbl
 keycode  49 = grave asciitilde NoSymbol NoSymbol grave asciitilde
 keycode  66 = Escape NoSymbol NoSymbol NoSymbol Escape NoSymbol
+keycode 105 = Multi_key
