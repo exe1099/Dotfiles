@@ -7,12 +7,12 @@ time=2000
 
 function get_volume {
     # pipe to xargs to remove surrounding whitespaces
-    pacmd list-sinks | grep "volume: front-left" | cut -d % -f 1 | cut -d / -f 2 | xargs
+    pactl get-sink-volume "$(pactl get-default-sink)" | grep "Volume: front-left" | cut -d % -f 1 | cut -d / -f 2 | xargs
 }
 
 function is_mute {
     # pipe to /dev/null because we don't want any output
-    pacmd list-sinks | grep muted | grep yes > /dev/null
+    pactl get-sink-mute "$(pactl get-default-sink)" | grep yes > /dev/null
 }
 
 function send_notification {

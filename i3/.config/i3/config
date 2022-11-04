@@ -39,7 +39,7 @@ bar {
     i3bar_command i3bar
     status_command /usr/bin/i3blocks -c ~/.config/i3blocks/config
     position top
-    font pango:Hack Nerd Font 10
+    font pango:Hack Nerd Font 9
     strip_workspace_numbers no
     bindsym button4 nop
     bindsym button5 nop
@@ -204,7 +204,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+o        resize shrink width 8 px or 8 ppt
 bindsym $mod+u        resize grow height 8 px or 8 ppt
 bindsym $mod+i        resize shrink height 8 px or 8 ppt
-bindsym $mod+z        resize grow width 8 px or 8 ppt
+bindsym $mod+y        resize grow width 8 px or 8 ppt
 
 # change container layout (stacked, tabbed, toggle split)
 # bindsym $mod+s layout stacking

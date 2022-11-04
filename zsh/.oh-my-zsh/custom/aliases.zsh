@@ -46,10 +46,15 @@ alias sr='sudo ranger'
 alias v='nvr ~/d'
 alias vim='nvim'
 
+# bluetooth
+alias bt_airpods='bluetoothctl connect 7C:C1:80:00:24:15'
+alias bt_home='bluetoothctl connect EC:81:93:E0:01:72'
+
+
 # Raspberry Pi
 alias pi-home='ssh pi@pi-home'
-alias pi-lab-uni='ssh pi@pi-lab-uni'
-alias pi-office-uni='ssh pi@pi-office-uni'
+# alias pi-lab-uni='ssh pi@pi-lab-uni'
+# alias pi-office-uni='ssh pi@pi-office-uni'
 
 # stuff
 alias gs='git st'
