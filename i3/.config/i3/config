@@ -290,8 +290,8 @@ bindsym $mod+p                      exec --no-startup-id ~/.config/scripts/displ
 bindsym XF86TouchpadToggle          exec --no-startup-id  ~/.config/scripts/touchpad_toggle
 
 # brightness control
-bindsym XF86MonBrightnessUp         exec brightnessctl set +10%
-bindsym XF86MonBrightnessDown       exec brightnessctl set 10%-
+bindsym XF86MonBrightnessUp         exec brightnessctl set +5%
+bindsym XF86MonBrightnessDown       exec brightnessctl set 5%-
 
 # dunst (remove notification)
 bindsym ctrl+space                  exec dunstctl close

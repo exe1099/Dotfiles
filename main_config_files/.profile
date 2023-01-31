@@ -8,7 +8,8 @@
 
 
 # set PATH so it includes user's private bin if it exists
-[ -d ~/Bins ] && PATH="$PATH:$HOME/Bins"
+# put in beginning so it preferes bins there (for example for spotify)
+[ -d ~/Bins ] && PATH="$HOME/Bins:$PATH"
 
 # lots of bins get installed to this directory
 [ -d ~/.local/bin ] && PATH="$PATH:$HOME/.local/bin"

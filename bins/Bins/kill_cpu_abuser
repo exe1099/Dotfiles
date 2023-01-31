@@ -1,0 +1,16 @@
+#!/bin/bash
+
+TOPPROCESS=$(top -b -n 1 | sed 1,6d | sed -n 2p)
+TOPPID=$(echo "$TOPPROCESS" | awk '{print $1}')
+TOPNAME=$(echo "$TOPPROCESS" | awk '{print $12}')
+TOPCPUUSAGE=$(echo "$TOPPROCESS" | awk '{print $9}')
+
+
+
+read -p "Kill process $TOPNAME with CPU usage $TOPCPUUSAGE%? " -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    kill -9 $TOPPID
+    echo "Killed process!"
+fi

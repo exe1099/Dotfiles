@@ -59,6 +59,8 @@ alias pi-home='ssh pi@pi-home'
 # stuff
 alias gs='git st'
 alias starwars='telnet towel.blinkenlights.nl' # watch Star Wars A New Hope in ASCII Art
+# install swh-plugins
+alias audio_norm='pacmd load-module module-ladspa-sink sink_name=compressor-stereo plugin=sc4_1882 label=sc4 control=1,1.5,401,-30,20,5,17'
 
 # unused stuff
 # alias sh='sudo htop'

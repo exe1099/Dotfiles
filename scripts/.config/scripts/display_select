@@ -5,8 +5,8 @@ chosen=$(printf "internal\\nexternal\\nmanual" | dmenu -fn "Hack-13" -i -p "Sele
 echo $chosen
 
 case "$chosen" in
-    "internal") xrandr --output eDP-1 --auto --output DP-4 --off;;
-    "external") xrandr --output DP-4 --auto --output eDP-1 --off;;
+    "internal") xrandr --output eDP-1 --auto --output DP-2 --off;;
+    "external") xrandr --output DP-2 --auto --output eDP-1 --off;;
     "manual") arandr
 esac
 
