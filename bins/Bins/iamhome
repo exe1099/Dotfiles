@@ -1,0 +1,8 @@
+#!/bin/bash
+
+shopt -s expand_aliases
+source /home/exe/.oh-my-zsh/custom/aliases.zsh
+
+exe_bt_airpods
+sleep 3
+exe_audio_norm

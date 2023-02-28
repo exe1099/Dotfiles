@@ -47,8 +47,8 @@ alias v='nvr ~/d'
 alias vim='nvim'
 
 # bluetooth
-alias bt_airpods='bluetoothctl connect 7C:C1:80:00:24:15'
-alias bt_home='bluetoothctl connect EC:81:93:E0:01:72'
+alias exe_bt_airpods='bluetoothctl connect 7C:C1:80:00:24:15'
+alias exe_bt_home='bluetoothctl connect EC:81:93:E0:01:72'
 
 
 # Raspberry Pi
@@ -60,7 +60,7 @@ alias pi-home='ssh pi@pi-home'
 alias gs='git st'
 alias starwars='telnet towel.blinkenlights.nl' # watch Star Wars A New Hope in ASCII Art
 # install swh-plugins
-alias audio_norm='pacmd load-module module-ladspa-sink sink_name=compressor-stereo plugin=sc4_1882 label=sc4 control=1,1.5,401,-30,20,5,17'
+alias exe_audio_norm='pacmd load-module module-ladspa-sink sink_name=compressor-stereo plugin=sc4_1882 label=sc4 control=1,1.5,401,-30,20,5,17'
 
 # unused stuff
 # alias sh='sudo htop'

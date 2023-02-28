@@ -1,0 +1,59 @@
+#!/bin/bash
+# https://gist.github.com/bendavis78/ed22a974c2b4534305eabb2522956359#file-extract_pdf_images-sh
+# with slight modifications
+usage() {
+    echo "Usage: $(basename $0) document.pdf FirstPageNumber LastPageNumber OutputFolderName";
+}
+
+[[ -z "$1" ]] && usage && exit 1;
+[[ -z "$2" ]] && usage && exit 1;
+[[ -z "$3" ]] && usage && exit 1;
+[[ -z "$4" ]] && usage && exit 1;
+
+TMPDIR="$(mktemp -d)";
+DIR="$(pwd)";
+
+mkdir "$TMPDIR/extracted";
+# Extract the images into tmpdir
+pdfimages -all -f $2 -l $3 $1 "$TMPDIR/extracted/image" || exit 1;
+
+# Rename images based on object id and whether or not they are a mask
+pdfimages -list -f $2 -l $3 $1 | tail -n +3 | while read row; do
+    num=$(echo "$row" | awk '{print $2}');
+    imgtype=$(echo "$row" | awk '{print $3}');
+    imgenc=$(echo "$row" | awk '{print $9}');
+    objectid=$(echo "$row" | awk '{print $11}');
+    if [[ "$imgenc" == "jpeg" ]]; then
+        ext="jpg";
+    else
+        ext="png";
+    fi
+    src=$(printf "$TMPDIR/extracted/image-%03d.$ext" $num);
+
+    if [[ "$imgtype" == "smask" ]]; then
+        dest=$(printf "$TMPDIR/image-%03d-mask.$ext" $objectid);
+    else
+        dest=$(printf "$TMPDIR/image-%03d.$ext" $objectid);
+    fi
+    echo "$src -> $dest";
+    mv "$src" "$dest" || exit 1;
+    rmdir $TMPDIR/extracted
+done
+
+# Merge the images that have a mask
+pdfimages -list -f $2 -l $3 $1 | tail -n +3 | while read row; do
+    imgtype=$(echo "$row" | awk '{print $3}');
+    objectid=$(echo "$row" | awk '{print $11}');
+    if [[ "$imgtype" == "smask" ]]; then
+        img=$(printf "$TMPDIR/image-%03d.jpg" $objectid);
+        mask=$(printf "$TMPDIR/image-%03d-mask.png" $objectid);
+        echo "convert $img $mask";
+        convert "$img" "$mask" -alpha off -compose copy-opacity -composite "$img.png" || exit 1;
+        rm $img
+    fi
+done
+
+rm "$TMPDIR"/image-*-mask.png*;
+mkdir "$DIR/$4"
+mv $TMPDIR/* "$DIR/$4";
+echo "Programm finished!"
