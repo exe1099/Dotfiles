@@ -162,8 +162,11 @@ let g:NERDTrimTrailingWhitespace = 1
 " custom formats
 " (get filetype of file with: :set filetype?
 " let g:NERDCustomDelimiters = { 'cpp': { 'left': '/*','right': '*/' } }
-let g:NERDCustomDelimiters = { 'cpp': { 'left': '//' } }
-
+let g:NERDCustomDelimiters = { 
+    \ 'cpp': { 'left': '//'},
+    \ 'c':  { 'left': '//'},
+    \ 'cc': { 'left': '//'},
+    \}
 " airline
 let g:airline_powerline_fonts = 1 " needed for status line
 " set noshowmode " hide -- INSERT --

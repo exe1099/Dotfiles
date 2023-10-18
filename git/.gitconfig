@@ -46,3 +46,5 @@
 # diff-so-fancy custom colors
 [color "diff"]
     meta = bold blue
+[pull]
+	rebase = true

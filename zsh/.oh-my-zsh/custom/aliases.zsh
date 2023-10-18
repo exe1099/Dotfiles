@@ -20,7 +20,7 @@ alias egrep='egrep --color=auto'
 
 # programming
 # alias connect_four='conda activate main && python /home/exe/Cloud/Info/Python/ConnectFour/connect_four.py'
-alias jn='conda activate main; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
+alias jn='conda activate main; export BROWSER=/usr/bin/chromium; screen -d -m jupyter notebook; exit'
 alias jn2='tmux new-session -d -s "jn" /home/exe/.config/scripts/jupyter_notebook'
 # alias jnlab='conda activate lab; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter lab; exit'
 # alias jnroot='conda activate ROOT; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
@@ -52,7 +52,8 @@ alias exe_bt_home='bluetoothctl connect EC:81:93:E0:01:72'
 
 
 # Raspberry Pi
-alias pi-home='ssh pi@pi-home'
+alias exe_pi-home-meshnet='ssh pi@exe1099-altai.nord'
+alias exe_pi-home='ssh pi@pi-home'
 # alias pi-lab-uni='ssh pi@pi-lab-uni'
 # alias pi-office-uni='ssh pi@pi-office-uni'
 

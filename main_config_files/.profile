@@ -31,3 +31,5 @@ export TERMINAL="st"
 export BROWSER=/usr/bin/firefox
 export SUDO_ASKPASS="$HOME/.config/scripts/askpass"
 export ZDOTDIR="$HOME/.config/zsh"  # so config files don't clutter home dir
+
+export QSYS_ROOTDIR="/home/exe/.cache/yay/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/21.1/quartus/sopc_builder/bin"

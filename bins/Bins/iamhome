@@ -3,6 +3,7 @@
 shopt -s expand_aliases
 source /home/exe/.oh-my-zsh/custom/aliases.zsh
 
-exe_bt_airpods
+exe_bt_home
+xrandr --output DP-3 --auto --output eDP-1 --off
 sleep 3
 exe_audio_norm

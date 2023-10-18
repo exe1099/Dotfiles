@@ -29,7 +29,7 @@ case "$BLOCK_BUTTON" in
 	/* posX=$(($BLOCK_X - $width / 2)) */
 	/* posY=$(($BLOCK_Y - $height)) */
     posX=1869
-    posY=37
+    posY=20
 
 	i3-msg -q "exec yad --calendar \
         --width=$width --height=$height \
