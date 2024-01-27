@@ -128,7 +128,8 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec_always --no-startup-id fix_xcursor
 
 # wallpaper script
-exec --no-startup-id ~/.config/scripts/wallpaper_change Current
+exec --no-startup-id feh --bg-max ~/.background_image.jpg
+# exec --no-startup-id ~/.config/scripts/wallpaper_change Current
 
 # input options (touchpad, trackpoint, ...)
 # can also  do this in /etc/X11/xorg.conf.d/30-touchpad.conf
@@ -164,7 +165,7 @@ exec --no-startup-id udiskie -t
 
 exec --no-startup-id i3-msg 'workspace $ws1; exec firefox'
 # exec --no-startup-id i3-msg 'workspace $ws2; exec $TERMINAL ranger; workspace $ws4'
-exec --no-startup-id i3-msg 'workspace $ws8; exec thunderbird'
+exec --no-startup-id i3-msg 'workspace $ws8; exec betterbird'
 exec --no-startup-id $TERMINAL -c="scratchpad" ~/miniconda3/envs/main/bin/python -ic "import numpy as np"
 exec --no-startup-id $TERMINAL nvr ~/d.md'
 
@@ -274,20 +275,18 @@ for_window [class="Xfburn"] floating enable
 # => Multimedia and Function Keys--------------------------{{{
 
 # change volume; send signal 10 to i3blocks, which triggers volume block (executes volume script)
-# exec --no-startup-id volumeicon
-bindsym $mod+a                      exec pavucontrol
 bindsym XF86AudioRaiseVolume        exec --no-startup-id pactl set-sink-volume "$(pactl get-default-sink)" +5% && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioLowerVolume        exec --no-startup-id pactl set-sink-volume "$(pactl get-default-sink)" -5% && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMute               exec --no-startup-id pactl set-sink-mute "$(pactl get-default-sink)" toggle && pkill -RTMIN+10 i3blocks
-# bindsym $mod+m                      exec --no-startup-id ~/.config/scripts/mic_mute
 bindsym XF86AudioMicMute            exec --no-startup-id ~/.config/scripts/mic_mute
+
+bindsym XF86AudioMedia              exec --no-startup-id ~/.config/scripts/bluetooth_toggle
 
 # display manager
 # this is actually Fn + F9
 bindsym $mod+p                      exec --no-startup-id ~/.config/scripts/display_select
 
-# enable/disable touchpad (only this works, doesn't work without the python here)
-bindsym XF86TouchpadToggle          exec --no-startup-id  ~/.config/scripts/touchpad_toggle
+bindsym $mod+a                      exec --no-startup-id ~/.config/scripts/audio_select
 
 # brightness control
 bindsym XF86MonBrightnessUp         exec brightnessctl set +5%
@@ -301,7 +300,7 @@ bindsym ctrl+space                  exec dunstctl close
 
 bindsym $mod+Return exec $TERMINAL
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -fn "Hack-13"
+bindsym $mod+d exec dmenu_run -fn "Hack Nerd Font-13"
 
 bindsym $mod+q              kill
 bindsym $mod+Shift+q        kill

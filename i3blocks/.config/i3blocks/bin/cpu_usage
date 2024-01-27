@@ -6,7 +6,7 @@
 #
 # Licensed under the terms of the GNU GPL v3, or any later version.
 #
-# dependencies: sysstat (mpstat)
+# dependencies: pacman -S sysstat
 
 use strict;
 use warnings;

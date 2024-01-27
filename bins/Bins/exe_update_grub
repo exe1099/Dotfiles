@@ -1,0 +1,5 @@
+sudo mount /dev/nvme0n1p1 /boot/efi
+echo "EFI Partition mounted!"
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+sudo umount /boot/efi
+echo "EFI Partition unmounted!"

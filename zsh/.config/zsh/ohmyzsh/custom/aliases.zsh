@@ -36,20 +36,22 @@ alias main='conda activate main'
 alias sizes="du -had 1"
 alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
 alias ccat='highlight --out-format=ansi' # color cat - print file with syntax highlighting
+alias cpu='auto-cpufreq --stats'
 alias download='aria2c'
 alias list_devices='sudo fdisk -l | grep -A 2 Device'
 alias openf='xdg-open '
-# alias r='python ~/Gits/ranger/ranger.py ~'
-# alias ranger='python ~/Gits/ranger/ranger.py ~'
 alias root='root -l'
 alias sr='sudo ranger'
 alias v='nvr ~/d'
 alias vim='nvim'
 
+# trash
+alias rm='echo "Are you sure? Use tp (trash-put) or escape with /."; false'
+alias tp='trash-put'
+
 # bluetooth
 alias exe_bt_airpods='bluetoothctl connect 7C:C1:80:00:24:15'
 alias exe_bt_home='bluetoothctl connect EC:81:93:E0:01:72'
-
 
 # Raspberry Pi
 alias exe_pi-home-meshnet='ssh pi@exe1099-altai.nord'
@@ -58,10 +60,9 @@ alias exe_pi-home='ssh pi@pi-home'
 # alias pi-office-uni='ssh pi@pi-office-uni'
 
 # stuff
-alias gs='git st'
 alias starwars='telnet towel.blinkenlights.nl' # watch Star Wars A New Hope in ASCII Art
 # install swh-plugins
-alias exe_audio_norm='pacmd load-module module-ladspa-sink sink_name=compressor-stereo plugin=sc4_1882 label=sc4 control=1,1.5,401,-30,20,5,17'
+# alias exe_audio_norm='pacmd load-module module-ladspa-sink sink_name=compressor-stereo plugin=sc4_1882 label=sc4 control=1,1.5,401,-30,20,5,17'
 
 # unused stuff
 # alias sh='sudo htop'

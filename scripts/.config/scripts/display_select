@@ -1,7 +1,7 @@
 #!/bin/sh
 # dependencies: pacman -S xorg-xrandr
 
-chosen=$(printf "internal\\nexternal\\nmanual" | dmenu -fn "Hack-13" -i -p "Select display arrangement:")
+chosen=$(printf "internal\\nexternal\\nmanual" | dmenu -fn "Hack Nerd Font-13" -i -p "Select display output:")
 echo $chosen
 
 case "$chosen" in

@@ -1,16 +1,22 @@
 ! only add modified lines, also problems with @ { [ ] etc
+! NoSymbol is just a placeholder, keeps the original symbol
+! many changes here for removing dead keys (dead_asciicircium --> asciicircum)
 ! run xmodmap -pke for a full list of current keycodes + assignments
 ! run xev to get keycode of keypress
 ! run xmodmap -pm to see modifiers (they dont influence the config in this file!)
 ! Mode_switch is a modifier key, that can be assigned to some keycode (I dont use it)
-! Key    Shift_L/R+Key   Mode_switch+Key   Mode_switch+Shift_L/R+Key   ISO_Level3_Shift+Key   ISO_Level3_Shift+Shift+Key
+! Key    Shift_L/R+Key   Mode_switch+Key   Mode_switch+Shift_L/R+Key   ISO_Level3_Shift(r_alt)+Key   ISO_Level3_Shift(r_alt)+Shift+Key
 
 clear lock
 keycode  15 = 6 asciicircum NoSymbol NoSymbol 6 asciicircum
-keycode  30 = u U NoSymbol NoSymbol uacute Uacute
-keycode  32 = o O NoSymbol NoSymbol oacute Oacute
-keycode  38 = a A NoSymbol NoSymbol aacute Aacute
-keycode  48 = apostrophe quotedbl NoSymbol NoSymbol apostrophe quotedbl
+! keycode  30 = u U NoSymbol NoSymbol uacute Uacute
+! keycode  32 = o O NoSymbol NoSymbol oacute Oacute
+! keycode  38 = a A NoSymbol NoSymbol aacute Aacute
+keycode  48 = apostrophe quotedbl NoSymbol NoSymbol degree quotedbl
 keycode  49 = grave asciitilde NoSymbol NoSymbol grave asciitilde
+keycode  59 = comma less NoSymbol NoSymbol leftarrow
+keycode  60 = period greater NoSymbol NoSymbol rightarrow
+
 keycode  66 = Escape NoSymbol NoSymbol NoSymbol Escape NoSymbol
 keycode 105 = Multi_key
+! keycode 114 = Right NoSymbol NoSymbol NoSymbol rightarrow

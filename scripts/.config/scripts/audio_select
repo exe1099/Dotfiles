@@ -1,0 +1,12 @@
+#!/bin/sh
+# dependencies: pacman -S xorg-xrandr
+
+chosen=$(printf "EasyEffects\\npavuControl" | dmenu -fn "hack nerd font-13" -i -p "Select audio:")
+echo $chosen
+
+case "$chosen" in
+    "Nothing") easyeffects -l Nothing;;
+    "LoudnessEqualizer") easyeffects -l LoudnessEqualizer;;
+    "EasyEffects") easyeffects;;
+    "pavuControl") pavucontrol
+esac
