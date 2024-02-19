@@ -4,7 +4,7 @@
 # |  __/| | | (_) |  _| | |  __/
 # |_|   |_|  \___/|_| |_|_|\___|
 #
-# runs on login
+# runs on login (had to rename to .xprofile)
 
 
 # set PATH so it includes user's private bin if it exists

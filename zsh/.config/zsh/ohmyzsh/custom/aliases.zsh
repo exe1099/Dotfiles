@@ -56,6 +56,7 @@ alias exe_bt_home='bluetoothctl connect EC:81:93:E0:01:72'
 # Raspberry Pi
 alias exe_pi-home-meshnet='ssh pi@exe1099-altai.nord'
 alias exe_pi-home='ssh pi@pi-home'
+alias exe_pi-ha='ssh exe@192.168.178.48'
 # alias pi-lab-uni='ssh pi@pi-lab-uni'
 # alias pi-office-uni='ssh pi@pi-office-uni'
 
