@@ -28,7 +28,7 @@ export QT_STYLE_OVERRIDE=kvantum
 # variables
 export EDITOR="nvim"
 export TERMINAL="st"
-export BROWSER=/usr/bin/firefox
+export BROWSER=/usr/bin/google-chrome-stable
 export SUDO_ASKPASS="$HOME/.config/scripts/askpass"
 export ZDOTDIR="$HOME/.config/zsh"  # so config files don't clutter home dir
 

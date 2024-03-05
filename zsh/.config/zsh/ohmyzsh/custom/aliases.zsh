@@ -20,7 +20,7 @@ alias egrep='egrep --color=auto'
 
 # programming
 # alias connect_four='conda activate main && python /home/exe/Cloud/Info/Python/ConnectFour/connect_four.py'
-alias jn='conda activate main; export BROWSER=/usr/bin/chromium; screen -d -m jupyter notebook; exit'
+alias jn='conda activate main; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
 alias jn2='tmux new-session -d -s "jn" /home/exe/.config/scripts/jupyter_notebook'
 # alias jnlab='conda activate lab; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter lab; exit'
 # alias jnroot='conda activate ROOT; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
@@ -44,6 +44,27 @@ alias root='root -l'
 alias sr='sudo ranger'
 alias v='nvr ~/d'
 alias vim='nvim'
+
+# fzf
+alias ff="fzf -i +m --border=none | xargs -r xdg-open"
+# Install pkgs using fzf
+function fin() {
+	pacman -Slq | fzf -q "$1" -m --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S
+}
+function fyin() {
+    yay -Slq | fzf -q "$1" -m --preview 'yay -Si {1}'| xargs -ro yay -S
+}
+# Uninstall pkgs using fzf
+function fre() {
+	pacman -Qq | fzf -q "$1" -m  --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns
+}
+# function fyre() {
+#     yay -Qq | fzf -q "$1" -m --preview 'yay -Qi {1}' | xargs -ro yay -Rns
+# }
+# find installed packages sizes
+# function pkgsize(){
+#     pacman -Ss $@ | awk '{if(NR%2) {system("pacman -Si "$1" | grep Ins | cut -d\":\" -f 2 | tr -d \" \n\" "" "); printf " "$1"$";} else print $0}' | sort -h | tr "$" "\n"
+# }
 
 # trash
 alias rm='echo "Are you sure? Use tp (trash-put) or escape with /."; false'
