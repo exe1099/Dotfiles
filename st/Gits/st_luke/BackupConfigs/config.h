@@ -258,7 +258,7 @@ static Shortcut shortcuts[] = {
     { MODKEY,               XK_Page_Up,     kscrollup,      {.i = -1} },
     { MODKEY,               XK_Page_Down,   kscrolldown,    {.i = -1} },
 
-	{ MODKEY,               XK_plus,        zoom,           {.f = +1} },
+	{ MODKEY,               XK_equal,       zoom,           {.f = +1} },
 	{ MODKEY,               XK_minus,       zoom,           {.f = -1} },
 
 	{ XK_ANY_MOD,           XK_Break,       sendbreak,      {.i =  0} },
@@ -313,7 +313,7 @@ static Shortcut shortcuts[] = {
  * If you want keys other than the X11 function keys (0xFD00 - 0xFFFF)
  * to be mapped below, add them to this array.
  */
-static KeySym mappedkeys[] = { -1 };
+static KeySym mappedkeys[] = {XK_equal, XK_minus};
 
 /*
  * State bits to ignore when matching key or button events.  By default,
@@ -327,6 +327,8 @@ static uint ignoremod = Mod2Mask|XK_SWITCH_MOD;
  */
 static Key key[] = {
 	/* keysym           mask            string      appkey appcursor */
+    { XK_minus,         Mod1Mask,       "\033[45;3u",    0,    0},
+    { XK_equal,         Mod1Mask,       "\033[61;3u",    0,    0},
 	{ XK_KP_Home,       ShiftMask,      "\033[2J",       0,   -1},
 	{ XK_KP_Home,       ShiftMask,      "\033[1;2H",     0,   +1},
 	{ XK_KP_Home,       XK_ANY_MOD,     "\033[H",        0,   -1},
