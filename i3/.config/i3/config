@@ -300,7 +300,7 @@ bindsym ctrl+space                  exec dunstctl close
 
 bindsym $mod+Return exec $TERMINAL
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -fn "Hack Nerd Font-13"
+bindsym $mod+d exec dmenu_run -fn "Hack Nerd Font-12"
 
 bindsym $mod+q              kill
 bindsym $mod+Shift+q        kill
