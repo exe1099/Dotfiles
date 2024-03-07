@@ -14,6 +14,9 @@
 # lots of bins get installed to this directory
 [ -d ~/.local/bin ] && PATH="$PATH:$HOME/.local/bin"
 
+# for rustling
+[ -d ~/.cargo/bin ] && PATH="$PATH:$HOME/.cargo/bin"
+
 # lattice diamond bins
 #[ -d /usr/local/diamond/3.11_x64/bin/lin64 ] && PATH="$PATH:/usr/local/diamond/3.11_x64/bin/lin64"
 
