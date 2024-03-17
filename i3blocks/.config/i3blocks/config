@@ -30,14 +30,21 @@ markup=pango
 
 # Microfon indicator
 #
-[microphone]
+# [microphone]
 # label=VOL
-label= 
-instance=Master
+# label=
+# instance=Master
 #instance=PCM
+# interval=once
+# signal=11
+# interval=5
+
+# Bluetooth
+#
+[bluetooth]
+label=
 interval=once
-signal=11
-interval=5
+signal=20
 
 # Volume indicator
 #

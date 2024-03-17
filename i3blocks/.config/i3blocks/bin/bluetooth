@@ -1,0 +1,13 @@
+#!/bin/bash
+
+POWERED=$(bluetoothctl show | grep Powered | grep -wo "yes\|no")
+
+if [[ ${POWERED} == "yes" ]]; then
+  echo "󰂯"  # short output
+  echo "󰂯"  # long output
+  echo "#f44242"
+else
+  echo "󰂲"
+  echo "󰂲"
+  echo ""
+fi
