@@ -45,7 +45,7 @@ alias sr='sudo ranger'
 alias v='nvr ~/d'
 alias vim='nvim'
 
-# fzf
+# fzf - fuzzyfind
 alias ff="fzf -i +m --border=none | xargs -r xdg-open"
 # Install pkgs using fzf
 function fin() {
