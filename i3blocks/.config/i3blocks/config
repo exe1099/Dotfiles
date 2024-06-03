@@ -43,7 +43,7 @@ markup=pango
 #
 [bluetooth]
 label=
-interval=once
+interval=-1
 signal=20
 
 # Volume indicator
@@ -56,7 +56,7 @@ signal=20
 label= 
 instance=Master
 #instance=PCM
-interval=once
+interval=-1
 signal=10
 
 # Battery indicator

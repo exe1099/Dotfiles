@@ -5,6 +5,7 @@
 # notification time
 time=2000
 
+
 function get_volume {
     # pipe to xargs to remove surrounding whitespaces
     pactl get-sink-volume "$(pactl get-default-sink)" | grep "Volume: front-left" | cut -d % -f 1 | cut -d / -f 2 | xargs
@@ -15,34 +16,29 @@ function is_mute {
     pactl get-sink-mute "$(pactl get-default-sink)" | grep yes > /dev/null
 }
 
-function send_notification {
-    volume=$(get_volume)
-    # need to use dunstify for r-option (to overwrite existing notification)
-    # compile dunstify from dunst repository with make dunstify and copy in bin path
-    # dependecies:
-    # sudo apt install libxss-dev libnotify-dev
-    # https://www.reddit.com/r/linuxquestions/comments/7n1b18/where_will_the_file_libnotifypc_be_found/
-    dunstify -i audio-volume-muted-blocking -t $time -r 1593 -u low "$volume"
-    echo $volume
-}
+# need to use dunstify for r-option (to overwrite existing notification)
+# compile dunstify from dunst repository with make dunstify and copy in bin path
+# dependecies:
+# sudo apt install libxss-dev libnotify-dev
+# https://www.reddit.com/r/linuxquestions/comments/7n1b18/where_will_the_file_libnotifypc_be_found/
 
 # buttons
-case "$BLOCK_BUTTON" in
-    1) # left click
-        pactl set-sink-volume 0 +5%
-        ;;
-    2) # middle click
-        pactl set-sink-mute 0 toggle
-        ;;
-    3) # right click
-        pactl set-sink-volume 0 -5%
-        ;;
-esac
+# case "$BLOCK_BUTTON" in
+#     1) # left click
+#         pactl set-sink-volume 0 +5%
+#         ;;
+#     2) # middle click
+#         pactl set-sink-mute 0 toggle
+#         ;;
+#     3) # right click
+#         pactl set-sink-volume 0 -5%
+#         ;;
+# esac
 
-# adjust notification if muted
 if is_mute ; then
-    dunstify -i audio-volume-muted -t $time -r 1593 -u low "Mute"
-    echo "Mute"
+    volume="Mute"
 else
-send_notification
+    volume=$(get_volume)
 fi
+echo $volume
+dunstify -i audio-volume-muted-blocking -t $time -r 1593 -u low "$volume"

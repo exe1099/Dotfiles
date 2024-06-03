@@ -20,7 +20,7 @@ alias egrep='egrep --color=auto'
 
 # programming
 # alias connect_four='conda activate main && python /home/exe/Cloud/Info/Python/ConnectFour/connect_four.py'
-alias jn='conda activate main; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
+alias jn='conda activate main; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter-lab; exit'
 alias jn2='tmux new-session -d -s "jn" /home/exe/.config/scripts/jupyter_notebook'
 # alias jnlab='conda activate lab; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter lab; exit'
 # alias jnroot='conda activate ROOT; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
@@ -74,15 +74,17 @@ alias tp='trash-put'
 alias exe_bt_airpods='bluetoothctl connect 7C:C1:80:00:24:15'
 alias exe_bt_home='bluetoothctl connect EC:81:93:E0:01:72'
 
-# Raspberry Pi
+# Raspberry Pi & Servers
 alias exe_pi-home-meshnet='ssh pi@exe1099-altai.nord'
 alias exe_pi-home='ssh pi@pi-home'
 alias exe_pi-ha='ssh exe@192.168.178.48'
+alias exe_server='ssh exe@162.55.210.221'
+
 # alias pi-lab-uni='ssh pi@pi-lab-uni'
 # alias pi-office-uni='ssh pi@pi-office-uni'
 
 # stuff
-alias starwars='telnet towel.blinkenlights.nl' # watch Star Wars A New Hope in ASCII Art
+alias wine-ltspice='wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceXVII/XVIIx64.exe'
 # install swh-plugins
 # alias exe_audio_norm='pacmd load-module module-ladspa-sink sink_name=compressor-stereo plugin=sc4_1882 label=sc4 control=1,1.5,401,-30,20,5,17'
 
