@@ -120,7 +120,6 @@ bindsym $mod+Shift+F4 move container to workspace $ws8
 # stuff from manjaro
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec --no-startup-id xfce4-power-manager
-# exec --no-startup-id clipit  # clipboard manager
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
@@ -128,7 +127,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec_always --no-startup-id fix_xcursor
 
 # wallpaper script
-exec --no-startup-id feh --bg-max ~/.background_image.jpg
+exec --no-startup-id feh --bg-max ~/.background_image.png
 # exec --no-startup-id ~/.config/scripts/wallpaper_change Current
 
 # input options (touchpad, trackpoint, ...)
@@ -169,6 +168,7 @@ exec --no-startup-id i3-msg 'workspace $ws8; exec betterbird'
 exec --no-startup-id $TERMINAL -c="scratchpad" ~/miniconda3/envs/main/bin/python -ic "import numpy as np"
 # exec --no-startup-id $TERMINAL nvr ~/d.md'
 # exec --no-startup-id %TERMINAL bluetoothctl power off
+exec --no-startup-id easyeffects --gapplication-service
 
 
 # }}}
@@ -280,9 +280,10 @@ for_window [class="Xfburn"] floating enable
 bindsym XF86AudioRaiseVolume        exec --no-startup-id pactl set-sink-volume "$(pactl get-default-sink)" +5% && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioLowerVolume        exec --no-startup-id pactl set-sink-volume "$(pactl get-default-sink)" -5% && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMute               exec --no-startup-id pactl set-sink-mute "$(pactl get-default-sink)" toggle && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioMicMute            exec --no-startup-id ~/.config/scripts/mic_mute
+# bindsym XF86AudioMicMute            exec --no-startup-id ~/.config/scripts/mic_mute
 
-bindsym XF86AudioMedia              exec --no-startup-id ~/.config/scripts/bluetooth_toggle && pkill -RTMIN+20 i3blocks
+# bindsym XF86AudioMedia              exec --no-startup-id ~/.config/scripts/bluetooth_toggle && pkill -RTMIN+20 i3blocks
+bindsym XF86AudioMedia              exec $TERMINAL bluetuith --no-warning
 
 # display manager
 # this is actually Fn + F9 (not sure why this works)
@@ -315,8 +316,6 @@ bindsym $mod+r              exec $TERMINAL ranger
 # can't use ~/d here
 bindsym $mod+v              exec $TERMINAL nvr ~/d.md
 bindsym $mod+Shift+w        exec --no-startup-id ~/.config/scripts/wallpaper_change Current
-# bindsym $mod+m              exec --no-startup-id ~/.config/scripts/mount
-# bindsym $mod+Shift+m        exec --no-startup-id ~/.config/scripts/umount
 
 # }}}
 # vim:filetype=i3:foldmethod=marker

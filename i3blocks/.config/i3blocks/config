@@ -43,8 +43,7 @@ markup=pango
 #
 [bluetooth]
 label=
-interval=-1
-signal=20
+interval=3
 
 # Volume indicator
 #
@@ -63,7 +62,7 @@ signal=10
 #
 # The battery instance defaults to 0.
 [battery]
-interval=5
+interval=3
 
 # Memory usage
 #
