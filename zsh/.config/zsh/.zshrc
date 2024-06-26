@@ -10,7 +10,9 @@
 # path to your oh-my-zsh installation
 export ZSH="$ZDOTDIR/ohmyzsh"
 ZSH_THEME="eastwood"
-plugins=(sudo git)
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+plugins=(sudo git vi-mode fzf zsh-autosuggestions)
+
 source $ZSH/oh-my-zsh.sh
 
 # }}}
@@ -19,31 +21,19 @@ source $ZSH/oh-my-zsh.sh
 # location of history file
 export HISTFILE="/home/exe/.config/zsh/.zsh_history"
 
-
 # }}}
-# vim -------------------------------------------------------------------------------{{{
+# Key Bindings -------------------------------------------------------------------------------{{{
 
 # use vim keys in tab complete menu:
-# bindkey -M menuselect 'h' vi-backward-char
-# bindkey -M menuselect 'k' vi-up-line-or-history
-# bindkey -M menuselect 'l' vi-forward-char
-# bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey '^ ' autosuggest-accept
 # bindkey -v '^?' backward-delete-char
-
-# }}}
-# lf --------------------------------------------------------------------------------{{{
-
-# use lf to switch directories and bind it to ctrl-o
-# lfcd () {
-    # tmp="$(mktemp)"
-    # lf -last-dir-path="$tmp" "$@"
-    # if [ -f "$tmp" ]; then
-        # dir="$(cat "$tmp")"
-        # rm -f "$tmp"
-        # [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
-    # fi
-# }
-# bindkey -s '^o' 'lfcd\n'
+# bindkey -v
+# bindkey ^R history-incremental-search-backward
+# bindkey ^S history-incremental-search-forward
 
 # }}}
 # Anaconda --------------------------------------------------------------------------{{{

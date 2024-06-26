@@ -1,4 +1,6 @@
 Stow file in root directory with:
     sudo stow -t / <stow folder>
 
-If possible stow whole folders (~/.config/nvim should be a softlink to ~/Dotfiles/nvim)
+* if possible stow whole folders (~/.config/nvim should be a softlink to ~/Dotfiles/nvim)
+    * dont do this for zsh dir! (oh-my-zsh installs in this dir)
+

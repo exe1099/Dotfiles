@@ -34,15 +34,14 @@ alias main='conda activate main'
 
 # utility
 alias sizes="du -had 1"
-alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
-alias ccat='highlight --out-format=ansi' # color cat - print file with syntax highlighting
+# alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
+# alias ccat='highlight --out-format=ansi' # color cat - print file with syntax highlighting
 alias cpu='auto-cpufreq --stats'
-alias download='aria2c'
-alias list_devices='sudo fdisk -l | grep -A 2 Device'
+# alias list_devices='sudo fdisk -l | grep -A 2 Device'
 alias openf='xdg-open '
 alias root='root -l'
 alias sr='sudo ranger'
-alias v='nvr ~/d'
+# alias v='nvr ~/d'
 alias vim='nvim'
 
 # fzf - fuzzyfind
@@ -70,10 +69,6 @@ function fre() {
 alias rm='echo "Are you sure? Use tp (trash-put) or escape with /."; false'
 alias tp='trash-put'
 
-# bluetooth
-alias exe_bt_airpods='bluetoothctl connect 7C:C1:80:00:24:15'
-alias exe_bt_home='bluetoothctl connect EC:81:93:E0:01:72'
-
 # Raspberry Pi & Servers
 alias exe_pi-home-meshnet='ssh pi@exe1099-altai.nord'
 alias exe_pi-home='ssh pi@pi-home'
@@ -85,15 +80,5 @@ alias exe_server='ssh exe@162.55.210.221'
 
 # stuff
 alias wine-ltspice='wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceXVII/XVIIx64.exe'
-# install swh-plugins
-# alias exe_audio_norm='pacmd load-module module-ladspa-sink sink_name=compressor-stereo plugin=sc4_1882 label=sc4 control=1,1.5,401,-30,20,5,17'
 
 # unused stuff
-# alias sh='sudo htop'
-# alias pycharm='screen -d -m ./PyCharm/bin/pycharm.sh; exit'
-# alias startP='pdfpc -g ~/pCloud/LatexDocs/BA_slides/BA_slides.pdf'
-# alias pomeron='sshpass -p "vminusa19" ssh -XYv psi2019@pomeron.physi.uni-heidelberg.de'
-# alias group_drive_mount='sudo sshfs lbinn@linux.zdv.uni-mainz.de:/uni-mainz.de/groups/08/AGBoeser/IceCube/ /mnt/GroupDrive/'
-# alias GPU13_mount='sshfs labor@129.129.144.97:/mnt/data/PSI2019/ ~/Devices/GPU13/'
-# alias GPU13_umount='sudo fusermount -u ~/Devices/GPU13'
-# alias group_drive_umount='sudo fusermount -u /mnt/GroupDrive'

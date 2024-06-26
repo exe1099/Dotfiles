@@ -131,7 +131,7 @@ set breakindentopt=shift:2"
 " }}}
 " Searching ------------------------------------------------------{{{
 
-" substitue
+" substitute
 nnoremap <leader>s :%s/
 vnoremap <leader>s y:%s/<C-R>"/
 
@@ -164,7 +164,7 @@ endif
 " :PlugClean
 " :PlugInstall
 call plug#begin('~/.vim/plugged')
-" Add plugins here
+" add plugins here
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'scrooloose/nerdcommenter'  " comment/uncomment plugin
 Plug 'lambdalisue/suda.vim'  " write file with sudo
