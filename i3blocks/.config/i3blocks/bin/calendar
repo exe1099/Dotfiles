@@ -1,8 +1,8 @@
 #! /bin/sh
 # dependencies: pacman -S yad
 
-width=200
-height=200
+width=400
+height=300
 datefmt="+%a %d.%m.%Y %H:%M:%S"
 
 OPTIND=1
@@ -28,10 +28,10 @@ case "$BLOCK_BUTTON" in
 	# the position of the upper left corner of the popup
 	/* posX=$(($BLOCK_X - $width / 2)) */
 	/* posY=$(($BLOCK_Y - $height)) */
-    posX=1869
-    posY=20
+    posX=1848
+    posY=19
 
-	i3-msg -q "exec yad --calendar \
+	i3-msg -q "exec yad --calendar --show-weeks\
         --width=$width --height=$height \
 	    --undecorated --fixed \
         --close-on-unfocus --no-buttons \

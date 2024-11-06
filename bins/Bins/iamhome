@@ -1,9 +1,4 @@
 #!/bin/bash
 
-shopt -s expand_aliases
-source ~/.config/zsh/ohmyzsh/custom/aliases.zsh
-
 xrandr --output DP-3 --auto --output eDP-1 --off
-bluetoothctl power on
-sleep 4
-exe_bt_home
+bluetuith --no-warning --adapter=hci0 --adapter-states="powered:yes" --connect-bdaddr="EC:81:93:E0:01:72"

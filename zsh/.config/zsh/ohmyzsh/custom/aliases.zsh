@@ -19,29 +19,15 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # programming
-# alias connect_four='conda activate main && python /home/exe/Cloud/Info/Python/ConnectFour/connect_four.py'
-alias jn='conda activate main; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter-lab; exit'
-alias jn2='tmux new-session -d -s "jn" /home/exe/.config/scripts/jupyter_notebook'
-# alias jnlab='conda activate lab; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter lab; exit'
-# alias jnroot='conda activate ROOT; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
-# alias jnc='export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
-# alias jndlp='conda activate dlp; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
-# alias jnroot='conda activate ROOT; export BROWSER=/usr/bin/google-chrome-stable; screen -d -m jupyter notebook; exit'
-# alias jtd='jt -t monokai -f hack -fs 10 -tfs 10 -nfs 115 -cursc g -T -tf fira -cellw 70%'
-# alias jtl='jt -f hack -fs 10 -tfs 10 -nfs 115 -cursc g -T -tf fira -cellw 70%'
+alias jn='conda activate main; screen -d -m jupyter-lab; exit'
 alias main='conda activate main'
-# alias uni_scrape='conda activate uni_scraper && cd ~/Info/Python/UniScraper && python uni_scraper.py'
 
 # utility
 alias sizes="du -had 1"
-# alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
-# alias ccat='highlight --out-format=ansi' # color cat - print file with syntax highlighting
 alias cpu='auto-cpufreq --stats'
-# alias list_devices='sudo fdisk -l | grep -A 2 Device'
 alias openf='xdg-open '
 alias root='root -l'
 alias sr='sudo ranger'
-# alias v='nvr ~/d'
 alias vim='nvim'
 
 # fzf - fuzzyfind
@@ -70,10 +56,9 @@ alias rm='echo "Are you sure? Use tp (trash-put) or escape with /."; false'
 alias tp='trash-put'
 
 # Raspberry Pi & Servers
-alias exe_pi-home-meshnet='ssh pi@exe1099-altai.nord'
-alias exe_pi-home='ssh pi@pi-home'
-alias exe_pi-ha='ssh exe@192.168.178.48'
-alias exe_server='ssh exe@162.55.210.221'
+alias exe-pi-home='ssh pi@pi-home'
+alias exe-pi-ha='ssh exe@192.168.178.48'
+alias exe-server='ssh exe@162.55.210.221'
 
 # alias pi-lab-uni='ssh pi@pi-lab-uni'
 # alias pi-office-uni='ssh pi@pi-office-uni'

@@ -51,6 +51,7 @@ else
     fi
 fi
 unset __conda_setup
+PROMPT=$(echo $PROMPT | sed 's/(base) //')  # remove prompt for base
 # <<< conda initialize <<<
 
 # }}}

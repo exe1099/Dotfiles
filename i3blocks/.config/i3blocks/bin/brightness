@@ -1,0 +1,9 @@
+#!/bin/bash
+
+offset=$(cat /dev/shm/AB.offset)
+offset=${offset::-2}
+
+
+echo $offset  # short output
+echo $offset  # long output
+# echo "#f44242"

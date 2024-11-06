@@ -159,6 +159,9 @@ exec --no-startup-id dunst
 # mounting with tray icon
 exec --no-startup-id udiskie -t
 
+# idle
+exec --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer 300 'xrandr --output "eDP-1" --brightness .2' 'xrandr --output "eDP-1" --brightness 1' --timer 600 'xrandr --output "eDP-1" --brightness 1; systemctl suspend' ''
+
 # }}}
 # => Autostart Programs in Workspaces/Scratchpad ----------{{{
 
@@ -243,7 +246,7 @@ bindsym $mod+Shift+l move right 60px
 
 # for_window [name="Open File"] resize set 640 480
 floating_minimum_size 75 x 50
-floating_maximum_size 1000 x 600
+# floating_maximum_size 1000 x 600
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -292,8 +295,9 @@ bindsym $mod+p                      exec --no-startup-id ~/.config/scripts/displ
 bindsym $mod+a                      exec --no-startup-id ~/.config/scripts/audio_select
 
 # brightness control
-bindsym XF86MonBrightnessUp         exec brightnessctl set +5%
-bindsym XF86MonBrightnessDown       exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp         exec --no-startup-id ~/Gits/Mac-like-automatic-brightness/AutomaticBrightness.sh -i 300 && pkill -RTMIN+11 i3blocks
+bindsym XF86MonBrightnessDown       exec --no-startup-id ~/Gits/Mac-like-automatic-brightness/AutomaticBrightness.sh -d 300 && pkill -RTMIN+11 i3blocks
+
 
 # dunst (remove notification)
 bindsym ctrl+space                  exec dunstctl close
