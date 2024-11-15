@@ -43,16 +43,9 @@ function fyin() {
 function fre() {
 	pacman -Qq | fzf -q "$1" -m  --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns
 }
-# function fyre() {
-#     yay -Qq | fzf -q "$1" -m --preview 'yay -Qi {1}' | xargs -ro yay -Rns
-# }
-# find installed packages sizes
-# function pkgsize(){
-#     pacman -Ss $@ | awk '{if(NR%2) {system("pacman -Si "$1" | grep Ins | cut -d\":\" -f 2 | tr -d \" \n\" "" "); printf " "$1"$";} else print $0}' | sort -h | tr "$" "\n"
-# }
 
 # trash
-alias rm='echo "Are you sure? Use tp (trash-put) or escape with /."; false'
+alias rm='echo "Are you sure? Use tp (trash-put) <file> or escape with \\\rm <file>."; false'
 alias tp='trash-put'
 
 # Raspberry Pi & Servers

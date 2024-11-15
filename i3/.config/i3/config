@@ -145,6 +145,9 @@ exec --no-startup-id nm-applet
 # compositor for transparency
 exec --no-startup-id xcompmgr
 
+# screenshot tool
+exec --no-startup-id flameshot
+
 # cloud services
 exec --no-startup-id pcloud
 # exec --no-startup-id dropbox
