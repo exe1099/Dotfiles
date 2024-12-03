@@ -35,4 +35,4 @@ export BROWSER=/usr/bin/google-chrome-stable
 export SUDO_ASKPASS="$HOME/.config/scripts/askpass"
 export ZDOTDIR="$HOME/.config/zsh"  # so config files don't clutter home dir
 
-export QSYS_ROOTDIR="/home/exe/.cache/yay/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/21.1/quartus/sopc_builder/bin"
+export XILINXD_LICENSE_FILE="2100@galileo-1.zdv.uni-mainz.de"

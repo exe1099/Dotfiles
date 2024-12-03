@@ -11,3 +11,10 @@ else
   echo "󰂲"
   echo ""
 fi
+
+case "$BLOCK_BUTTON" in
+  1|2|3)
+
+  $TERMINAL bluetuith --no-warning
+
+esac

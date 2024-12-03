@@ -53,6 +53,9 @@ alias exe-pi-home='ssh pi@pi-home'
 alias exe-pi-ha='ssh exe@192.168.178.48'
 alias exe-server='ssh exe@162.55.210.221'
 
+# Cloudflare Tunnels
+alias cloud-uni='cloudflared access rdp --hostname uni.binn.dev --url rdp://127.0.0.1:3389'
+
 # alias pi-lab-uni='ssh pi@pi-lab-uni'
 # alias pi-office-uni='ssh pi@pi-office-uni'
 
