@@ -6,6 +6,11 @@
 #
 # runs on login (had to rename to .xprofile)
 
+# start with screen locked
+/home/exe/.config/scripts/lock_screen
+
+# increase brightness a bit
+~/Gits/Mac-like-automatic-brightness/AutomaticBrightness.sh -i 600 && pkill -RTMIN+11 i3blocks
 
 # set PATH so it includes user's private bin if it exists
 # put in beginning so it preferes bins there (for example for spotify)

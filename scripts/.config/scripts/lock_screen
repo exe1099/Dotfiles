@@ -1,0 +1,8 @@
+#!/bin/bash
+# dependencies: i3lock-color
+i3lock -n \
+    --inside-color=373445ff --ring-color=ffffffff --line-uses-inside \
+    --keyhl-color=d23c3dff --bshl-color=d23c3dff --separator-color=00000000 \
+    --insidever-color=fecf4dff --insidewrong-color=d23c3dff \
+    --ringver-color=ffffffff --ringwrong-color=ffffffff --blur=1 --indicator \
+    --radius=50 --verif-text="" --wrong-text=""

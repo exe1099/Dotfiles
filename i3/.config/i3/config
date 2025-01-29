@@ -123,7 +123,7 @@ bindsym $mod+Shift+F4 move container to workspace $ws8
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # wallpaper script
-exec --no-startup-id feh --bg-max ~/.background_image.png
+exec --no-startup-id feh --bg-max /home/exe/Photos/Wallpapers/Current/background_image.png
 # exec --no-startup-id ~/.config/scripts/wallpaper_change Current
 
 # input options (touchpad, trackpoint, ...)
@@ -155,18 +155,24 @@ exec --no-startup-id dunst
 # mounting with tray icon
 exec --no-startup-id udiskie -t
 
+# bitwarden
+exec --no-startup-id bitwarden-desktop
+
 # idle
 exec --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer 300 'xrandr --output "eDP-1" --brightness .2' 'xrandr --output "eDP-1" --brightness 1' --timer 600 'xrandr --output "eDP-1" --brightness 1; systemctl suspend' ''
+
+# lock before suspend
+exec --no-startup-id xss-lock --transfer-sleep-lock -- /home/exe/.config/scripts/lock_screen
+
 # }}}
 
 
 # => Autostart Programs in Workspaces/Scratchpad ----------{{{
 
-exec --no-startup-id i3-msg 'workspace $ws1; exec google-chrome-stable'
-exec --no-startup-id i3-msg 'workspace $ws2; exec $TERMINAL ranger'
 exec --no-startup-id i3-msg 'workspace $ws8; exec betterbird'
 exec --no-startup-id $TERMINAL -c="scratchpad" ~/miniconda3/envs/main/bin/python -ic "import numpy as np"
 exec --no-startup-id easyeffects --gapplication-service
+exec --no-startup-id i3-msg 'workspace $ws1; exec google-chrome-stable'
 # }}}
 
 
@@ -199,10 +205,10 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # resizing current window
-bindsym $mod+Left   resize shrink width 60px; move right 30px
-bindsym $mod+Down   resize grow height 60px; move up 30px
-bindsym $mod+Up     resize shrink height 60px; move down 30px
-bindsym $mod+Right  resize grow width 60px; move left 30px
+bindsym $mod+Shift+Left   resize shrink width 60px; move right 30px
+bindsym $mod+Shift+Down   resize grow height 60px; move up 30px
+bindsym $mod+Shift+Up     resize shrink height 60px; move down 30px
+bindsym $mod+Shift+Right  resize grow width 60px; move left 30px
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+w layout tabbed
@@ -222,10 +228,10 @@ bindsym $mod+Shift+h move left 60px
 bindsym $mod+Shift+j move down 60px
 bindsym $mod+Shift+k move up   60px
 bindsym $mod+Shift+l move right 60px
-bindsym $mod+Shift+Left   move left 60px
-bindsym $mod+Shift+Down   move down 60px
-bindsym $mod+Shift+Up     move up 60px
-bindsym $mod+Shift+Right  move right 60px
+bindsym $mod+Left   move left 60px
+bindsym $mod+Down   move down 60px
+bindsym $mod+Up     move up 60px
+bindsym $mod+Right  move right 60px
 # }}}
 
 
